@@ -1,8 +1,8 @@
 ### maordano.github.io
 
-Hola, estamos construyendo una red de construcción abierta para el desarrollo de proyectos locales y virtuales.
+<h3>Hola, estamos construyendo una red de construcción abierta para el desarrollo de proyectos locales y virtuales.
 
-La idea es hacer un equipo colaborativo virtual de acceso abierto. 
+La idea es hacer un equipo colaborativo virtual de acceso abierto.
 
-Visita <a href="https://nodoambiental.org">Nodo Ambiental</a>
+<>Visita <a href="https://nodoambiental.org">Nodo Ambiental</a></h3>
 
