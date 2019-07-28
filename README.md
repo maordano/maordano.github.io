@@ -4,5 +4,5 @@
 
 La idea es hacer un equipo colaborativo virtual de acceso abierto.
 
-<>Visita <a href="https://nodoambiental.org">Nodo Ambiental</a></h3>
+Visita <a href="https://nodoambiental.org">Nodo Ambiental</a></h3>
 
