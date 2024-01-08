@@ -9,8 +9,8 @@ Tucumán, Argentina
 - Posdoctorado, Instituto de Ecología, Universidad Nacional Autónoma de México, Ciudad de México, 2007
 
 ### Posición Actual
-- Investigador, [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
-- Investigador, [Fundación Miguel Lillo](https://www.lillo.org.ar/) 
+- Investigador [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
+- Investigador [Fundación Miguel Lillo](https://www.lillo.org.ar/) 
 
 ### Servicios
 - Participación en la construcción de [Fundación Nodo Ambiental](https://nodoambiental.org) 
