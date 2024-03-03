@@ -4,9 +4,9 @@ Yerba Buena, Tucumán, Argentina
 
 ### Posición Actual
 
--   Investigador [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
+-   Investigador [Instituto de Ecología Regional](https://ier.conicet.gov.ar/), desde 2019
 
--   Investigador [Fundación Miguel Lillo](https://www.lillo.org.ar/)
+-   Investigador [Fundación Miguel Lillo](https://www.lillo.org.ar/), desde 2007
 
 ### Educación Académica
 
@@ -18,7 +18,7 @@ Yerba Buena, Tucumán, Argentina
 
 ### Desarrollo
 
--   Participación en la construcción de [Fundación Nodo Ambiental](https://nodoambiental.org), Presidente
+-   Participación en la construcción de [Fundación Nodo Ambiental](https://nodoambiental.org), Presidente, desde 2020
 
 ### Espacio Lúdico
 
