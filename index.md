@@ -2,7 +2,13 @@
 
 Mariano Ordano
 
-Tucumán, Argentina
+Yerba Buena, Tucumán, Argentina
+
+### Posición Actual
+
+\- Investigador [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
+
+\- Investigador [Fundación Miguel Lillo](https://www.lillo.org.ar/)
 
 ### Educación Académica
 
@@ -12,18 +18,12 @@ Tucumán, Argentina
 
 \- Posdoctorado, Instituto de Ecología, Universidad Nacional Autónoma de México, Ciudad de México, 2007
 
-### Posición Actual
-
-\- Investigador [[Instituto de Ecología Regional](%5Bhttps://ier.conicet.gov.ar/)](<https://ier.conicet.gov.ar/>)
-
-\- Investigador [[Fundación Miguel Lillo](%5Bhttps://www.lillo.org.ar/)](<https://www.lillo.org.ar/>)
-
 ### Desarrollo
 
-\- Participación en la construcción de [[Fundación Nodo Ambiental](%5Bhttps://nodoambiental.org)](<https://nodoambiental.org>)
+-   Participación en la construcción de [Fundación Nodo Ambiental](https://nodoambiental.org), Presidente
 
 ### Espacio Lúdico
 
-\- [[Nube de Palabras](%5Bhttps://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)](<https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/>)
+-   [Nube de Palabras](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)
 
-20240303
+###### Últimos Cambios 20240303
