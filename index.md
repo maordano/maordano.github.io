@@ -1,14 +1,10 @@
----
----
----
-
-### \### maordano.github.io
+### maordano.github.io
 
 Mariano Ordano
 
 Tucumán, Argentina
 
-\### Educación Académica
+### Educación Académica
 
 \- Biólogo, Universidad Nacional de Córdoba, Argentina, 1993
 
@@ -16,18 +12,18 @@ Tucumán, Argentina
 
 \- Posdoctorado, Instituto de Ecología, Universidad Nacional Autónoma de México, Ciudad de México, 2007
 
-\### Posición Actual
+### Posición Actual
 
-\- Investigador [Instituto de Ecología Regional](%5Bhttps://ier.conicet.gov.ar/)](<https://ier.conicet.gov.ar/>))
+\- Investigador [[Instituto de Ecología Regional](%5Bhttps://ier.conicet.gov.ar/)](<https://ier.conicet.gov.ar/>)
 
-\- Investigador [Fundación Miguel Lillo](%5Bhttps://www.lillo.org.ar/)](<https://www.lillo.org.ar/>))
+\- Investigador [[Fundación Miguel Lillo](%5Bhttps://www.lillo.org.ar/)](<https://www.lillo.org.ar/>)
 
-\### Desarrollo
+### Desarrollo
 
-\- Participación en la construcción de [Fundación Nodo Ambiental](%5Bhttps://nodoambiental.org)](<https://nodoambiental.org>))
+\- Participación en la construcción de [[Fundación Nodo Ambiental](%5Bhttps://nodoambiental.org)](<https://nodoambiental.org>)
 
-\### Espacio Lúdico
+### Espacio Lúdico
 
-\- [Nube de Palabras](%5Bhttps://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)](<https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/>))
+\- [[Nube de Palabras](%5Bhttps://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)](<https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/>)
 
 20240303
