@@ -1,7 +1,5 @@
 ### maordano.github.io
 
-Mariano Ordano
-
 Yerba Buena, Tucumán, Argentina
 
 ### Posición Actual
