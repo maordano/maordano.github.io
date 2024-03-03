@@ -3,7 +3,7 @@
 Mariano Ordano  
 Tucumán, Argentina
 
-### Educación
+### Educación Académica
 - Biólogo, Universidad Nacional de Córdoba, Argentina, 1993
 - Doctor en Ciencias, Ecología y Manejo de Recursos Naturales, Instituto de Ecología, Xalapa, Veracruz, México, 2005
 - Posdoctorado, Instituto de Ecología, Universidad Nacional Autónoma de México, Ciudad de México, 2007
@@ -15,6 +15,8 @@ Tucumán, Argentina
 ### Desarrollo
 - Participación en la construcción de [Fundación Nodo Ambiental](https://nodoambiental.org) 
 
-### Herramientas
-- [nube de palabras](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)
+### Espacio Lúdico
+- [Nube de Palabras](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)
+
+20240303
 

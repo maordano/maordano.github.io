@@ -1,21 +1,29 @@
-### maordano.github.io
+### \### maordano.github.io
 
-Mariano Ordano\
+Mariano Ordano
+
 Tucumán, Argentina
 
-### Educación
+\### Educación Académica
 
--   Biólogo, Universidad Nacional de Córdoba, Argentina, 1993
--   Doctor en Ciencias, Ecología y Manejo de Recursos Naturales, Instituto de Ecología, Xalapa, Veracruz, México, 2005
--   Posdoctorado, Instituto de Ecología, Universidad Nacional Autónoma de México, Ciudad de México, 2007
+\- Biólogo, Universidad Nacional de Córdoba, Argentina, 1993
 
-### Posición Actual
+\- Doctor en Ciencias, Ecología y Manejo de Recursos Naturales, Instituto de Ecología, Xalapa, Veracruz, México, 2005
 
--   Investigador en [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
--   Investigador en [Fundación Miguel Lillo](https://www.lillo.org.ar/)
+\- Posdoctorado, Instituto de Ecología, Universidad Nacional Autónoma de México, Ciudad de México, 2007
 
-### Desarrollo
+\### Posición Actual
 
--   Participación en la construcción de [Fundación Nodo Ambiental](https://nodoambiental.org)
+\- Investigador [Instituto de Ecología Regional]([https://ier.conicet.gov.ar/)](https://ier.conicet.gov.ar/))
 
-20240108
+\- Investigador [Fundación Miguel Lillo]([https://www.lillo.org.ar/)](https://www.lillo.org.ar/))
+
+\### Desarrollo
+
+\- Participación en la construcción de [Fundación Nodo Ambiental]([https://nodoambiental.org)](https://nodoambiental.org))
+
+\### Espacio Lúdico
+
+\- [Nube de Palabras]([https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/))
+
+20240303
