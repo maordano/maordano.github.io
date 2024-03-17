@@ -28,6 +28,10 @@ Yerba Buena, Tucumán, Argentina
 
 -   Posdoctorado, Instituto de Ecología, Universidad Nacional Autónoma de México, Ciudad de México, 2007
 
+### Acceso al CV
+
+-   [Curriculum Vitae](https://docs.google.com/document/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/edit)
+
 ### Espacio Lúdico
 
 -   [Nube de Palabras](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)
