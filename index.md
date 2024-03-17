@@ -4,20 +4,20 @@ Yerba Buena, Tucumán, Argentina
 
 ### Posición Actual
 
--   Investigador [Instituto de Ecología Regional](https://ier.conicet.gov.ar/), desde 2019
-
 -   Investigador [Fundación Miguel Lillo](https://www.lillo.org.ar/), desde 2007
+
+-   Investigador [Instituto de Ecología Regional](https://ier.conicet.gov.ar/), desde 2019
 
 ### Desarrollo
 
 -   Grupo fundador de [Fundación Nodo Ambiental](https://nodoambiental.org), Presidente, desde 2020
 
-### 
-
 ### Redes
 
--   [Facebook](https://www.facebook.com/mariano.ordano){.fb.png}
+-   [Facebook](https://www.facebook.com/mariano.ordano)
 -   [Instagram](https://www.instagram.com/mariano.ordano/)
+-   [X](https://twitter.com/MarianoOrdano)
+-   [LinkedIn](https://www.linkedin.com/in/mariano-ordano/?originalSubdomain=ar)
 -   [ResearchGate](https://www.researchgate.net/profile/Mariano-Ordano)
 
 ### Educación Académica
