@@ -17,19 +17,18 @@ publishDir = "docs"
 
 [params.ananke.social]
 [params.ananke.social.follow]
-  networks = ["linkedin", "facebook", "instagram", "researchgate"]
+ networks = ["linkedin", "github", "researchgate", "instagram"]
 
 [params.ananke.social.linkedin]
   username = "mariano-ordano"
 
-[params.ananke.social.facebook]
-  username = "mariano.ordano"
-
-[params.ananke.social.instagram]
-  username = "mariano.ordano"
+[params.ananke.social.github]
+  username = "maordano"
 
 [params.ananke.social.networks.researchgate]
   slug = "researchgate"
+
+
   label = "ResearchGate"
   color = "#00CCBB"
   profile = "https://www.researchgate.net/profile/%s"
@@ -37,14 +36,15 @@ publishDir = "docs"
 
 [params.ananke.social.researchgate]
   username = "Mariano-Ordano"
+  
+[params.ananke.social.instagram]
+  username = "mariano.ordano"
+
 
 [menu]
   [[menu.main]]
-    name = "Blog"
+    name = "Bitácora"
     url = "/post/"
     weight = 1
-  [[menu.main]]
-    name = "CV"
-    url = "https://docs.google.com/document/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/edit"
-    weight = 2
+
     
