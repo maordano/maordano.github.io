@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mariano Ordano</title>
+    <link>https://maordano.github.io/</link>
+    <description>Recent content on Mariano Ordano</description>
+    <generator>Hugo</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://maordano.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Espacio Lúdico</title>
+      <link>https://maordano.github.io/post/2021-05-30-espacio-ludico/</link>
+      <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://maordano.github.io/post/2021-05-30-espacio-ludico/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/&#34;&gt;Hacer nubes de palabras&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

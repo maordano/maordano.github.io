@@ -1,0 +1,50 @@
+baseURL = "https://maordano.github.io/"
+languageCode = "es-ar"
+title = "Mariano Ordano"
+theme = "ananke"
+publishDir = "docs"
+
+[params]
+  description = "Investigador | Fundación Miguel Lillo · IER-CONICET"
+  featured_image = "/images/portal.png"
+  body_classes = "avenir bg-washed-blue"
+
+[[params.oss_projects]]
+
+
+[params.ananke]
+  show_recent_posts = false
+
+[params.ananke.social]
+[params.ananke.social.follow]
+  networks = ["linkedin", "facebook", "instagram", "researchgate"]
+
+[params.ananke.social.linkedin]
+  username = "mariano-ordano"
+
+[params.ananke.social.facebook]
+  username = "mariano.ordano"
+
+[params.ananke.social.instagram]
+  username = "mariano.ordano"
+
+[params.ananke.social.networks.researchgate]
+  slug = "researchgate"
+  label = "ResearchGate"
+  color = "#00CCBB"
+  profile = "https://www.researchgate.net/profile/%s"
+  icon = "researchgate"
+
+[params.ananke.social.researchgate]
+  username = "Mariano-Ordano"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/post/"
+    weight = 1
+  [[menu.main]]
+    name = "CV"
+    url = "https://docs.google.com/document/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/edit"
+    weight = 2
+    
