@@ -1,0 +1,8 @@
+<footer class="{{ .Site.Params.background_color_class | compare.Default "bg-black" }} bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="{{ .Site.Home.Permalink }}" >
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" class="hover-white white-70 no-underline">CC BY 4.0</a> {{ now.Format "2006" }} {{ .Site.Title }}
+  </a>
+    <div>{{ partials.IncludeCached "social/follow.html" . }}</div>
+  </div>
+</footer>
