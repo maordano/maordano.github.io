@@ -9,11 +9,11 @@
     <lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://maordano.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Espacio Lúdico</title>
+      <title>aquel espacio lúdico</title>
       <link>https://maordano.github.io/post/2021-05-30-espacio-ludico/</link>
       <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
       <guid>https://maordano.github.io/post/2021-05-30-espacio-ludico/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/&#34;&gt;Hacer nubes de palabras&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/&#34;&gt;¿cómo?&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;el enlace lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, proporcional a la frecuencia de la palabra en el texto seleccionado&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
