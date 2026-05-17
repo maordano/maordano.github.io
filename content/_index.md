@@ -1,6 +1,7 @@
 ---
 title: ""
 featured_image: "/images/riparium-cielo.png"
+featured_image_class: "cover bg-center"
 ---
 
 # explorando mundos con seres vivos
