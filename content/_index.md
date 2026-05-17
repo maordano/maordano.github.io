@@ -1,22 +1,24 @@
 ---
 title: ""
-featured_image: "/images/portal.png"
+featured_image: "/images/riparium-cielo.png"
 ---
 
 # explorando mundos con seres vivos
 
 ___
 
-ecología y evolución de relaciones bióticas y ambientales
+investigo en ecología y evolución<br>de relaciones bióticas y ambientales
 
 ___
 
-_roles laborales: investigador_
+tengo roles de investigación y educación<br>como empleado por la [Fundación Miguel Lillo](https://www.lillo.org.ar/)<br>y el [CONICET](https://www.conicet.gov.ar/)<br>en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
 
-[Fundación Miguel Lillo](https://www.lillo.org.ar/) | 2007 >>
-
-[Instituto de Ecología Regional](https://ier.conicet.gov.ar/) | 2019 >>
+___
 
 Tucumán, Argentina
+
+![curva](/images/curva.png)
+ecotono en la selva pedemontana
+
 ___
 

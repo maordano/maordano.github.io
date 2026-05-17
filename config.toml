@@ -4,6 +4,11 @@ title = "Mariano Ordano"
 theme = "ananke"
 publishDir = "docs"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   description = "Investigador | Fundación Miguel Lillo · IER-CONICET"
   featured_image = "/images/portal.png"
