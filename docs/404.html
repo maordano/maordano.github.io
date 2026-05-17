@@ -134,6 +134,37 @@
   <style>
   .ananke-socials a { margin: 0 0.5rem; }
 </style>
+  <div id="google_translate_element"></div>
+</div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'en,pt,fr,it,de,ru,zh-CN,ja,ar,qu,gn,no,sv,da,fi,nl,pl,ko,hi,ca,eu,tr,sw,he,iw',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style>
+  #google_translate_element {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    background: rgba(0,0,0,0.7);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+  }
+  #google_translate_element select {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 0.85rem;
+  }
+</style>
 </footer>
 
   </body>

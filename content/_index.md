@@ -12,7 +12,7 @@ investigo en ecología y evolución<br>de relaciones bióticas y ambientales
 
 ___
 
-tengo roles de investigación y educación<br>como empleado por la [Fundación Miguel Lillo](https://www.lillo.org.ar/)<br>y el [CONICET](https://www.conicet.gov.ar/)<br>en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
+tengo roles de investigación y educación<br>como empleado por la [Fundación Miguel Lillo](https://www.lillo.org.ar/)<br>y por el [CONICET](https://www.conicet.gov.ar/)<br>en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
 
 ___
 
