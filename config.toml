@@ -11,8 +11,9 @@ publishDir = "docs"
 
 [params]
   description = "Investigador | Fundación Miguel Lillo · IER-CONICET"
-  featured_image = "/images/portal.png"
+  featured_image = "/images/riparium-cielo.png"
   body_classes = "avenir bg-washed-blue"
+  version = "0.1.0"
 
 [[params.oss_projects]]
 
