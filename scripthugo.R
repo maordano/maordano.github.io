@@ -32,7 +32,15 @@ blogdown::build_site()
 # check web
 
 ##### apuntes
-# incluir versionado
-# incluir texto explicativo del trabajo
+# hecho
+# incluir versionado: a mano en [params] config.toml
+# incluir texto explicativo del trabajo: mínimo hecho
+
+# por hacer?
+# incluir Anuncios junto a bitácora: convocatoria para 2027-2028
+# (ojo: cuidar plan de trabajo -staples-osf)
+
 # incluir bitacora con una forma de la experticia
+
 # flujo caminito historieta comic
+
