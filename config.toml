@@ -8,6 +8,10 @@ publishDir = "docs"
   home = ["HTML", "RSS", "JSON", "sitemap"]
   section = ["HTML", "RSS", "JSON"]
 
+[outputs.robots]
+  mediatype = "text/plain"
+  baseName = "robots"
+  
 [outputFormats.sitemap]
   mediatype = "application/xml"
   baseName = "sitemap"
