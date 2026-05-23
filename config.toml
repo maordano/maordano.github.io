@@ -26,10 +26,10 @@ enableRobotsTXT = true
       unsafe = true
 
 [params]
-  description = "Investigador | Fundación Miguel Lillo · IER-CONICET"
+  description = "Investigador en ecología y evolución de interacciones bióticas | Fundación Miguel Lillo · IER-CONICET"
   featured_image = "/images/riparium-cielo.png"
   body_classes = "avenir bg-washed-blue"
-  version = "0.1.0"
+  version = "0.2.0"
   featured_image_class = "cover bg-center"
   enableRobotsTXT = true
 [[params.oss_projects]]
@@ -43,6 +43,9 @@ enableRobotsTXT = true
 
 [params.ananke.social.linkedin]
   username = "mariano-ordano"
+
+[params.ananke.social.networks.linkedin]
+  profile = "https://www.linkedin.com/in/mariano-ordano"
 
 [params.ananke.social.github]
   username = "maordano"
