@@ -39,7 +39,7 @@ enableRobotsTXT = true
 
 [params.ananke.social]
 [params.ananke.social.follow]
- networks = ["linkedin", "github", "researchgate", "instagram","osf"]
+ networks = ["linkedin", "github","osf","researchgate","instagram"]
 
 [params.ananke.social.linkedin]
   username = "mariano-ordano"
