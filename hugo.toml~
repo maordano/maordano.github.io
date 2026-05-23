@@ -1,8 +1,0 @@
-baseURL = "https://maordano.github.io/"
-languageCode = "es-ar"
-title = "Mariano Ordano"
-theme = "ananke"
-publishDir = "docs"
-
-[params]
-  description = "Investigador | Fundación Miguel Lillo · IER-CONICET"
