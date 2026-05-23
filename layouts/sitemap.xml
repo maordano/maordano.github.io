@@ -1,0 +1,14 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {{- range .Site.AllPages }}
+{{- if and (ne .Kind "section") (ne .Kind "taxonomy") (ne .Kind "taxonomyTerm") }}
+<url>
+  <loc>{{ .Permalink }}</loc>
+  {{- if not .Date.IsZero }}
+<lastmod>{{ .Date.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+  {{- end }}
+</url>
+  {{- end }}
+{{- end }}
+</urlset>
+  
