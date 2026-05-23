@@ -4,6 +4,16 @@ title = "Mariano Ordano"
 theme = "ananke"
 publishDir = "docs"
 
+[outputs]
+  home = ["HTML", "RSS", "JSON", "sitemap"]
+  section = ["HTML", "RSS", "JSON"]
+
+[outputFormats.sitemap]
+  mediatype = "application/xml"
+  baseName = "sitemap"
+  isPlainText = true
+  isHTML = false
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -17,7 +27,6 @@ publishDir = "docs"
   featured_image_class = "cover bg-center"
 
 [[params.oss_projects]]
-
 
 [params.ananke]
   show_recent_posts = false
@@ -34,8 +43,6 @@ publishDir = "docs"
 
 [params.ananke.social.networks.researchgate]
   slug = "researchgate"
-
-
   label = "ResearchGate"
   color = "#00CCBB"
   profile = "https://www.researchgate.net/profile/%s"
@@ -47,11 +54,8 @@ publishDir = "docs"
 [params.ananke.social.instagram]
   username = "mariano.ordano"
 
-
 [menu]
   [[menu.main]]
     name = "Bitácora"
     url = "/post/"
     weight = 1
-
-    
