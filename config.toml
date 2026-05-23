@@ -5,18 +5,18 @@ theme = "ananke"
 publishDir = "docs"
 
 [outputs]
-  home = ["HTML", "RSS", "JSON", "sitemap"]
+  home = ["HTML", "RSS", "JSON", "sitemap", "robots"]
   section = ["HTML", "RSS", "JSON"]
 
-[outputs.robots]
-  mediatype = "text/plain"
-  baseName = "robots"
-  
 [outputFormats.sitemap]
   mediatype = "application/xml"
   baseName = "sitemap"
   isPlainText = true
   isHTML = false
+
+[outputFormats.robots]
+  mediatype = "text/plain"
+  baseName = "robots"
 
 [markup]
   [markup.goldmark]
