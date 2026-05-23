@@ -1,6 +1,6 @@
 ---
 title: ""
-featured_image: "/images/riparium-cielo.png"
+featured_image: "/images/riparium-cielo.webp"
 featured_image_class: "cover bg-center"
 ---
 
@@ -18,7 +18,7 @@ ___
 
 Tucumán, Argentina
 
-![curva](/images/curva.png)
+![curva](/images/curva.webp)
 ecotono en la selva pedemontana
 
 ___
