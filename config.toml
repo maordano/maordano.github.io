@@ -3,6 +3,7 @@ languageCode = "es-ar"
 title = "Mariano Ordano"
 theme = "ananke"
 publishDir = "docs"
+enableRobotsTXT = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON", "sitemap", "robots"]
@@ -30,7 +31,7 @@ publishDir = "docs"
   body_classes = "avenir bg-washed-blue"
   version = "0.1.0"
   featured_image_class = "cover bg-center"
-
+  enableRobotsTXT = true
 [[params.oss_projects]]
 
 [params.ananke]
@@ -38,7 +39,7 @@ publishDir = "docs"
 
 [params.ananke.social]
 [params.ananke.social.follow]
- networks = ["linkedin", "github", "researchgate", "instagram"]
+ networks = ["linkedin", "github", "researchgate", "instagram","osf"]
 
 [params.ananke.social.linkedin]
   username = "mariano-ordano"
@@ -58,6 +59,22 @@ publishDir = "docs"
   
 [params.ananke.social.instagram]
   username = "mariano.ordano"
+
+[params.ananke.social.networks.osf]
+  slug = "osf"
+  label = "OSF"
+  color = "#4eb1ba"
+  profile = "https://osf.io/%s"
+  icon = "osf"
+
+[params.ananke.social.osf]
+  username = "9yxfm"
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
 
 [menu]
   [[menu.main]]
