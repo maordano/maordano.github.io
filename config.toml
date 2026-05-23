@@ -6,7 +6,8 @@ publishDir = "docs"
 
 [outputs]
   home = ["HTML", "RSS", "JSON", "sitemap", "robots"]
-  section = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS", "JSON","sitemap"]
+  page = ["HTML"]
 
 [outputFormats.sitemap]
   mediatype = "application/xml"
