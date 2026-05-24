@@ -1,6 +1,6 @@
 ---
 title: ""
-featured_image: "/images/selva1x.webp"
+featured_image: "/images/alba-bird-tree-4594.webp"
 featured_image_class: "cover bg-center"
 ---
 
