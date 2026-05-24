@@ -27,7 +27,7 @@ enableRobotsTXT = true
 
 [params]
   description = "Investigador en ecología y evolución de interacciones bióticas | Fundación Miguel Lillo · IER-CONICET"
-  featured_image = "/images/riparium-cielo.webp"
+  featured_image = "/images/alba-como-retrato.webp"
   body_classes = "avenir bg-washed-blue"
   version = "0.2.0"
   featured_image_class = "cover bg-center"
