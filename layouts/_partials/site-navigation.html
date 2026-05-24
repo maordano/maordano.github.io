@@ -1,6 +1,6 @@
 <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
-    <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw2 hover-white white-90 dib no-underline">
+    <a href="{{ .Site.Home.RelPermalink }}" class="f4 fw2 hover-white white-90 dib no-underline">
       {{ with .Site.Params.site_logo }}
         <img src="{{ urls.RelURL . }}" class="w100 mw5-ns" alt="{{ $.Site.Title }}" />
       {{ else }}
@@ -20,18 +20,45 @@
           {{ end }}
         </ul>
       {{ end }}
-     <div id="google_translate_element" style="margin-left: 1rem;">
-  <style>
-    #google_translate_element select {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 4px;
-      font-size: 0.85rem;
-      padding: 0.2rem;
-    }
-  </style>
-</div>
+      <!-- Botón traductor universal -->
+      <div style="margin-left: 0.8rem; position: relative;">
+        <a onclick="document.getElementById('translate-panel').classList.toggle('dn')" 
+           style="cursor:pointer; color:white; opacity:0.8; font-size:1.3rem; text-decoration:none;"
+           title="Traducir / Translate">🌐</a>
+        <div id="translate-panel" class="dn"
+             style="position:absolute; right:0; top:2.2rem; background:#111; border-radius:6px; padding:0.5rem; z-index:9999; min-width:180px;">
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
+
+<style>
+  #google_translate_element {
+    position: static !important;
+    bottom: auto !important;
+    right: auto !important;
+    background: transparent !important;
+  }
+  #google_translate_element select {
+    background: #111;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    font-family: inherit;
+    width: 100%;
+  }
+  #google_translate_element select:hover {
+    border-color: white;
+  }
+  .goog-te-gadget {
+    font-size: 0 !important;
+  }
+  .goog-te-gadget select {
+    margin: 0 !important;
+  }
+</style>
