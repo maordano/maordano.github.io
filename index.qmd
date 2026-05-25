@@ -1,6 +1,6 @@
 ---
 title: ""
-image: alba-bird-tree-4594.webp
+image: images/alba-bird-tree-4594.webp
 ---
 
 # explorando mundos con seres vivos
@@ -17,7 +17,7 @@ tengo roles de investigación y educación<br>como empleado por la [Fundación M
 
 Tucumán, Argentina
 
-\![\](curva.webp)
+\![\](images/curva.webp)
 
 ecotono en la selva pedemontana
 

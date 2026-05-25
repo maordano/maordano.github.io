@@ -1,6 +1,6 @@
 ---
 title: "Acerca de"
-image: cainzo.webp
+image: images/cainzo.webp
 about:
   template: trestles  # foto a la izquierda y texto a la derecha
 ---
