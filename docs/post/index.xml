@@ -9,11 +9,18 @@
     <lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://maordano.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>espacio lúdico con nubes de palabras</title>
+      <title>nubes de palabras</title>
       <link>https://maordano.github.io/post/2021-05-30-espacio-ludico/</link>
       <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
       <guid>https://maordano.github.io/post/2021-05-30-espacio-ludico/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/&#34;&gt;¿cómo generar una imagen de nube de palabras?&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;el enlace lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://maordano.github.io/images/cainzo.webp&#34; alt=&#34;cainzo&#34;&gt;&#xA;retrato del arroyo Cainzo&lt;br&gt;Parque Sierra de San Javier&lt;/p&gt;</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/&#34;&gt;¿Cómo generar una imagen de nube de palabras?&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Hace relativamente poco tiempo, en este siglo, la formación de imágenes desde programas como R o Python eran de difícil solución.&lt;br&gt;&#xA;En unos pocos años, dispositivos como los asistentes de IA lo pueden resolverlo sin necesidad de haber aprendido alguna otra interfase [ &lt;em&gt;ejemplo&lt;/em&gt; ].&lt;/p&gt;&#xA;&lt;p&gt;El enlace lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>nubes de palabras</title>
+      <link>https://maordano.github.io/post/2026-05-25-nube-de-palabras/</link>
+      <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://maordano.github.io/post/2026-05-25-nube-de-palabras/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/&#34;&gt;¿Cómo generar una imagen de nube de palabras?&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Hace relativamente poco tiempo, en este siglo, la formación de imágenes desde programas como R o Python eran de difícil solución.&lt;br&gt;&#xA;En unos pocos años, dispositivos como los asistentes de IA lo pueden resolverlo sin necesidad de haber aprendido alguna otra interfase [ &lt;em&gt;ejemplo&lt;/em&gt; ].&lt;/p&gt;&#xA;&lt;p&gt;El enlace lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code on Mariano Ordano</title>
+    <link>https://maordano.github.io/tags/code/</link>
+    <description>Recent content in Code on Mariano Ordano</description>
+    <generator>Hugo</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Mon, 25 May 2026 13:04:11 -0300</lastBuildDate>
+    <atom:link href="https://maordano.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>acerca de</title>
+      <link>https://maordano.github.io/about/</link>
+      <pubDate>Mon, 25 May 2026 13:04:11 -0300</pubDate>
+      <guid>https://maordano.github.io/about/</guid>
+      <description>&lt;h1 id=&#34;descripción-del-sitio&#34;&gt;Descripción del sitio&lt;/h1&gt;&#xA;&lt;p&gt;Esta sección describe este dispositivo de interacción. Realizo ejercicios de aprendizaje, de expresión, describo mapas y mundos que se vinculan a lo que hago, a cómo pasaron y pasan los días, mientras busco una forma de interacción mediada por dispositivos, una forma que refleje diversos aspectos e integre exploraciones, creaciones lúdicas, ejercicios.&lt;/p&gt;&#xA;&lt;p&gt;Busca y explora conceptos, términos y condiciones. Opta por principios tipo FAIR y CARE para la gestión de datos compartidos.Toma recaudos y atiende la legislación vigente para la gestión de datos personales.&#xA;Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referenciables, auditables. Declara el uso de asistentes de IA y otros dispositivos, o cualquier fuente que contribuya a la producción del sitio.&#xA;Usa código abierto alojado en &lt;a href=&#34;https://github.com/maordano/&#34;&gt;https://github.com/maordano/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
