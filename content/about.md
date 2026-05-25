@@ -1,7 +1,7 @@
 ---
-title: 'acerca de'
-date: '2026-05-25T13:04:11-03:00'
-tags: [code]
+title: 'Acerca de'
+date: ''
+tags: []
 featured_image: "/images/riparium-cielo.webp"
 description: "este dispositivo"
 ---
@@ -28,13 +28,15 @@ Nideas, apuntes, stuffs, … (sensu Umberto Eco).
 
 Experiencias y aprendizajes.  
 Experiencias aprendizadas.  
-Expresiones rumiantes.
+Expresiones rumiantes.  
 Ex.  
+
 
 ## Proyectos
 Descripción de elementos de investigación. 
 [ _variación fenotípica_ ]
 
-Símbolo del globo geográfico 🌐
-Widget de traducción vía Google para 25 idiomas, inclusive el español castellano de origen.
+## Símbolo del globo geográfico 🌐
+Widget de traducción vía Google para 25 idiomas:  
+ar,ca,da,de,es (origen),en,eu,fi,fr,gn,he,hi,it,iw,ja,ko,nl,no,pl,pt,qu,ru,sv,sw,tr,zh-CN.
 [ _mapa de idiomas representados_ ]

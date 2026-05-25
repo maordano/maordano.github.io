@@ -1,6 +1,6 @@
 baseURL = "https://maordano.github.io/"
 languageCode = "es-ar"
-title = "Mariano Ordano"
+title = "Portada"
 theme = "ananke"
 publishDir = "docs"
 enableRobotsTXT = true
@@ -29,7 +29,7 @@ enableRobotsTXT = true
   description = "Investigador en ecología y evolución de interacciones bióticas | Fundación Miguel Lillo · IER-CONICET"
   featured_image = "/images/alba-bird-tree-4594.webp"
   body_classes = "avenir bg-washed-blue"
-  version = "0.2.0"
+  version = "0.3.0"
   featured_image_class = "cover bg-center"
   enableRobotsTXT = true
 [[params.oss_projects]]
