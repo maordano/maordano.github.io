@@ -8,25 +8,22 @@ website:
     background: primary
     search: true
     left:
-      - href: index.qmd
-        text: Inicio
       - href: blog.qmd
         text: Bitácora
       - href: proyectos.qmd
         text: Proyectos
       - href: about.qmd
-        text: Sobre mí
-    right:
-      - icon: github
-        href: https://github.com
-        aria-label: GitHub
-      - icon: linkedin
-        href: https://linkedin.com  # Cambiá por tu enlace real
-        aria-label: LinkedIn
+        text: Acerca de
 
   page-footer: 
-    left: "© 2026 Mariano Ordano"
-    right: "Versión 1.0 (Quarto)"
+    left: "2026 Mariano Ordano | Versión 1.0 Quarto"
+    right: 
+      - icon: github
+        href: https://github.com/maordano/
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://linkedin.com  # Reemplazá con tu enlace
+        aria-label: LinkedIn
 
 format:
   html:
