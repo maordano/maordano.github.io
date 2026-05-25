@@ -7,7 +7,8 @@ website:
   navbar:
     background: "#f8f9fa"
     search: true
-    left:
+    left: []
+    right:
       - href: blog.qmd
         text: Bitácora
       - href: proyectos.qmd
@@ -31,15 +32,24 @@ website:
       - icon: instagram
         href: https://instagram.com/mariano.ordano/
         aria-label: Instagram
-      - text: "📄 CV"  # Botón directo al CV
+      - text: "cv"  # botón directo al CV
         href: https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view
         
 format:
   html:
     theme: cosmo
     css: styles.css
-    code-block-bg: true
-    code-block-border-left: "#30638E"
+    include-in-header: 
+      text: |
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+          }
+        </script>
+        <script type="text/javascript" src="//://google.com"></script>
+    include-after-body: 
+      text: |
+        <div id="google_translate_element" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: #fff; padding: 5px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);"></div>
 
 execute:
   freeze: true

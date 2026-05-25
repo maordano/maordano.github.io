@@ -1,9 +1,8 @@
 ---
 title: "Acerca de"
+image: cainzo.webp
+about:
+  template: trestles  # foto a la izquierda y texto a la derecha
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+descripcion
