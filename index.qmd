@@ -1,8 +1,6 @@
 ---
-title: "Mariano Ordano"
+title: ""
 image: alba-bird-tree-4594.webp
-about:
-  template: jolla     # foto en un círculo y tu bio abajo
 ---
 
 # explorando mundos con seres vivos
