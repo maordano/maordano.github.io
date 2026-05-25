@@ -2,7 +2,7 @@
 @import url('https://googleapis.com');
 
 /* 2. Forzar a toda la web a usar Roboto */
-body, .navbar, h1, h2, h3, h4, h5, h6 {
+body, html, .navbar, .nav-link, h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif !important;
 }
 
