@@ -1,9 +1,42 @@
-/* 1. Importar la tipografía Roboto desde Google */
+/* 1. Importar Roboto cargando todas las variantes de grosor */
 @import url('https://googleapis.com');
 
-/* 2. Forzar a toda la web a usar Roboto */
-body, html, .navbar, .nav-link, h1, h2, h3, h4, h5, h6 {
+/* 2. Aplicar Roboto con un espaciado de letras fino y elegante (Estilo Chingón) */
+body, html, .navbar, .nav-link, h1, h2, h3, h4, h5, h6, footer {
   font-family: 'Roboto', sans-serif !important;
+  letter-spacing: 0.02em;
+}
+
+/* 3. Nombre en la barra superior: normal, suave y más chico */
+.navbar-brand {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 300 !important;      /* Cambia a la variante ultra-fina y limpia */
+  font-size: 1.15rem !important;     /* Tamaño reducido y sutil */
+  color: #495057 !important;         /* Color gris oscuro suave, no negro puro */
+}
+
+/* Forzar que los links del menú superior sean del mismo color suave */
+.navbar-nav .nav-link {
+  color: #6c757d !important;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+/* 4. Agrandar los iconos y letras del footer */
+footer, .page-footer {
+  font-size: 1.05rem !important;     /* Letra del footer más legible */
+  background-color: #f8f9fa !important;
+  padding: 1.5rem 0 !important;
+}
+
+footer a, .page-footer a {
+  font-size: 1.1rem !important;      /* Iconos y enlaces un poco más grandes */
+  margin-left: 12px;
+  color: #495057 !important;
+}
+
+footer a:hover {
+  color: #007bff !important;         /* Efecto azul sutil al pasar el mouse */
 }
 
 /* 3. Cambiar el tamaño del nombre (Title) en la barra de navegación */
