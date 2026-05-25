@@ -25,13 +25,13 @@ website:
         href: https://linkedin.com  # Reemplazá con tu enlace
         aria-label: LinkedIn
       - text: "OSF"
-        href: https://osf.io
+        href: https://osf.io/9yxfm/
       - text: "ResearchGate"  # Al no haber icono nativo directo, el texto limpio funciona muy bien
         href: https://researchgate.net
       - icon: instagram
-        href: https://instagram.com
+        href: https://instagram.com/mariano.ordano/
         aria-label: Instagram
-      - text: "📄 Mi CV"  # Botón directo al CV
+      - text: "📄 CV"  # Botón directo al CV
         href: https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view
         
 format:
