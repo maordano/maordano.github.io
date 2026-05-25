@@ -5,7 +5,7 @@ project:
 website:
   title: "Mariano Ordano"
   navbar:
-    background: primary
+    background: "#f8f9fa"
     search: true
     left:
       - href: blog.qmd
@@ -24,7 +24,16 @@ website:
       - icon: linkedin
         href: https://linkedin.com  # Reemplazá con tu enlace
         aria-label: LinkedIn
-
+      - text: "OSF"
+        href: https://osf.io
+      - text: "ResearchGate"  # Al no haber icono nativo directo, el texto limpio funciona muy bien
+        href: https://researchgate.net
+      - icon: instagram
+        href: https://instagram.com
+        aria-label: Instagram
+      - text: "📄 Mi CV"  # Botón directo al CV
+        href: https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view
+        
 format:
   html:
     theme: cosmo
