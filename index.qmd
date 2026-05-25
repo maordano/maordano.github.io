@@ -1,5 +1,5 @@
 ---
-title: "sitio-quarto"
+title: ""
 ---
 
 # explorando mundos con seres vivos
@@ -16,6 +16,6 @@ tengo roles de investigación y educación<br>como empleado por la [Fundación M
 
 Tucumán, Argentina
 
-![curva](/images/curva.webp) ecotono en la selva pedemontana
+\![\](curva.webp) ecotono en la selva pedemontana
 
 ------------------------------------------------------------------------
