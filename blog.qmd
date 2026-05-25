@@ -1,0 +1,9 @@
+---
+title: "Bitácora"
+editor: visual
+listing:
+  contents: posts  # Buscará los artículos dentro de la carpeta /posts
+  sort: "date desc"
+  type: default
+  categories: true
+---

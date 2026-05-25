@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs  # CRUCIAL: Esto le dice a Quarto que guarde la web acá para GitHub Pages
+
+website:
+  title: "Mariano Ordano"
+  page-footer:
+    left: "2026 Mariano Ordano 0.5.0 quarto"
+    center:
+      - text: "Acerca de"
+        href: about.qmd
+    right: 
+      - icon: github
+        text: "GitHub"
+        href: https://github.com/maordano/
+  navbar:
+    left:
+      - href: index.qmd
+        text: Portada
+      - href: blog.qmd
+        text: Bitácora
+      - href: proyectos.qmd
+        text: Proyectos
+      - href: about.qmd
+        text: Acerca de
+
+format:
+  html:
+    theme: cosmo
+    mainfont: "Roboto"      # Fuerza a todo el cuerpo de texto a usar Roboto
+    sansfont: "Roboto"      # Asegura Roboto para elementos sin serifa
+    code-block-bg: true
+    code-block-border-left: "#30638E"

@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Bitácora",
+    "section": "",
+    "text": "prompt nube de palabras\n\n\nprompt para imagen de nube de palabras\n\n\n\n\n\nMay 25, 2026\n\n\nMariano Ordano\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\nobtener imagen de nube de palabras\n\n\n\n\n\nMay 30, 2021\n\n\nMariano Ordano\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "sitio-quarto",
+    "section": "",
+    "text": "explorando mundos con seres vivos\n\ninvestigo en ecología y evoluciónde relaciones bióticas y ambientales\n\ntengo roles de investigación y educacióncomo empleado por la Fundación Miguel Lilloy por el CONICETen el Instituto de Ecología Regional\n\nTucumán, Argentina\n ecotono en la selva pedemontana"
+  },
+  {
+    "objectID": "posts/post/2026-05-25-nube-de-palabras/index.html",
+    "href": "posts/post/2026-05-25-nube-de-palabras/index.html",
+    "title": "prompt nube de palabras",
+    "section": "",
+    "text": "[ prompt ]"
+  },
+  {
+    "objectID": "posts/post/2021-05-30-espacio-ludico/index.html",
+    "href": "posts/post/2021-05-30-espacio-ludico/index.html",
+    "title": "nube de palabras",
+    "section": "",
+    "text": "¿Cómo generar una imagen de nube de palabras?\n\nHace relativamente poco tiempo, en este siglo, la formación de imágenes desde programas como R o Python eran de difícil solución.\nEn unos pocos años, dispositivos como los asistentes de IA lo pueden resolver sin necesidad de haber aprendido alguna otra interfase [ ejemplo ].\nEl enlace lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.\n retrato del arroyo CainzoParque Sierra de San Javier"
+  },
+  {
+    "objectID": "proyectos.html",
+    "href": "proyectos.html",
+    "title": "Proyectos",
+    "section": "",
+    "text": "Acá van mis proyectos."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]

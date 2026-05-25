@@ -1,0 +1,11 @@
+---
+title: "Proyectos"
+date: 2026-05-25
+featured_image: "/images/alba-como-retrato.webp"
+description: "conjunto de elementos de investigación"
+---
+
+Proyecto como dispositivo de investigación.
+
+![alba](/images/alba-como-retrato.webp)
+otoño al amanecer, selva pedemontana
