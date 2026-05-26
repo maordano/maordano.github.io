@@ -1,0 +1,27 @@
+<nav class="navbar-translate">
+<div id="google_translate_element_nav" style="margin-left:0.5rem;"></div>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: "es",
+    includedLanguages: "es,en,pt,fr,it,de,ru,zh-CN,ja,ar,qu,gn,no,sv,da,fi,nl,pl,ko,hi,ca,eu,tr,sw,he",
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, "google_translate_element_nav");
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style>
+  #google_translate_element_nav select {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 3px;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    cursor: pointer;
+  }
+  .goog-te-gadget { font-size: 0 !important; }
+  .goog-te-gadget select { margin: 0 !important; }
+</style>
+</nav>

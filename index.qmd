@@ -1,20 +1,20 @@
-writeLines('---
-title: ""
----
+___
 
 ![](images/alba-bird-tree-4594.webp){width=100%}
 
+___
+
 # explorando mundos con seres vivos
 
----
+___
 
 investigo en ecología y evolución  
 de relaciones bióticas y ambientales
 
----
-
+___
 
 ![ecotono en la selva pedemontana](images/curva.webp)
+___
 
 tengo roles de investigación y educación  
 como empleado de la [Fundación Miguel Lillo](https://www.lillo.org.ar/)  
@@ -26,5 +26,3 @@ en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
 Tucumán, Argentina
 
 ---
-
-', "index.qmd")
