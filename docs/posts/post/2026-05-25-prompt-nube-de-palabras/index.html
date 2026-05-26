@@ -109,10 +109,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">Acerca de</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../#"> 
-<span class="menu-text">🌐</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -626,22 +622,27 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
-<nav class="navbar-translate">
-<div id="google_translate_element_nav" style="margin-left:0.5rem;"></div>
-<script>
+<div id="google_translate_element" style="margin-left:0.5rem;"></div>
+<script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: "es",
     includedLanguages: "es,en,pt,fr,it,de,ru,zh-CN,ja,ar,qu,gn,no,sv,da,fi,nl,pl,ko,hi,ca,eu,tr,sw,he",
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
     autoDisplay: false
-  }, "google_translate_element_nav");
+  }, "google_translate_element");
 }
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <style>
-  #google_translate_element_nav select {
-    background: transparent;
+  #google_translate_element {
+    position: fixed;
+    top: 0.6rem;
+    right: 0.5rem;
+    z-index: 9999;
+  }
+  #google_translate_element select {
+    background: #1a1a2e;
     color: white;
     border: 1px solid rgba(255,255,255,0.4);
     border-radius: 3px;
@@ -652,7 +653,6 @@ function googleTranslateElementInit() {
   .goog-te-gadget { font-size: 0 !important; }
   .goog-te-gadget select { margin: 0 !important; }
 </style>
-</nav>
 
 
 

@@ -16,12 +16,7 @@ website:
         text: Proyectos
       - href: about.qmd
         text: Acerca de
-      - text: "🌐"
-        href: "#"
-        id: "translate-toggle"
-        menu:
-          - text: "Seleccionar idioma"
-            href: "#"
+  
   page-footer:
     background: dark
     left: |
