@@ -1,4 +1,4 @@
-writeLines('---
+---
 title: "Acerca de"
 image: images/riparium-cielo.webp
 about:
@@ -42,4 +42,5 @@ Descripción de elementos de investigación.
 Widget de traducción vía Google para 25 idiomas, inclusive el español castellano de origen.
 [ mapa de idiomas representados ]
 
-', "about.qmd")
+___
+
