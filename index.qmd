@@ -1,24 +1,30 @@
----
+writeLines('---
 title: ""
-image: images/alba-bird-tree-4594.webp
 ---
+
+![](images/alba-bird-tree-4594.webp){width=100%}
 
 # explorando mundos con seres vivos
 
-------------------------------------------------------------------------
+---
 
-investigo en ecología y evolución<br>de relaciones bióticas y ambientales
+investigo en ecología y evolución  
+de relaciones bióticas y ambientales
 
-------------------------------------------------------------------------
+---
 
-tengo roles de investigación y educación<br>como empleado por la [Fundación Miguel Lillo](https://www.lillo.org.ar/)<br>y por el [CONICET](https://www.conicet.gov.ar/)<br>en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
 
-------------------------------------------------------------------------
+![ecotono en la selva pedemontana](images/curva.webp)
+
+tengo roles de investigación y educación  
+como empleado de la [Fundación Miguel Lillo](https://www.lillo.org.ar/)  
+y del [CONICET](https://www.conicet.gov.ar/)  
+en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
+
+---
 
 Tucumán, Argentina
 
-\![\](images/curva.webp)
+---
 
-ecotono en la selva pedemontana
-
-------------------------------------------------------------------------
+', "index.qmd")
