@@ -1,32 +1,33 @@
-@import url('https://googleapis.com');
-
-/* Estilo general elegante */
-body, html, .navbar, .nav-link, h1, h2, h3, h4, footer {
-  font-family: 'Roboto', sans-serif !important;
-  letter-spacing: 0.03em;
+/* Navbar oscura tipo Ananke */
+.navbar {
+  background-color: #1a1a2e !important;
+}
+.navbar-brand, .navbar-nav .nav-link {
+  color: rgba(255,255,255,0.9) !important;
+}
+.navbar-nav .nav-link:hover {
+  color: white !important;
 }
 
-/* 1. Nombre de la marca: Pequeño, muy fino y suave */
-.navbar-brand {
-  font-weight: 100 !important;      /* Grosor de letra ultra fino */
-  font-size: 1.05rem !important;     /* Nombre pequeño */
-  color: #555555 !important;
+/* Footer oscuro */
+.nav-footer {
+  background-color: #1a1a2e;
+  color: rgba(255,255,255,0.7);
+}
+.nav-footer a {
+  color: rgba(255,255,255,0.7);
+}
+.nav-footer a:hover {
+  color: white;
 }
 
-/* 2. Nombres del menú: Más grandes y destacados */
-.navbar-nav .nav-link {
-  font-size: 1.15rem !important;     /* Menú más grande */
-  font-weight: 400 !important;
-  color: #333333 !important;
-  margin-right: 15px;                /* Separación entre pestañas */
+/* Contenido central */
+body {
+  font-family: 'Avenir', 'Helvetica Neue', sans-serif;
+  background-color: #f4f8fb;
 }
 
-/* 3. Iconos y letras del footer más grandes */
-footer, .page-footer {
-  font-size: 1.15rem !important;     
-  background-color: #f8f9fa !important;
-}
-
-footer a, .page-footer a {
-  font-size: 1.25rem !important;     /* Iconos notablemente más grandes */
+/* Imagen hero */
+.quarto-title-block {
+  margin-bottom: 2rem;
 }

@@ -5,8 +5,9 @@ project:
 website:
   title: "Mariano Ordano"
   navbar:
-    background: "#f8f9fa"
-    search: true
+    title: "Portada · Galería"
+    background: dark
+    foreground: light
     left: []
     right:
       - href: blog.qmd
@@ -15,41 +16,69 @@ website:
         text: Proyectos
       - href: about.qmd
         text: Acerca de
-
-  page-footer: 
-    left: "2026 Mariano Ordano | Versión 1.0 Quarto"
-    right: 
+      - text: "🌐"
+        menu:
+          - text: "Seleccionar idioma"
+            href: "#"
+  page-footer:
+    background: dark
+    left: |
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2026 Mariano Ordano | v1.0 Quarto
+    right:
       - icon: github
         href: https://github.com/maordano/
         aria-label: GitHub
       - icon: linkedin
-        href: https://linkedin.com  # Reemplazá con tu enlace
+        href: https://www.linkedin.com/in/mariano-ordano
         aria-label: LinkedIn
       - text: "OSF"
         href: https://osf.io/9yxfm/
-      - text: "ResearchGate"  # Al no haber icono nativo directo, el texto limpio funciona muy bien
-        href: https://researchgate.net
+      - text: "RG"
+        href: https://www.researchgate.net/profile/Mariano-Ordano
       - icon: instagram
         href: https://instagram.com/mariano.ordano/
         aria-label: Instagram
-      - text: "cv"  # botón directo al CV
+      - text: "CV"
         href: https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view
-        
+
 format:
   html:
     theme: cosmo
     css: styles.css
-    include-in-header: 
+    include-in-header:
       text: |
         <script type="text/javascript">
           function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            new google.translate.TranslateElement({
+              pageLanguage: 'es',
+              includedLanguages: 'es,en,pt,fr,it,de,ru,zh-CN,ja,ar,qu,gn,no,sv,da,fi,nl,pl,ko,hi,ca,eu,tr,sw,he',
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+              autoDisplay: false
+            }, 'google_translate_element');
           }
         </script>
-        <script type="text/javascript" src="//://google.com"></script>
-    include-after-body: 
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <style>
+          #google_translate_element {
+            position: static !important;
+            background: transparent !important;
+          }
+          #google_translate_element select {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 3px;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.4rem;
+            cursor: pointer;
+            color: white;
+          }
+          .goog-te-gadget { font-size: 0 !important; }
+          .goog-te-gadget select { margin: 0 !important; }
+          .navbar-dark { background-color: #1a1a2e !important; }
+        </style>
+    include-after-body:
       text: |
-        <div id="google_translate_element" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: #fff; padding: 5px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);"></div>
+        <div id="google_translate_element" style="display:none;"></div>
 
 execute:
   freeze: true
