@@ -17,7 +17,7 @@ website:
       - href: about.qmd
         text: Acerca de
       - text: "🌐"
-        href: "https://translate.google.com/translate?sl=es&u=https://maordano.github.io"
+        href: "https://translate.google.com/translate?sl=es&tl=en&u=https%3A%2F%2Fmaordano.github.io"
         target: "_blank"
         
   page-footer:
@@ -46,8 +46,6 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    include-in-header:
-      file: translate-widget.html
       
 execute:
   freeze: true
