@@ -38,8 +38,7 @@ Descripción de elementos de investigación.
 [ variación fenotípica ]
 
 ### Símbolo del globo geográfico 🌐
-Widget de traducción vía Google para 25 idiomas, inclusive el español castellano de origen.
-[ mapa de idiomas representados ]
+Widget de traducción vía Google. Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original. En los celulares el tamaño de pantalla puede impedir ver opciones, se sugiere cambiar de visión vertical a horizontal para visualizar opciones y regresar a la página original.
 
 ___
 
