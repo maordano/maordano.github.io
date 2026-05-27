@@ -21,10 +21,7 @@ website:
     background: dark
     left: |
       [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2026 Mariano Ordano | v1.1
-    center:
-      - icon: quarto
-        href: https://quarto.org
-        aria-label: Quarto
+    center: "hecho con [Quarto](https://quarto.org)"
     right:
       - icon: github
         href: https://github.com/maordano/

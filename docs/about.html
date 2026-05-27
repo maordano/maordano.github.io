@@ -569,15 +569,8 @@ Expresiones rumiantes. Ex.</p>
 <p><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 2026 Mariano Ordano | v1.1</p>
 </div>   
     <div class="nav-footer-center">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://quarto.org">
-      <i class="bi bi-quarto" role="img" aria-label="Quarto">
-</i> 
-    </a>
-  </li>  
-</ul>
-    </div>
+<p>hecho con <a href="https://quarto.org">Quarto</a></p>
+</div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -617,7 +610,54 @@ Expresiones rumiantes. Ex.</p>
     </div>
   </div>
 </footer>
-<div id="google_translate_element" style="margin-left:0.5rem;"></div>
+
+<style>
+  #translate-btn {
+    position: fixed;
+    top: 0.6rem;
+    right: 1rem;
+    z-index: 9999;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+  #translate-panel {
+    display: none;
+    position: fixed;
+    top: 2.8rem;
+    right: 1rem;
+    z-index: 9999;
+    background: #1a1a2e;
+    border-radius: 6px;
+    padding: 0.5rem;
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  #translate-panel select {
+    background: #1a1a2e;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+    cursor: pointer;
+  }
+  .goog-te-gadget { font-size: 0 !important; }
+  .goog-te-gadget select { margin: 0 !important; }
+</style>
+
+<button id="translate-btn" title="Traducir / Translate" onclick="
+  var p = document.getElementById('translate-panel');
+  p.style.display = p.style.display === 'block' ? 'none' : 'block';
+">🌐</button>
+
+<div id="translate-panel">
+  <div id="google_translate_element"></div>
+</div>
+
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
@@ -629,25 +669,7 @@ function googleTranslateElementInit() {
 }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<style>
-  #google_translate_element {
-    position: fixed;
-    top: 0.6rem;
-    right: 0.5rem;
-    z-index: 9999;
-  }
-  #google_translate_element select {
-    background: #1a1a2e;
-    color: white;
-    border: 1px solid rgba(255,255,255,0.4);
-    border-radius: 3px;
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
-    cursor: pointer;
-  }
-  .goog-te-gadget { font-size: 0 !important; }
-  .goog-te-gadget select { margin: 0 !important; }
-</style>
+
 
 
 
