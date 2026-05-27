@@ -68,11 +68,68 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<style>
+  #translate-panel {
+    display: none;
+    position: fixed;
+    top: 3.2rem;
+    right: 1rem;
+    z-index: 9999;
+    background: #1a1a2e;
+    border-radius: 6px;
+    padding: 0.5rem;
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  #translate-panel select {
+    background: #1a1a2e;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+    cursor: pointer;
+  }
+  .goog-te-gadget { font-size: 0 !important; }
+  .goog-te-gadget select { margin: 0 !important; }
+</style>
+
+</head><body class="nav-fixed fullcontent quarto-light"><div id="translate-panel">
+  <div id="google_translate_element"></div>
+</div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: "es",
+    includedLanguages: "es,en,pt,fr,it,de,ru,zh-CN,ja,ar,qu,gn,no,sv,da,fi,nl,pl,ko,hi,ca,eu,tr,sw,he",
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, "google_translate_element");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.querySelectorAll(".navbar-nav .nav-link");
+  links.forEach(function(link) {
+    if (link.textContent.trim() === "🌐") {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        var panel = document.getElementById("translate-panel");
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    }
+  });
+});
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 
 <link rel="stylesheet" href="styles.css">
-</head>
 
-<body class="nav-fixed fullcontent quarto-light">
+
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -105,6 +162,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">Acerca de</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./#"> 
+<span class="menu-text">🌐</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -131,8 +192,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
   </div>
   <div class="about-contents"><main class="content" id="quarto-document-content">
-<section id="acerca-de" class="level1">
-<h1>Acerca de</h1>
 <section id="descripción-del-sitio" class="level2">
 <h2 data-anchor-id="descripción-del-sitio">Descripción del sitio</h2>
 <p>Esta sección describe este dispositivo de interacción. Realizo ejercicios de aprendizaje, de expresión, describo mapas y mundos que se vinculan a lo que hago, a cómo pasaron y pasan los días, mientras busco una forma de describir interacciones mediadas por dispositivos, una forma que refleje diversos aspectos e integre exploraciones, creaciones lúdicas, ejercicios.</p>
@@ -163,7 +222,6 @@ Expresiones rumiantes. Ex.</p>
 <hr>
 
 
-</section>
 </section>
 </section>
 </main></div>
@@ -566,7 +624,7 @@ Expresiones rumiantes. Ex.</p>
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 2026 Mariano Ordano | v1.1</p>
+<p><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 2026 Mariano Ordano v1.1</p>
 </div>   
     <div class="nav-footer-center">
 <p>hecho con <a href="https://quarto.org">Quarto</a></p>
@@ -610,66 +668,6 @@ Expresiones rumiantes. Ex.</p>
     </div>
   </div>
 </footer>
-
-<style>
-  #translate-btn {
-    position: fixed;
-    top: 0.6rem;
-    right: 1rem;
-    z-index: 9999;
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    line-height: 1;
-  }
-  #translate-panel {
-    display: none;
-    position: fixed;
-    top: 2.8rem;
-    right: 1rem;
-    z-index: 9999;
-    background: #1a1a2e;
-    border-radius: 6px;
-    padding: 0.5rem;
-    min-width: 180px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  }
-  #translate-panel select {
-    background: #1a1a2e;
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 3px;
-    font-size: 0.85rem;
-    padding: 0.3rem 0.5rem;
-    width: 100%;
-    cursor: pointer;
-  }
-  .goog-te-gadget { font-size: 0 !important; }
-  .goog-te-gadget select { margin: 0 !important; }
-</style>
-
-<button id="translate-btn" title="Traducir / Translate" onclick="
-  var p = document.getElementById('translate-panel');
-  p.style.display = p.style.display === 'block' ? 'none' : 'block';
-">🌐</button>
-
-<div id="translate-panel">
-  <div id="google_translate_element"></div>
-</div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: "es",
-    includedLanguages: "es,en,pt,fr,it,de,ru,zh-CN,ja,ar,qu,gn,no,sv,da,fi,nl,pl,ko,hi,ca,eu,tr,sw,he",
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, "google_translate_element");
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 
 
 
