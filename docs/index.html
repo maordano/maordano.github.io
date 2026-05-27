@@ -69,102 +69,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-<style>
-  #translate-panel {
-    display: none;
-    position: fixed;
-    top: 3.2rem;
-    right: 1rem;
-    z-index: 9999;
-    background: #1a1a2e;
-    border-radius: 6px;
-    padding: 0.5rem;
-    min-width: 200px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  }
-  #translate-panel select {
-    background: #1a1a2e;
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 3px;
-    font-size: 0.85rem;
-    padding: 0.3rem 0.5rem;
-    width: 100%;
-    cursor: pointer;
-  }
-  .translate-reset-btn {
-    background: transparent;
-    color: rgba(255,255,255,0.6);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 3px;
-    font-size: 0.78rem;
-    padding: 0.2rem 0.5rem;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 0.4rem;
-  }
-  .translate-reset-btn:hover {
-    color: white;
-    border-color: white;
-  }
-  .translate-external-btn {
-    display: block;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.75rem;
-    text-align: center;
-    margin-top: 0.4rem;
-    text-decoration: none;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 0.4rem;
-  }
-  .translate-external-btn:hover {
-    color: white;
-  }
-  .goog-te-gadget { font-size: 0 !important; }
-  .goog-te-gadget select { margin: 0 !important; }
-</style>
-
-</head><body class="nav-fixed fullcontent quarto-light"><div id="translate-panel">
-  <div id="google_translate_element"></div>
-  <button class="translate-reset-btn" onclick="window.location.href=window.location.href.split('?')[0]">
-    ↩ volver al español
-  </button>
-  <a class="translate-external-btn" href="https://translate.google.com/translate?sl=es&amp;u=https://maordano.github.io" target="_blank" rel="noopener">
-    🔗 abrir traducción en nueva pestaña
-  </a>
-</div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: "es",
-    includedLanguages: "es,en,pt,fr,it,de,ru,zh-CN,ja,ar,qu,gn,no,sv,da,fi,nl,pl,ko,hi,ca,eu,tr,sw,he",
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, "google_translate_element");
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  var links = document.querySelectorAll(".navbar-nav .nav-link");
-  links.forEach(function(link) {
-    if (link.textContent.trim() === "🌐") {
-      link.addEventListener("click", function(e) {
-        e.preventDefault();
-        var panel = document.getElementById("translate-panel");
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-      });
-    }
-  });
-});
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
 
 <link rel="stylesheet" href="styles.css">
+</head>
 
-
-
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -198,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="menu-text">Acerca de</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./#"> 
+    <a class="nav-link" href="https://translate.google.com/translate?sl=es&amp;u=https://maordano.github.io" target="_blank"> 
 <span class="menu-text">🌐</span></a>
   </li>  
 </ul>
