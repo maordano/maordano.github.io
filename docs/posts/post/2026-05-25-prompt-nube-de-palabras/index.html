@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     background: #1a1a2e;
     border-radius: 6px;
     padding: 0.5rem;
-    min-width: 180px;
+    min-width: 200px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
   #translate-panel select {
@@ -95,12 +95,46 @@ ul.task-list li input[type="checkbox"] {
     width: 100%;
     cursor: pointer;
   }
+  .translate-reset-btn {
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 3px;
+    font-size: 0.78rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.4rem;
+  }
+  .translate-reset-btn:hover {
+    color: white;
+    border-color: white;
+  }
+  .translate-external-btn {
+    display: block;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 0.4rem;
+    text-decoration: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 0.4rem;
+  }
+  .translate-external-btn:hover {
+    color: white;
+  }
   .goog-te-gadget { font-size: 0 !important; }
   .goog-te-gadget select { margin: 0 !important; }
 </style>
 
 </head><body class="nav-fixed fullcontent quarto-light"><div id="translate-panel">
   <div id="google_translate_element"></div>
+  <button class="translate-reset-btn" onclick="window.location.href=window.location.href.split('?')[0]">
+    ↩ volver al español
+  </button>
+  <a class="translate-external-btn" href="https://translate.google.com/translate?sl=es&amp;u=https://maordano.github.io" target="_blank" rel="noopener">
+    🔗 abrir traducción en nueva pestaña
+  </a>
 </div>
 
 <script type="text/javascript">
