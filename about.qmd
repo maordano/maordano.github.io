@@ -18,7 +18,7 @@ Usa código abierto alojado en https://github.com/maordano/
 
 Hecho a mano por mi cuerpo orgánico, mediado por dispositivos inorgánicos y algunos de tipo imaginario.
 
-### Portada Galería
+### [Portada Galería](https://maordano.github.io/)
 Inicio. Analogía de la llegada a un espacio de presentación y comunicación, a un límite que identifica ese espacio, un ecotono, una portada galería.
 
 ### [Bitácora](https://maordano.github.io/blog.html)
@@ -34,11 +34,11 @@ Experiencias aprendizadas.
 Expresiones rumiantes.
 Ex. 
 
-### Proyectos
+### [Proyectos](https://maordano.github.io/proyectos.html)
 Descripción de elementos de investigación. 
 [ variación fenotípica ]
 
-### Símbolo del globo geográfico 🌐
+### [Símbolo del globo geográfico 🌐](https://maordano-github-io.translate.goog/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es-419)
 Widget de traducción vía Google. Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original. En los celulares el tamaño de pantalla puede impedir ver opciones, se sugiere cambiar de visión vertical a horizontal para visualizar opciones y regresar a la página original.
 
 ___
