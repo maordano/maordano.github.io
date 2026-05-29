@@ -41,11 +41,14 @@ Ex.
 ___
 
 ### [Proyectos](https://maordano.github.io/proyectos.html)
-Descripción de elementos de investigación. 
-[ variación fenotípica ]
+
+Descripción de elementos de investigación.
+
+[variación fenotípica]
 
 ### [🌐Símbolo del globo terráqueo con meridianos](https://maordano-github-io.translate.goog/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es-419)
-Widget de traducción vía Google. Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original. 
+Widget de traducción vía Google. Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original.
+
 En los celulares el tamaño de pantalla puede impedir ver opciones, ubicadas arriba a la derecha. Usar visión vertical u horizontal según preferencias o para visualizar opciones y regresar a la página original.
 
 ___
