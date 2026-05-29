@@ -7,16 +7,18 @@ about:
 
 ## Descripción del sitio
 
-Esta sección describe este dispositivo de interacción. 
+Esta sección describe este dispositivo de interacción, el sitio web.
+
 Realizo ejercicios de aprendizaje, de expresión, describo mapas y mundos que se vinculan a lo que hago, a cómo pasaron y pasan los días, mientras busco una forma de describir interacciones bióticas, interacciones mediadas por dispositivos; una forma que refleje diversos aspectos e integre exploraciones, creaciones lúdicas, rumias, ejercicios.
 
-Busca y explora conceptos, términos y condiciones. 
-Opta por principios tipo [FAIR](https://www.go-fair.org/) y CARE para la gestión de datos compartidos [RI CONICET].
+El sitio busca y explora conceptos, términos y condiciones. 
+Sigue principios tipo [FAIR](https://www.go-fair.org/) y CARE para la [gestión de datos compartidos](https://datosdeinvestigacion.conicet.gov.ar/los-principios-fair-en-la-gestion-de-datos-de-investigacion/).
 Se informa sobre la [legislación vigente local para la gestión de datos personales](https://www.oas.org/juridico/pdfs/arg_ley25326.pdf) y [uso de inteligencia artificial](https://www.argentina.gob.ar/justicia/derechofacil/leysimple/educacion-ciencia-cultura/recomendaciones-para-el-uso-de).
-Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referenciables, auditables. Deja huella o declara el uso de asistentes de IA y otros dispositivos, o cualquier fuente que contribuya a la producción del sitio. 
-Para la construcción del sitio ayudaron asistentes de Claude, Gemini y Copilot.
+Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referenciables, auditables.
 
-Usa código abierto alojado en https://github.com/maordano/
+La construcción del sitio está inspirada e inicialmente armada en [Hugo Ananke](https://themes.gohugo.io/themes/ananke/) y construido con [Quarto](https://quarto.org). Se usaron asistentes de Claude, Gemini y Copilot.
+
+Usa código abierto alojado en [GitHub](https://github.com/maordano/)
 
 Hecho a mano por mi cuerpo orgánico, mediado por dispositivos inorgánicos y algunos de tipo imaginario.
 
@@ -24,17 +26,19 @@ Hecho a mano por mi cuerpo orgánico, mediado por dispositivos inorgánicos y al
 Inicio. Analogía de la llegada a un espacio de presentación y comunicación, a un límite que identifica ese espacio, un ecotono, una portada galería.
 
 ### [Bitácora](https://maordano.github.io/blog.html)
-Espacio que guarda de todo. Comparada con un mundo en las puertas de la singularidad, tiene aire a aquella vieja libreta que guarda apuntes sueltos, gramáticas telegráficas o ideográficas, ciertas expresiones indigeribles, o palabras que ya no son legibles, o no tienen sentido actual, o de memoria erosionada. 
-En algunos casos puede funcionar como un testing de temas no resueltos, temas no madurados en el sentido de un producto final, cosas que podrían generar un espacio propio o un menú aparte. 
+Espacio que guarda de todo. Comparada con un mundo en las puertas de la singularidad, tiene aire a aquella vieja libreta que guarda apuntes sueltos, gramáticas telegráficas o ideográficas, ciertas expresiones indigeribles, o palabras que ya no son legibles, o no tienen sentido actual, o tienen la memoria erosionada. 
 
-Herramientas, técnicas, métodos, conceptos.
-Prompts, redacción de consultas, test de cosas que dicen.
-Nideas, apuntes, stuffs, … (sensu Umberto Eco).  
+En algunos casos puede funcionar como un testing de temas no resueltos, temas no madurados en el sentido de un producto final; o cosas que podrían generar un espacio propio o un menú aparte. 
+
+Puede incluir herramientas, técnicas, métodos, conceptos, prompts, redacción de consultas, test de cosas que dicen; _"nideas"_, apuntes, "stuffs", … (sensu Umberto Eco).  
+
+___
 
 Experiencias y aprendizajes.  
 Experiencias aprendizadas.  
 Expresiones rumiantes.
 Ex. 
+___
 
 ### [Proyectos](https://maordano.github.io/proyectos.html)
 Descripción de elementos de investigación. 
@@ -43,10 +47,13 @@ Descripción de elementos de investigación.
 ### [🌐Símbolo del globo terráqueo con meridianos](https://maordano-github-io.translate.goog/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es-419)
 Widget de traducción vía Google. Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original. 
 En los celulares el tamaño de pantalla puede impedir ver opciones, ubicadas arriba a la derecha. Usar visión vertical u horizontal según preferencias o para visualizar opciones y regresar a la página original.
+
 ___
 
 ![amanecer en el pedemonte](images/alba-4474.webp){width=100%}
+
 amanecer en el pedemonte 
 Sierra de San Javier
+
 ___
 
