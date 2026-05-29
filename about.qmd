@@ -15,9 +15,10 @@ El sitio busca y explora conceptos, términos y condiciones. Sigue principios ti
 Se informa sobre la [legislación vigente local para la gestión de datos personales](https://www.oas.org/juridico/pdfs/arg_ley25326.pdf) y [uso de inteligencia artificial](https://www.argentina.gob.ar/justicia/derechofacil/leysimple/educacion-ciencia-cultura/recomendaciones-para-el-uso-de).
 Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referenciables, accesibles.
 
-La construcción del sitio está inspirada e inicialmente armada en [Hugo Ananke](https://themes.gohugo.io/themes/ananke/) y construido con [Quarto](https://quarto.org). Se usaron asistentes de Claude, Gemini y Copilot para la generación de código.
+La construcción del sitio está inspirada e inicialmente armado en [Hugo Ananke](https://themes.gohugo.io/themes/ananke/) y ahora construido con [Quarto](https://quarto.org). Se usaron y se usan  asistentes de Claude, Gemini y Copilot para la generación de código.
 
 Usa código abierto alojado en [GitHub](https://github.com/maordano/)
+Licencia [Creative Commons by 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 Hecho a mano por mi cuerpo orgánico - aparentemente humano ;) , mediado por dispositivos inorgánicos y algunos de tipo imaginario.
 
@@ -57,4 +58,3 @@ amanecer en el pedemonte
 Sierra de San Javier
 
 ___
-
