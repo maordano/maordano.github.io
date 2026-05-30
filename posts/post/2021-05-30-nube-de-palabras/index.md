@@ -12,7 +12,7 @@ ___
 
 El enlace lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.
 
-![retrato del Arroyo Cainzo, Parque Sierra de San Javier](images/cainzo.webp)
+![retrato del Arroyo Cainzo, Parque Sierra de San Javier](cainzo.webp)
 
 
 ___
