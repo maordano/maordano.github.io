@@ -18,7 +18,7 @@
     "href": "posts/post/2026-05-25-prompt-nube-de-palabras/index.html",
     "title": "prompt nube de palabras",
     "section": "",
-    "text": "Hace relativamente poco tiempo, en este siglo, la formación de imágenes desde programas como R o Python eran de difícil solución.\nEn unos pocos años, dispositivos como los asistentes de IA lo pueden resolver sin necesidad de haber aprendido alguna otra interfase [ ejemplo ].\n[ prompt ]"
+    "text": "Hace relativamente poco tiempo, en este siglo, la formación de imágenes desde programas como R o Python eran de difícil solución.\nEn unos pocos años, dispositivos como los asistentes de IA lo pueden resolver sin necesidad de haber aprendido alguna otra interfase.\nUn ejemplo de nube de palabras basada en el diálogo de un prompt (1 consulta + 1 respuesta) a la asistencia de Claude Sonet 4.6 (Anthropic 2026).\n\nPrompt\nclaudewordcloud Nube de palabras generada a partir de un prompt a Claude Sonnet 4.6 (Anthropic, 2026)\nsawordcloud Nube de palabras generada a partir de la app shiny de 2021."
   },
   {
     "objectID": "posts/post/2021-05-30-nube-de-palabras/index.html",
