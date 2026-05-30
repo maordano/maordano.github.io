@@ -21,13 +21,13 @@ Respuesta de asistencia de IA: "¡Hola! Qué lindo reconocimiento, gracias. Y s�
 
 ___
 
-![claudewordcloud](claudewordcloud.webp){width=100%}
+![claudewordcloud](images/claudewordcloud.webp){width=100%}
 
 Nube de palabras generada a partir de un prompt a Claude Sonnet 4.6 (Anthropic, 2026)
 
 ___
 
-![sawordcloud](sawordcloud.webp){width=100%}
+![sawordcloud](images/sawordcloud.webp){width=100%}
 
 Nube de palabras generada a partir de la [app shiny de 2021](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/). 
 
