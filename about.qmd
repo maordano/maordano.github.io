@@ -17,10 +17,22 @@ Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referencia
 
 La construcción del sitio está inspirada e inicialmente armado en [Hugo Ananke](https://themes.gohugo.io/themes/ananke/) y ahora construido con [Quarto](https://quarto.org). Se usaron y se usan  asistentes de Claude, Gemini y Copilot para la generación de código.
 
-Usa código abierto alojado en [GitHub](https://github.com/maordano/)
-Licencia [Creative Commons by 4.0](https://creativecommons.org/licenses/by/4.0/).
+Usa código abierto alojado en [GitHub](https://github.com/maordano/).  
 
 Hecho a mano por mi cuerpo orgánico - aparentemente humano ;) , mediado por dispositivos inorgánicos y algunos de tipo imaginario.
+
+
+Licencia [Creative Commons by 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+___
+
+![amanecer en el pedemonte](images/alba-4476.webp){width=100%}
+
+amanecer en el pedemonte
+
+Sierra de San Javier
+
+___
 
 ### [Portada Galería](https://maordano.github.io/)
 Inicio. Analogía de la llegada a un espacio de presentación y comunicación, a un límite que identifica ese espacio, un ecotono, una portada galería de un ámbito doméstico.
@@ -36,8 +48,9 @@ ___
 
 Experiencias y aprendizajes.  
 Experiencias aprendizadas.  
-Expresiones rumiantes.
-Ex. 
+Expresiones rumiantes.  
+Ex.  
+
 ___
 
 ### [Proyectos](https://maordano.github.io/proyectos.html)
