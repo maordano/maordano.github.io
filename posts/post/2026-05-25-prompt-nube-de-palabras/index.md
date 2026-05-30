@@ -2,7 +2,7 @@
 title: "prompt nube de palabras"
 author: "Mariano Ordano"
 date: 2026-05-25
-description: "prompt para imagen de nube de palabras"
+description: "imagen obtenida con asistencia de IA"
 ---
 ___
 
@@ -21,13 +21,13 @@ Respuesta de asistencia de IA: "¡Hola! Qué lindo reconocimiento, gracias. Y s�
 
 ___
 
-[claudewordcloud](images/claudewordcloud.webp){width=100%}
+![claudewordcloud](images/claudewordcloud.webp){width=100%}
+
 Nube de palabras generada a partir de un prompt a Claude Sonnet 4.6 (Anthropic, 2026)
 
 ___
 
-[sawordcloud](images/sawordcloud.webp){width=100%}
-
+![sawordcloud](images/sawordcloud.webp){width=100%}
 
 Nube de palabras generada a partir de la [app shiny de 2021](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/). 
 
