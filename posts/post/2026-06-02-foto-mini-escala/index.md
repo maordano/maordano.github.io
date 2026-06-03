@@ -12,6 +12,7 @@ La percepción y la interpretación ¿en qué medida están afectadas por el dis
 ___
 
 Un ejemplo de 4 fotos en el pedemonte.
+
 ___
 
 ![Lente 0.5 x ~ 13 mm](images/selva0-5x.webp){width=100%}
@@ -29,3 +30,4 @@ ___
 ![Lente 3 x ~ 77 mm](images/selva3x.webp){width=100%}
 
 ___
+
