@@ -11,17 +11,29 @@ Un ejemplo de 4 fotos en el pedemonte.
 
 ___
 
-![0.5 x](images/luz-grieta0-5x.webp){width=50%}
+![0.5 x](images/selva0-5x.webp){width=50%}
 
 Lente 0.5 x ~ 13 mm
 
 ___
 
-![1 x](images/luz-grieta1x.webp){width=50%}
+![1 x](images/selva1x.webp){width=50%}
 
 Lente 1 x ~ 24 mm
 
 ___
 
+
 ___
 
+![2 x](images/selva2x.webp){width=50%}
+
+Lente 2 x ~ 48 mm
+
+___
+
+![3 x](images/selva3x.webp){width=50%}
+
+Lente 3 x ~ 77 mm
+
+___
