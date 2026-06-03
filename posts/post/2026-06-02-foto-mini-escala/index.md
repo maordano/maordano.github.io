@@ -5,35 +5,27 @@ date: 2026-06-02
 description: "cambio de escala en fotos de celular"
 ---
 
-Fotos tomadas a distinta escala pueden nutrir la interpretación ambiental de un sitio. La percepción y la interpretación ¿en qué medida están afectadas por el dispositivo?  
+Fotos tomadas desde un mismo punto, a distinta escala, pueden nutrir la interpretación ambiental. 
+
+La percepción y la interpretación ¿en qué medida están afectadas por el dispositivo?  
+
+___
 
 Un ejemplo de 4 fotos en el pedemonte.
+___
+
+![Lente 0.5 x ~ 13 mm](images/selva0-5x.webp){width=100%}
 
 ___
 
-![0.5 x](images/selva0-5x.webp){width=50%}
-
-Lente 0.5 x ~ 13 mm
+![Lente 1 x ~ 24 mm](images/selva1x.webp){width=100%}
 
 ___
 
-![1 x](images/selva1x.webp){width=50%}
-
-Lente 1 x ~ 24 mm
+![Lente 2 x ~ 48 mm](images/selva2x.webp){width=100%}
 
 ___
 
-
-___
-
-![2 x](images/selva2x.webp){width=50%}
-
-Lente 2 x ~ 48 mm
-
-___
-
-![3 x](images/selva3x.webp){width=50%}
-
-Lente 3 x ~ 77 mm
+![Lente 3 x ~ 77 mm](images/selva3x.webp){width=100%}
 
 ___
