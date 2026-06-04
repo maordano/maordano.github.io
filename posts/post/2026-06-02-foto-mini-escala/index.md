@@ -1,5 +1,5 @@
 ---
-title: "fotos cero punto cinco x a tres x"
+title: "fotos 0.5, 1, 2 y 3 x"
 author: "Mariano Ordano"
 date: 2026-06-02
 description: "cambio de escala en fotos de celular"
