@@ -1,6 +1,5 @@
 ---
 title: "Bitácora"
-featured_image: "images/quetupi-riparium-nube.webp"
-featured_image_class: "content bg-center"
+image: "images/quetupi-riparium-nube.webp"
 ---
   
