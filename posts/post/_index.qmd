@@ -3,4 +3,4 @@ title: "Bitácora"
 image: "images/quetupi-riparium-nube.webp"
 ---
 
-![Pitangus sulphuratus parado en Solanum riparium muerto](post/images/quetupi-riparium-nube.webp){width="100%"}
+![Pitangus sulphuratus parado en Solanum riparium muerto](images/quetupi-riparium-nube.webp){width="100%"}

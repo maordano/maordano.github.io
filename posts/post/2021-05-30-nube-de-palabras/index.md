@@ -2,6 +2,7 @@
 title: "nube de palabras"
 author: "Mariano Ordano"
 date: 2021-05-30
+date-modified: 2026-06-04
 description: "imagen obtenida con app shiny adaptada"
 ---
 ___
