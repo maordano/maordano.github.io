@@ -1,6 +1,10 @@
 ---
 title: "Proyectos"
-
+listing:
+  contents: proyectos
+  sort: "date desc"
+  type: grid         # El tipo 'grid' queda hermoso para portafolios visuales en tarjetas
+  categories: true
 ---
 
 Acá van mis proyectos.

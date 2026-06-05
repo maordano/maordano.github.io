@@ -1,0 +1,12 @@
+---
+title: "testing"
+description: "próximos 3 años"
+date: "2026-06-05"
+date-modified: last-modified
+author: "Mariano Ordano"
+categories: [Investigación, Campo, Participación Ciudadana, Educación, Aprendizaje, Entrenamiento]
+image: "images/portal.webp" # Usa la foto de la raíz como miniatura provisional
+---
+
+prueba de escritura de proyecto
+
