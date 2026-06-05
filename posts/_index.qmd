@@ -1,25 +1,6 @@
 ---
-title: "Portada Galería"
-featured_image: "images/alba-bird-tree-4594.webp"
-featured_image_class: "cover bg-center"
+title: "Bitácora"
+image: "images/quetupi-riparium-nube.webp"
 ---
 
-# explorando mundos con seres vivos
-
-___
-
-investigo en ecología y evolución<br>de relaciones bióticas y ambientales
-
-___
-
-tengo roles de investigación y educación<br>como empleado de la [Fundación Miguel Lillo](https://www.lillo.org.ar/)<br>y del [CONICET](https://www.conicet.gov.ar/)<br>en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
-
-___
-
-Tucumán, Argentina
-
-![curva](images/curva.webp)
-ecotono en la selva pedemontana
-
-___
-
+![Pitangus sulphuratus parado en Solanum riparium muerto](images/quetupi-riparium-nube.webp){width="100%"}
