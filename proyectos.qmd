@@ -1,5 +1,13 @@
 ---
 title: "Proyectos"
+
 ---
 
 Acá van mis proyectos.
+
+___
+
+
+![pájaros al alba](images/alba-bird-tree-4594.webp)
+
+
