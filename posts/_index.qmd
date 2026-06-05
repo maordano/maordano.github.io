@@ -1,6 +1,11 @@
 ---
 title: "Bitácora"
+date: 2026-05-25
+date-modified: last-modified
 image: "images/quetupi-riparium-nube.webp"
----
+description: "conjunto de elementos de investigación"
 
-![Pitangus sulphuratus parado en Solanum riparium muerto](images/quetupi-riparium-nube.webp){width="100%"}
+---
+![](images/quetupi-riparium-nube.webp){fig-cap="Pitangus sulphuratus parado en Solanum riparium muerto" width="100%"}
+
+___
