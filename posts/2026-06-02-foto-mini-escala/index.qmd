@@ -1,11 +1,10 @@
 ---
 title: "fotos 0.5, 1, 2 y 3 x"
-author: "Mariano Ordano"
+image: "images/selva3x.webp"
 date: 2026-06-02
 date-modified: last-modified
 description: "cambio de escala en fotos de celular"
-categories: ["Fotografía", "Fotografía con Teléfono Celular", "Fotografpia de Naturaleza", "Interpretación Ambiental", "Escala de Aproximación"]
-
+categories: ["Fotografía", "Fotografía con Teléfono Celular", "Fotografía de Naturaleza", "Interpretación Ambiental", "Escala de Aproximación"]
 ---
 
 Fotos tomadas desde un mismo punto, a distinta escala, pueden nutrir la interpretación ambiental. 

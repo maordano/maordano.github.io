@@ -1,11 +1,10 @@
 ---
 title: "nube de palabras"
-author: "Mariano Ordano"
+image: "images/cainzo.webp"
 date: 2021-05-30
 date-modified: last-modified
 description: "imagen obtenida con app shiny adaptada"
 categories: ["Métodos", "Clasificación", "Tipos de Variables", "Ecología de Texto",  "Visualización", "Diseño de Consignas", "R Shiny app", "Ingeniería del Aprendizaje", "Entrenamiento"]
-
 ---
 
 ___
