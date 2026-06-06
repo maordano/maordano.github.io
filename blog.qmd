@@ -1,10 +1,11 @@
 ---
 title: "Bitácora"
 editor: visual
-image: "images/quetupi-riparium-nube.webp"
 listing:
   contents: posts  # artículos en carpeta /posts
   sort: "date desc"
-  type: grid # default apaga la imagen de cabecera
+  type: default # grid vs default apaga la imagen de cabecera
   categories: true 
 ---
+
+![Benteveo en Tabaquillo](images/quetupi-riparium-nube.webp){width=100%}
