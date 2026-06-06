@@ -1,6 +1,5 @@
 ---
 title: "prompt nube de palabras"
-author: "Mariano Ordano"
 image: "images/claudewordcloud.webp"
 date: 2026-05-25
 date-modified: last-modified
