@@ -23,7 +23,7 @@ website:
   page-footer:
     background: dark
     left: |
-      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2026 Mariano Ordano v1.3
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2026 Mariano Ordano v1.4
     center: "hecho con [Quarto](https://quarto.org)"
     right:
       - icon: github
