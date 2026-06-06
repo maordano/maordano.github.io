@@ -4,6 +4,7 @@ author: "Mariano Ordano"
 date: 2026-05-25
 date-modified: last-modified
 description: "imagen obtenida con asistencia de IA"
+categories: ["Métodos", "Clasificación", "Tipos de variables", "Ecología de Texto",  "Visualización", "IA Prompts", "Interacción con IA",  "Diseño de Consignas", "Ingeniería del Aprendizaje", "Entrenamiento"]
 
 ---
 ___

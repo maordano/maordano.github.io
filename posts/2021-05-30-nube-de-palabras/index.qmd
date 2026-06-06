@@ -4,14 +4,17 @@ author: "Mariano Ordano"
 date: 2021-05-30
 date-modified: last-modified
 description: "imagen obtenida con app shiny adaptada"
+categories: ["Métodos", "Clasificación", "Tipos de Variables", "Ecología de Texto",  "Visualización", "Diseño de Consignas", "R Shiny app", "Ingeniería del Aprendizaje", "Entrenamiento"]
+
 ---
+
 ___
 
 [¿Cómo generar una imagen de nube de palabras?](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/)
 
 ___
 
-El enlace lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.
+El [enlace del título](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/) lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.
 
 ![retrato del Arroyo Cainzo, Parque Sierra de San Javier](images/cainzo.webp)
 

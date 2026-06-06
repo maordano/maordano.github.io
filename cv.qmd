@@ -1,0 +1,27 @@
+---
+title: "Currículum Vitae"
+date: last-modified
+date-format: "MMMM YYYY"
+---
+
+## Resumen
+
+*Me desempeño como investigador de la Fundación Miguel Lillo y del Instituto de Ecología Regional (Universidad Nacional de Tucumán - CONICET). Desarrollo investigaciones en ecología y evolución de interacciones bióticas, a varios niveles de organización biológica. Exploro aplicaciones de la biología evolutiva en manejo amnbiental, agricultura y eco-epidemiología*
+
+---
+
+## Posiciones Actuales
+
+* **Investigador Adjunto / Asistente** | CONICET - Instituto de Ecología Regional (IER)
+* **Docente / Investigador** | Fundación Miguel Lillo
+
+## Formación Académica
+
+* **Doctor en Ciencias Biológicas** | Universidad Nacional de Tucumán
+* **Licenciado en Biología** | Universidad Nacional de Tucumán
+
+## Áreas de Interés y Especialidad
+
+* Ecología y Evolución de Interacciones Bióticas
+* Clínica de datos y gestión de datos compartidos
+* Interfases humano-naturaleza

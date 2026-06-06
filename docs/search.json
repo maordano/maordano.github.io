@@ -4,49 +4,7 @@
     "href": "blog.html",
     "title": "Bitácora",
     "section": "",
-    "text": "fotos 0.5, 1, 2 y 3 x\n\n\ncambio de escala en fotos de celular\n\n\n\n\n\nJun 2, 2026\n\n\nMariano Ordano\n\n\n\n\n\n\n\n\n\n\n\n\nprompt nube de palabras\n\n\nimagen obtenida con asistencia de IA\n\n\n\n\n\nMay 25, 2026\n\n\nMariano Ordano\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\nimagen obtenida con app shiny adaptada\n\n\n\n\n\nMay 30, 2021\n\n\nMariano Ordano\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "explorando mundos con seres vivos",
-    "section": "",
-    "text": "pájaros al alba\n\n\n\n\nexplorando mundos con seres vivos\n\ninvestigo en ecología y evolución\nde relaciones bióticas y ambientales\n\n\n\n\notoño al amanecer, selva pedemontana\n\n\n\ntengo roles de investigación y educación\ncomo empleado de la Fundación Miguel Lillo\ny del CONICET\nen el Instituto de Ecología Regional\n\nTucumán, Argentina"
-  },
-  {
-    "objectID": "proyectos.html",
-    "href": "proyectos.html",
-    "title": "Proyectos",
-    "section": "",
-    "text": "Acá van mis proyectos.\n\n\n\n\npájaros al alba\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntesting\n\n\n\nInvestigación\n\nCampo\n\nParticipación Ciudadana\n\nEducación\n\nAprendizaje\n\nEntrenamiento\n\n\n\npróximos 3 años\n\n\n\nMariano Ordano\n\n\nJun 5, 2026\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/2021-05-30-nube-de-palabras/index.html",
-    "href": "posts/2021-05-30-nube-de-palabras/index.html",
-    "title": "nube de palabras",
-    "section": "",
-    "text": "¿Cómo generar una imagen de nube de palabras?\n\nEl enlace lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.\n\n\n\nretrato del Arroyo Cainzo, Parque Sierra de San Javier"
-  },
-  {
-    "objectID": "posts/2026-06-02-foto-mini-escala/index.html",
-    "href": "posts/2026-06-02-foto-mini-escala/index.html",
-    "title": "fotos 0.5, 1, 2 y 3 x",
-    "section": "",
-    "text": "Fotos tomadas desde un mismo punto, a distinta escala, pueden nutrir la interpretación ambiental.\nLa percepción y la interpretación ¿en qué medida están afectadas por el dispositivo?\n\nUn ejemplo de 4 fotos en el pedemonte.\n\n\n\n\nLente 0.5 x ~ 13 mm\n\n\n\n\n\n\nLente 1 x ~ 24 mm\n\n\n\n\n\n\nLente 2 x ~ 48 mm\n\n\n\n\n\n\nLente 3 x ~ 77 mm"
-  },
-  {
-    "objectID": "posts/2026-05-25-prompt-nube-de-palabras/index.html",
-    "href": "posts/2026-05-25-prompt-nube-de-palabras/index.html",
-    "title": "prompt nube de palabras",
-    "section": "",
-    "text": "Hace relativamente poco tiempo, en este siglo, la formación de imágenes desde programas como R o Python eran de difícil solución.\nEn unos pocos años, dispositivos como los asistentes de IA lo pueden resolver sin necesidad de haber aprendido alguna otra interfase.\nUn ejemplo de nube de palabras basada en el diálogo de un prompt (1 consulta + 1 respuesta) a la asistencia de Claude Sonet 4.6 (Anthropic 2026).\n\nPrompt\nConsulta: “Hola! la web está quedando gustosa, muchas gracias! Puedes leer en la sección Acerca de sobre el reconocimiento de tu asistencia. Tengo un desafío, cuyo propósito es comparativo-didáctico, teniendo un post de 2021 y otro post de 2026, con la misma idea y distintas herramientas o procesos. Como entrenando con shiny con RStudio, en aquel tiempo hice este ejercicio: https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/ que sigue estable. Eso fue hecho en mayo de 2021. Supongo que ahora, unos 5 años después, la misma imagen generada por aquel pequeño dispositivo, podría transformarse en un solo prompt y un asistente de IA como usted podría generar la figura. ¿Es posible?”\nRespuesta de asistencia de IA: “¡Hola! Qué lindo reconocimiento, gracias. Y sí, es completamente posible. Tu app Shiny de 2021 toma un texto y genera una nube de palabras donde el tamaño refleja la frecuencia. Eso hoy se puede hacer directamente aquí. Probemos: pasame un texto y te genero la nube de palabras como imagen SVG interactiva, sin código, sin Shiny, sin instalar nada. Puede ser cualquier texto: un párrafo tuyo, un abstract de un paper, lo que quieras. Así tenés el contraste perfecto para el post comparativo: 2021 con Shiny + R, 2026 con un prompt a un asistente de IA.”\n\n\n\n\nclaudewordcloud\n\n\nNube de palabras generada a partir de un prompt a Claude Sonnet 4.6 (Anthropic, 2026)\n\n\n\n\nsawordcloud\n\n\nNube de palabras generada a partir de la app shiny de 2021."
-  },
-  {
-    "objectID": "proyectos/proyecto-prueba/index.html",
-    "href": "proyectos/proyecto-prueba/index.html",
-    "title": "testing",
-    "section": "",
-    "text": "prueba de escritura de proyecto"
+    "text": "fotos 0.5, 1, 2 y 3 x\n\n\n\nFotografía\n\nFotografía con Teléfono Celular\n\nFotografpia de Naturaleza\n\nInterpretación Ambiental\n\nEscala de Aproximación\n\n\n\ncambio de escala en fotos de celular\n\n\n\n\n\nJun 2, 2026\n\n\nMariano Ordano\n\n\n\n\n\n\n\n\n\n\n\n\nprompt nube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de variables\n\nEcología de Texto\n\nVisualización\n\nIA Prompts\n\nInteracción con IA\n\nDiseño de Consignas\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con asistencia de IA\n\n\n\n\n\nMay 25, 2026\n\n\nMariano Ordano\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de Variables\n\nEcología de Texto\n\nVisualización\n\nDiseño de Consignas\n\nR Shiny app\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con app shiny adaptada\n\n\n\n\n\nMay 30, 2021\n\n\nMariano Ordano\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -61,5 +19,82 @@
     "title": "Acerca de",
     "section": "",
     "text": "Esta sección describe este dispositivo de interacción, el sitio web.\nRealizo ejercicios de aprendizaje, de expresión, describo mapas y mundos que se vinculan a lo que hago, a cómo pasaron y pasan los días, mientras busco una forma de describir interacciones bióticas, interacciones mediadas por dispositivos; una forma que refleje diversos aspectos e integre exploraciones, creaciones lúdicas, rumias, ejercicios.\nEl sitio busca y explora conceptos, términos y condiciones. Sigue principios tipo FAIR y CARE para la gestión de datos compartidos. Se informa sobre la legislación vigente local para la gestión de datos personales y uso de inteligencia artificial. Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referenciables, accesibles.\nLa construcción del sitio está inspirada e inicialmente armado en Hugo Ananke y ahora construido con Quarto. Se usaron y se usan asistentes de Claude, Gemini y Copilot para la generación de código.\nUsa código abierto alojado en GitHub.\nHecho a mano por mi cuerpo orgánico - aparentemente humano ;) , mediado por dispositivos inorgánicos y algunos de tipo imaginario.\nLicencia Creative Commons by 4.0.\n\n\n\n\namanecer en el pedemonte, Sierra de San Javier\n\n\n\n\n\nInicio. Analogía de la llegada a un espacio de presentación y comunicación, a un límite que identifica ese espacio, un ecotono, una portada galería de un ámbito doméstico.\n\n\n\nEspacio que guarda de todo. Comparada con un mundo en las puertas de la singularidad, tiene aire a aquella vieja libreta que guarda apuntes sueltos, gramáticas telegráficas o ideográficas, ciertas expresiones indigeribles, o palabras que ya no son legibles, o no tienen sentido actual, o tienen la memoria erosionada.\nEn algunos casos puede funcionar como un testing de temas no resueltos, temas no madurados en el sentido de un producto final; o cosas que podrían generar un espacio propio o un menú aparte.\nPuede incluir herramientas, técnicas, métodos, conceptos, prompts, redacción de consultas, test de cosas que dicen; “nideas”, apuntes, “stuffs”, … (sensu Umberto Eco).\n\nExperiencias y aprendizajes.\nExperiencias aprendizadas.\nExpresiones rumiantes.\nEx.\n\n\n\n\nDescripción de elementos de investigación.\n[variación fenotípica]\n\n\n\nWidget de traducción vía Google. Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original. En los celulares el tamaño de pantalla puede impedir ver opciones, ubicadas arriba a la derecha. Si no se pueden visualizar opciones de retorno, pruebe con girar la posición entre vertical y horizontal, o viceversa, para regresar a la página web original.\n\n\n\n\namanecer en el pedemonte\n\n\nSierra de San Javier"
+  },
+  {
+    "objectID": "proyectos/proyecto-prueba/index.html",
+    "href": "proyectos/proyecto-prueba/index.html",
+    "title": "testing",
+    "section": "",
+    "text": "prueba de escritura de proyecto"
+  },
+  {
+    "objectID": "posts/2026-05-25-prompt-nube-de-palabras/index.html",
+    "href": "posts/2026-05-25-prompt-nube-de-palabras/index.html",
+    "title": "prompt nube de palabras",
+    "section": "",
+    "text": "Hace relativamente poco tiempo, en este siglo, la formación de imágenes desde programas como R o Python eran de difícil solución.\nEn unos pocos años, dispositivos como los asistentes de IA lo pueden resolver sin necesidad de haber aprendido alguna otra interfase.\nUn ejemplo de nube de palabras basada en el diálogo de un prompt (1 consulta + 1 respuesta) a la asistencia de Claude Sonet 4.6 (Anthropic 2026).\n\nPrompt\nConsulta: “Hola! la web está quedando gustosa, muchas gracias! Puedes leer en la sección Acerca de sobre el reconocimiento de tu asistencia. Tengo un desafío, cuyo propósito es comparativo-didáctico, teniendo un post de 2021 y otro post de 2026, con la misma idea y distintas herramientas o procesos. Como entrenando con shiny con RStudio, en aquel tiempo hice este ejercicio: https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/ que sigue estable. Eso fue hecho en mayo de 2021. Supongo que ahora, unos 5 años después, la misma imagen generada por aquel pequeño dispositivo, podría transformarse en un solo prompt y un asistente de IA como usted podría generar la figura. ¿Es posible?”\nRespuesta de asistencia de IA: “¡Hola! Qué lindo reconocimiento, gracias. Y sí, es completamente posible. Tu app Shiny de 2021 toma un texto y genera una nube de palabras donde el tamaño refleja la frecuencia. Eso hoy se puede hacer directamente aquí. Probemos: pasame un texto y te genero la nube de palabras como imagen SVG interactiva, sin código, sin Shiny, sin instalar nada. Puede ser cualquier texto: un párrafo tuyo, un abstract de un paper, lo que quieras. Así tenés el contraste perfecto para el post comparativo: 2021 con Shiny + R, 2026 con un prompt a un asistente de IA.”\n\n\n\n\nclaudewordcloud\n\n\nNube de palabras generada a partir de un prompt a Claude Sonnet 4.6 (Anthropic, 2026)\n\n\n\n\nsawordcloud\n\n\nNube de palabras generada a partir de la app shiny de 2021."
+  },
+  {
+    "objectID": "posts/2026-06-02-foto-mini-escala/index.html",
+    "href": "posts/2026-06-02-foto-mini-escala/index.html",
+    "title": "fotos 0.5, 1, 2 y 3 x",
+    "section": "",
+    "text": "Fotos tomadas desde un mismo punto, a distinta escala, pueden nutrir la interpretación ambiental.\nLa percepción y la interpretación ¿en qué medida están afectadas por el dispositivo?\n\nUn ejemplo de 4 fotos en el pedemonte.\n\n\n\n\nLente 0.5 x ~ 13 mm\n\n\n\n\n\n\nLente 1 x ~ 24 mm\n\n\n\n\n\n\nLente 2 x ~ 48 mm\n\n\n\n\n\n\nLente 3 x ~ 77 mm"
+  },
+  {
+    "objectID": "posts/2021-05-30-nube-de-palabras/index.html",
+    "href": "posts/2021-05-30-nube-de-palabras/index.html",
+    "title": "nube de palabras",
+    "section": "",
+    "text": "¿Cómo generar una imagen de nube de palabras?\n\nEl enlace del título lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.\n\n\n\nretrato del Arroyo Cainzo, Parque Sierra de San Javier"
+  },
+  {
+    "objectID": "proyectos.html",
+    "href": "proyectos.html",
+    "title": "Proyectos",
+    "section": "",
+    "text": "Acá van mis proyectos.\n\n\n\n\npájaros al alba\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntesting\n\n\n\nInvestigación\n\nCampo\n\nParticipación Ciudadana\n\nEducación\n\nAprendizaje\n\nEntrenamiento\n\n\n\npróximos 3 años\n\n\n\nMariano Ordano\n\n\nJun 5, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "explorando mundos con seres vivos",
+    "section": "",
+    "text": "pájaros al alba\n\n\n\n\nexplorando mundos con seres vivos\n\ninvestigo en ecología y evolución\nde relaciones bióticas y ambientales\n\n\n\n\notoño al amanecer, selva pedemontana\n\n\n\ntengo roles de investigación y educación\ncomo empleado de la Fundación Miguel Lillo\ny del CONICET\nen el Instituto de Ecología Regional\n\nTucumán, Argentina"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Currículum Vitae",
+    "section": "",
+    "text": "Me desempeño como investigador de la Fundación Miguel Lillo y del Instituto de Ecología Regional (Universidad Nacional de Tucumán - CONICET). Desarrollo investigaciones en ecología y evolución de interacciones bióticas, a varios niveles de organización biológica. Exploro aplicaciones de la biología evolutiva en manejo amnbiental, agricultura y eco-epidemiología"
+  },
+  {
+    "objectID": "cv.html#resumen",
+    "href": "cv.html#resumen",
+    "title": "Currículum Vitae",
+    "section": "",
+    "text": "Me desempeño como investigador de la Fundación Miguel Lillo y del Instituto de Ecología Regional (Universidad Nacional de Tucumán - CONICET). Desarrollo investigaciones en ecología y evolución de interacciones bióticas, a varios niveles de organización biológica. Exploro aplicaciones de la biología evolutiva en manejo amnbiental, agricultura y eco-epidemiología"
+  },
+  {
+    "objectID": "cv.html#posiciones-actuales",
+    "href": "cv.html#posiciones-actuales",
+    "title": "Currículum Vitae",
+    "section": "Posiciones Actuales",
+    "text": "Posiciones Actuales\n\nInvestigador Adjunto / Asistente | CONICET - Instituto de Ecología Regional (IER)\nDocente / Investigador | Fundación Miguel Lillo"
+  },
+  {
+    "objectID": "cv.html#formación-académica",
+    "href": "cv.html#formación-académica",
+    "title": "Currículum Vitae",
+    "section": "Formación Académica",
+    "text": "Formación Académica\n\nDoctor en Ciencias Biológicas | Universidad Nacional de Tucumán\nLicenciado en Biología | Universidad Nacional de Tucumán"
+  },
+  {
+    "objectID": "cv.html#áreas-de-interés-y-especialidad",
+    "href": "cv.html#áreas-de-interés-y-especialidad",
+    "title": "Currículum Vitae",
+    "section": "Áreas de Interés y Especialidad",
+    "text": "Áreas de Interés y Especialidad\n\nEcología y Evolución de Interacciones Bióticas\nClínica de datos y gestión de datos compartidos\nInterfases humano-naturaleza"
   }
 ]
