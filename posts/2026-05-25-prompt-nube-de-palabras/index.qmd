@@ -2,8 +2,9 @@
 title: "prompt nube de palabras"
 author: "Mariano Ordano"
 date: 2026-05-25
-date-modified: 2026-06-04
+date-modified: last-modified
 description: "imagen obtenida con asistencia de IA"
+
 ---
 ___
 
