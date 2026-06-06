@@ -8,20 +8,16 @@ listing:
   categories: true 
 ---
 
-![Benteveo en Tabaquillo](images/quetupi-riparium-nube.webp){width=100%}
+![Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos](images/quetupi-riparium-nube.webp){width="100%"}
 
-___
+------------------------------------------------------------------------
 
-_Un poco de todo, antrópico entrópico._
+*Un poco de todo, antrópico entrópico.*
 
-___
+------------------------------------------------------------------------
 
 ### Estructura general de cada post
 
-Título. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post.
-Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.
+Título. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.
 
-___
-
-
-
+------------------------------------------------------------------------
