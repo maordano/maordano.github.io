@@ -1,6 +1,6 @@
 ---
 title: "nube de palabras"
-image: "images/cainzo.webp"
+image: "images/sawordcloud.webp"
 date: 2021-05-30
 date-modified: last-modified
 description: "imagen obtenida con app shiny adaptada"
@@ -15,7 +15,7 @@ ___
 
 El [enlace del título](https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/) lleva a una ventana en donde se puede elegir idioma y texto, para generar una imagen de nube de palabras, que representa un conjunto de palabras con base en la frecuencia de aparición de una palabra en el texto seleccionado.
 
-![retrato del Arroyo Cainzo, Parque Sierra de San Javier](images/cainzo.webp)
+![imagen obtenida con shiny app](images/sawordcloud.webp)
 
 
 ___
