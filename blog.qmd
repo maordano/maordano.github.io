@@ -9,3 +9,19 @@ listing:
 ---
 
 ![Benteveo en Tabaquillo](images/quetupi-riparium-nube.webp){width=100%}
+
+___
+
+_Un poco de todo, antrópico entrópico._
+
+___
+
+### Estructura general de cada post
+
+Título. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post.
+Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.
+
+___
+
+
+
