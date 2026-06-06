@@ -57,7 +57,7 @@ Espacio que guarda de todo. Comparada con un mundo en las puertas de la singular
 
 En algunos casos puede funcionar como un testing de temas no resueltos, temas no madurados en el sentido de un producto final; o cosas que podrían generar un espacio propio o un menú aparte. 
 
-Puede incluir herramientas, técnicas, métodos, conceptos, prompts, redacción de consultas, test de cosas que dicen; _"nideas"_, apuntes, "stuffs", … (sensu Umberto Eco).  
+Puede incluir herramientas, técnicas, métodos, conceptos, prompts, redacción de consultas, test de cosas que dicen; _"nideas"_, apuntes, _stuffs_, … _sensu_ Umberto Eco.  
 
 ___
 
@@ -74,6 +74,9 @@ Descripción de elementos de investigación.
 
 ### [🌐Símbolo del globo terráqueo con meridianos](https://maordano-github-io.translate.goog/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es-419)
 Widget de traducción vía Google. Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original. En los celulares el tamaño de pantalla puede impedir ver opciones, ubicadas arriba a la derecha. Si no se pueden visualizar opciones de retorno, pruebe con girar la posición entre vertical y horizontal, o viceversa, para regresar a la página web original.
+
+## Buscador (lupa)
+Herramienta funcional, abre una barra para escribir palabras que encontrará (o no) en este sitio.
 
 ___
 
