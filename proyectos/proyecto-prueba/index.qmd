@@ -4,7 +4,7 @@ description: "rutas y facetas del ámbito doméstico"
 date: "2026-05-29"
 date-modified: last-modified
 categories: [Investigación, Campo, Participación Ciudadana, Educación, Aprendizaje, Entrenamiento]
-image: "/images/Lyssomanes-pauper.webp" # Usa la foto de la raíz como miniatura provisional
+image: "images/Lyssomanes-pauper.webp" # Usa la foto de la raíz como miniatura provisional
 ---
 
 Título
@@ -19,10 +19,10 @@ Fuente de elección del tema o sistema
 Dispositivos de interacción
 
 Marco conceptual
-
-Plan de gestión de datos compartidos
+Ecología y evolución de interacciones bióticas
 
 Métodos de Investigación
+Plan de gestión de datos compartidos
 
 Revisión sistemática generalizada
 
@@ -36,3 +36,4 @@ COS
 
 Status
 En preparación
+
