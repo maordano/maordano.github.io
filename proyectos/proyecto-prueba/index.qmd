@@ -3,14 +3,17 @@ title: "Variación fenotípica"
 description: "rutas y facetas del ámbito doméstico"
 date: "2026-05-29"
 date-modified: last-modified
-categories: [Investigación, Campo, Participación Ciudadana, Educación, Aprendizaje, Entrenamiento]
+categories: ["Investigación", "Campo", "Participación Ciudadana", "Educación", "Aprendizaje", "Entrenamiento", "Desarrollo de Proyectos", "Biología Evolutiva"]
 image: "images/Lyssomanes-pauper.webp" # Usa la foto de la raíz como miniatura provisional
 ---
+![](images/Lyssomanes-pauper.webp){width="100%"}
+*Lyssomanes pauper, una arañita saltarina silvestre, recorriendo un dispositivo del ámbito doméstico*
 
-Título
+
+### Título
 Variación fenotípica de la vida silvestre en el ámbito doméstico: una revisión sistemática
 
-Dispositivos de investigación
+#### Dispositivos de investigación
 Preguntas que guían la idea
 ¿Por qué hago lo que hago y hacia dónde se supone que va?
 
