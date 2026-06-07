@@ -6,27 +6,33 @@ ___
 ![pájaros al alba](images/alba-bird-tree-4594.webp){width=100%}
 
 
+::: {.lead}
+
 ___
 
-::: {.lead}
 Explorando mundos con seres vivos. 
 
 Investigación en ecología, evolución de relaciones bióticas y ambientales.
 
 Aprendizaje y educación.
-:::
+
 ___
+
+:::
 
 ![](images/alba-como-retrato.webp){width="100%" fig-align="center"}
 *Otoño al amanecer, selva pedemontana (Tucumán, Argentina)*
 
-___
 ::: {layout-ncol=2}
-#### Filiaciones
+___
+
 Trabajo en investigación y educación  
 como empleado de la [Fundación Miguel Lillo](https://www.lillo.org.ar/)  
 y del [CONICET](https://www.conicet.gov.ar/)  
 en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)
+
+___
+
 :::
 
 ---
