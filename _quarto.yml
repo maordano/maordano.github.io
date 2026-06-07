@@ -8,6 +8,7 @@ website:
     title: "Portada · Galería"
     background: dark
     foreground: light
+    pinned: true
     left: []
     right:
       - href: blog.qmd
