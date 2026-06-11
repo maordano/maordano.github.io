@@ -32,7 +32,7 @@ Revisión sistemática generalizada
 Glosario ad hoc
 
 Ecosistema digital
-Cloud drives, Google WorkSpace, OSF, STAPLE, RStudio, GitHub
+Cloud drives, Google WorkSpace, OSF, FORRT, STAPLE, RStudio, GitHub
 
 Entrenamiento de desarrollo
 COS
