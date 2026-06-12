@@ -5,8 +5,8 @@ editor: visual
 image: "images/caracol.webp"
 date: 2026-06-11
 date-modified: last-modified
-description: "caracterización de un  ecosistema de investigación"
-categories: ["Fotografía de Naturaleza", "Marco Conceptual", "Escala de Aproximación","Plan de Investigación"]
+description: "caracterización de un ecosistema de investigación"
+categories: ["Marco Conceptual", "Escala de Aproximación","Plan de Investigación",  "Ecosistema de Investigación","Entrenamiento","Aprendizaje","Proceso Interactivo"]
 ---
 
 ## Caracterización de una investigación
@@ -66,12 +66,13 @@ graph LR
 
     %% Aplicación de clases visuales
     class SEL,IMP,EXP latente;
-    class DEM,R1,R2,S1,S2,B1,D1 observado;
-    class PHE resultado;
+    class R1,R2,S1,S2,B1,D1 observado;
+    class DEM, PHE resultado;
 ```
+En este esquema se representa una posible forma de relaciones entre elementos de un objetivo de investigación, de un conjunto de posibles clasificaciones del conjunto de interacciones que coexisten en el ámbito doméstico, y la dirección de los flujos entre elementos.
 
 ---
 
-![ahí vamos](images/caracol.webp){width="100%"}
+![ahí vamos hermenéutica de interacciones humano-naturaleza](images/caracol.webp){width="100%"}
 
 ---
