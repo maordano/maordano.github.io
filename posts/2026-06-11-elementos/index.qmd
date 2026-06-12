@@ -40,7 +40,7 @@ graph LR
     EXP((Exportación de recursos))
     SEL((Filtro selectivo antropocénico))
     %% Correlación / Covarianza entre constructos del ecosistema
-    SEL --> EXP
+    IMP --> EXP
 
     %% 2. INDICADORES OBSERVADOS (Variables medibles que definen el constructo)
     R1[Alimentos] --- IMP
