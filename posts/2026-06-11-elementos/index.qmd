@@ -24,7 +24,7 @@ categories: ["Marco Conceptual", "Escala de Aproximación","Plan de Investigaci�
 -   un tiempo y espacio de entrenamiento y aprendizaje
 -   un tiempo y espacio de dedicación a facetas complementarias, comunidad de visiones del conocimiento y actividades *nada que ver*
 
-##### \[Meta-objetivo\] 
+##### \[Meta-objetivo\]
 
 Caracterizar el sistema de interacciones bióticas en el \[ámbito doméstico\]
 
@@ -59,20 +59,21 @@ graph LR
 
     %% 4. RELACIONES ESTRUCTURALES (Hipótesis de causalidad)
     IMP --> DEM
-    DEM --> EXP & SEL
+    DEM --> EXP
     EXP --> SEL
     SEL --> PHE
     
 
     %% Aplicación de clases visuales
     class SEL,IMP,EXP latente;
-    class R1,R2,S1,S2,B1,D1 observado;
-    class DEM, PHE resultado;
+    class DEM,R1,R2,S1,S2,B1,D1 observado;
+    class PHE resultado;
 ```
+
 En este esquema se representa una posible forma de relaciones entre elementos de un objetivo de investigación, de un conjunto de posibles clasificaciones del conjunto de interacciones que coexisten en el ámbito doméstico, y la dirección de los flujos entre elementos.
 
----
+------------------------------------------------------------------------
 
 ![ahí vamos hermenéutica de interacciones humano-naturaleza](images/caracol.webp){width="100%"}
 
----
+------------------------------------------------------------------------
