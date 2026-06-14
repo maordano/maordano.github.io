@@ -15,49 +15,85 @@ website:
         text: Proyectos
       - href: about.qmd
         text: Acerca de
-      - text: "🌐 .en"  # Agregada la marca del idioma actual/destino junto al globo terráqueo
-        href: "https://translate.google.com/translate?sl=es&tl=en&u=https%3A%2F%2Fmaordano.github.io"
+      - text: "🌐"                         # Removido el '.en' como pediste
+        href: "https://google.com"
         target: "_blank" 
    
   page-footer:
     background: dark
     left: |
-      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2026 Mariano Ordano v1.4
-    # BOTONES DISCRETOS DE ACCESIBILIDAD INTEGRADOS AL PIE DE PÁGINA (Sin flotantes molestos)
+      [CC BY 4.0](https://creativecommons.org) 2026 Mariano Ordano v1.4
+    # PANEL DE ACCESIBILIDAD CIENTÍFICO EN EL CENTER
     center: |
       hecho con [Quarto](https://quarto.org) | 
-      <button onclick="toggleContraste()" class="btn-acc">🌓 Contraste</button> | 
-      <button onclick="toggleTexto()" class="btn-acc">🔍 Letra A+</button>
+      <select id="modo-vision" onchange="cambiarPercepcion(this.value)" class="sel-acc">
+        <option value="normal">👁️ Percepción Estándar</option>
+        <option value="alto-contraste">🌓 Alto Contraste (Achromatopsia)</option>
+        <option value="filtro-suave">🌅 Filtro Suave (Bajo Brillo / Fatiga)</option>
+        <option value="daltonismo">🎨 Modo Protanopia/Deuteranopia</option>
+      </select> | 
+      <button onclick="toggleTextoAVoz()" id="btn-voz" class="btn-acc">🔊 Escuchar Página</button>
     right:
       - icon: github
-        href: https://github.com/maordano/
+        href: https://github.com
         aria-label: GitHub
       - text: "OSF"
-        href: https://osf.io/9yxfm/
+        href: https://osf.io
       - icon: linkedin
-        href: https://www.linkedin.com/in/mariano-ordano
+        href: https://linkedin.com
         aria-label: LinkedIn
       - text: "RG"
-        href: https://www.researchgate.net/profile/Mariano-Ordano
+        href: https://researchgate.net
       - icon: instagram
-        href: https://instagram.com/mariano.ordano/
+        href: https://instagram.com
         aria-label: Instagram
       - text: "CV"
-        href: https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view
+        href: https://google.com
 
 format:
   html:
     theme: cosmo
     css: styles.css
-    # LA UBICACIÓN CORRECTA PARA LA LÓGICA DE PROGRAMACIÓN DE LA ACCESIBILIDAD:
+    # JAVASCRIPT AVANZADO PARA FILTROS VISUALES Y SÍNTESIS DE VOZ NATIVA
     include-after-body:
       text: |
         <script>
-          function toggleContraste() {
-            document.body.classList.toggle('alto-contraste');
+          // 1. Lógica de cambios en Hue, Chroma y Brightness
+          function cambiarPercepcion(modo) {
+            // Limpiar clases previas
+            document.body.classList.remove('alto-contraste', 'filtro-suave', 'daltonismo');
+            if (modo !== 'normal') {
+              document.body.classList.add(modo);
+            }
           }
-          function toggleTexto() {
-            document.body.classList.toggle('texto-grande');
+
+          // 2. Lógica de Transcripción a Voz Nativa (Web Speech API)
+          let lector = null;
+          function toggleTextoAVoz() {
+            let boton = document.getElementById('btn-voz');
+            if ('speechSynthesis' in window) {
+              if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                boton.innerText = "🔊 Escuchar Página";
+                boton.style.color = "";
+              } else {
+                // Capturar el texto limpio de la página principal
+                let texto = document.querySelector('main')?.innerText || document.body.innerText;
+                lector = new SpeechSynthesisUtterance(texto);
+                lector.lang = 'es-AR'; // Español rioplatense/argentino
+                
+                lector.onend = function() {
+                  boton.innerText = "🔊 Escuchar Página";
+                  boton.style.color = "";
+                };
+
+                window.speechSynthesis.speak(lector);
+                boton.innerText = "🛑 Detener Lectura";
+                boton.style.color = "#ff4757"; // Alerta visual discreta de reproducción
+              }
+            } else {
+              alert("Tu navegador no soporta transcripción de voz automática.");
+            }
           }
         </script>
     

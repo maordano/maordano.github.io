@@ -88,3 +88,39 @@ body.texto-grande .nav-link {
   font-size: 1.35rem !important;          
   line-height: 1.6 !important;
 }
+
+/* Estilos para el selector desplegable de accesibilidad en el footer */
+.sel-acc {
+  background: #1a1a2e !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  color: rgba(255,255,255,0.8) !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 0.85rem;
+  padding: 2px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.sel-acc:hover {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+/* --- MATRIZ CIENTÍFICA DE PERCEPCIÓN VISUAL --- */
+
+/* 🌓 Modo 1: Alto Contraste Puro (Achromatopsia / Baja Visión) */
+body.alto-contraste {
+  filter: contrast(200%) brightness(110%) grayscale(100%) !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 🌅 Modo 2: Filtro Suave (Atenuación de Brillo y Cromatismo para fatiga o fotofobia) */
+body.filtro-suave {
+  filter: sepia(50%) brightness(85%) contrast(90%) !important;
+  background-color: #f4edd2 !important; /* Tono papel antiguo/cálido */
+}
+
+/* 🎨 Modo 3: Daltonismo (Desplazamiento del Hue para compensar Protanopia/Deuteranopia) */
+body.daltonismo {
+  filter: hue-rotate(90deg) contrast(120%) !important;
+}
