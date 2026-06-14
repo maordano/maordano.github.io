@@ -5,7 +5,7 @@ project:
 website:
   title: "Mariano Ordano"
   navbar:
-    title: "Portada · Galería"
+    title: "Portada Galería"
     background: dark
     foreground: light
     left: []
@@ -29,11 +29,11 @@ website:
       - icon: github
         href: https://github.com/maordano/
         aria-label: GitHub
+      - text: "OSF"
+        href: https://osf.io/9yxfm/
       - icon: linkedin
         href: https://www.linkedin.com/in/mariano-ordano
         aria-label: LinkedIn
-      - text: "OSF"
-        href: https://osf.io/9yxfm/
       - text: "RG"
         href: https://www.researchgate.net/profile/Mariano-Ordano
       - icon: instagram
@@ -46,6 +46,16 @@ format:
   html:
     theme: cosmo
     css: styles.css
-      
+    include-in-header:
+      text: |
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+          }
+        </script>
+        <script type="text/javascript" src="//://google.com"></script>
+        <!-- CÓDIGO DE USERWAY (EJEMPLO) -->
+        <script src="https://userway.org" data-account="TU_ID_DE_USERWAY"></script>
 execute:
   freeze: true
+
