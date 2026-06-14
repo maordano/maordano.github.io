@@ -2,7 +2,7 @@
 title: "prueba de diapositiva"
 format: 
   revealjs:
-    theme: serif # o: moon,sky,serif,simple,dark
+    theme: moon # night solarized simple default
     transition: slide # o: fade,zoom,none 
     slide-number: true 
     logo: images/caracol.webp 
