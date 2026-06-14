@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Mariano Ordano"
+  title: "<i class='bi-house-door'></i>"
   navbar:
     background: dark
     foreground: light
