@@ -55,6 +55,8 @@ quarto render posts/slides-devices/presentation.qmd
 
 ## 5 *Render* \>\> el Archivo de Presentación
 
+- Una primera vez como en el punto 3, o como proceso iterativo de corrección de errores
+
 ``` bash
 quarto render posts/slides-devices/presentation.qmd
 ```

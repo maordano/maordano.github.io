@@ -1,5 +1,5 @@
 ---
-title: "Prueba de Presentación"
+title: "prueba de presentación"
 image: "images/caracol.webp"
 date: 2026-06-14
 date-modified: last-modified
