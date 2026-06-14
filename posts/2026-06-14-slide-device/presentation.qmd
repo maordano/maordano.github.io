@@ -2,10 +2,10 @@
 title: "prueba de diapositiva"
 format: 
   revealjs:
-    theme: moon # o: moon, sky, serif, simple 
-    transition: slide # o: fade, zoom, none 
+    theme: sky # o: moon,sky,serif,simple,dark
+    transition: slide # o: fade,zoom,none 
     slide-number: true 
-    # logo: images/logo.webp 
+    logo: images/caracol.webp 
     footer: "casi lo mismo con otro dispositivo | maordano.github.io"
 editor: visual 
 ---
@@ -31,13 +31,13 @@ format:
     theme: moon # o: moon, sky, serif, simple 
     transition: slide # o: fade, zoom, none 
     slide-number: true 
-    # logo: images/logo.webp (apagada)
+    logo: images/caracol.webp 
     footer: "casi lo mismo con otro dispositivo | maordano.github.io"
 editor: visual 
 ---
 ```
 
-## 3 *Render* el Archivo de Presentación
+## 3 *Render* \>\> el Archivo de Presentación
 
 ``` bash
 quarto render posts/slides-devices/presentation.qmd
@@ -48,7 +48,29 @@ quarto render posts/slides-devices/presentation.qmd
 ``` r
 # Presentación
 
-<iframe src="presentacion.html" width="100%" height="500px" style="border:none; border-radius:8px;">
+<iframe src="presentation.html" width="100%" height="500px" style="border:none; border-radius:8px;">
 
 </iframe>
 ```
+
+## 5 *Render* \>\> el Archivo de Presentación
+
+``` bash
+quarto render posts/slides-devices/presentation.qmd
+```
+
+## 6 *Render* \>\> el Sitio Web
+
+``` bash
+quarto render 
+git add --all
+git commit -m "post RevealJS sky"
+git push origin main --force
+```
+
+## 7 Créditos
+
+Gracias a 
+- Claude Anthropic Sonnet 4.6
+- Gemini de Google (Modo IA)
+

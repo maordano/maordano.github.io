@@ -88,21 +88,42 @@
     "href": "posts/2026-06-14-slide-device/presentation.html#configuración-del-archivo-de-la-presentación",
     "title": "prueba de diapositiva",
     "section": "2 Configuración del Archivo de la Presentación",
-    "text": "2 Configuración del Archivo de la Presentación\n---\ntitle: \"prueba de diapositiva\"\nformat: \n  revealjs:\n    theme: moon # o: moon, sky, serif, simple \n    transition: slide # o: fade, zoom, none \n    slide-number: true \n    # logo: images/logo.webp (apagada)\n    footer: \"casi lo mismo con otro dispositivo | maordano.github.io\"\neditor: visual \n---"
+    "text": "2 Configuración del Archivo de la Presentación\n---\ntitle: \"prueba de diapositiva\"\nformat: \n  revealjs:\n    theme: moon # o: moon, sky, serif, simple \n    transition: slide # o: fade, zoom, none \n    slide-number: true \n    logo: images/caracol.webp \n    footer: \"casi lo mismo con otro dispositivo | maordano.github.io\"\neditor: visual \n---"
   },
   {
     "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación",
     "href": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación",
     "title": "prueba de diapositiva",
-    "section": "3 Render el Archivo de Presentación",
-    "text": "3 Render el Archivo de Presentación\nquarto render posts/slides-devices/presentation.qmd"
+    "section": "3 Render >> el Archivo de Presentación",
+    "text": "3 Render &gt;&gt; el Archivo de Presentación\nquarto render posts/slides-devices/presentation.qmd"
   },
   {
     "objectID": "posts/2026-06-14-slide-device/presentation.html#dentro-del-archivo-index",
     "href": "posts/2026-06-14-slide-device/presentation.html#dentro-del-archivo-index",
     "title": "prueba de diapositiva",
     "section": "4 Dentro del Archivo Index",
-    "text": "4 Dentro del Archivo Index\n# Presentación\n\n&lt;iframe src=\"presentacion.html\" width=\"100%\" height=\"500px\" style=\"border:none; border-radius:8px;\"&gt;\n\n&lt;/iframe&gt;"
+    "text": "4 Dentro del Archivo Index\n# Presentación\n\n&lt;iframe src=\"presentation.html\" width=\"100%\" height=\"500px\" style=\"border:none; border-radius:8px;\"&gt;\n\n&lt;/iframe&gt;"
+  },
+  {
+    "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación-1",
+    "href": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación-1",
+    "title": "prueba de diapositiva",
+    "section": "5 Render >> el Archivo de Presentación",
+    "text": "5 Render &gt;&gt; el Archivo de Presentación\nquarto render posts/slides-devices/presentation.qmd"
+  },
+  {
+    "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-sitio-web",
+    "href": "posts/2026-06-14-slide-device/presentation.html#render-el-sitio-web",
+    "title": "prueba de diapositiva",
+    "section": "6 Render >> el Sitio Web",
+    "text": "6 Render &gt;&gt; el Sitio Web\nquarto render \ngit add --all\ngit commit -m \"post RevealJS sky\"\ngit push origin main --force"
+  },
+  {
+    "objectID": "posts/2026-06-14-slide-device/presentation.html#créditos",
+    "href": "posts/2026-06-14-slide-device/presentation.html#créditos",
+    "title": "prueba de diapositiva",
+    "section": "7 Créditos",
+    "text": "7 Créditos\nGracias a - Claude Anthropic Sonnet 4.6 - Gemini de Google (Modo IA)"
   },
   {
     "objectID": "posts/2021-05-30-nube-de-palabras/index.html",
