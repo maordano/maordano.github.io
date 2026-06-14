@@ -1,6 +1,9 @@
 ---
-title: "index"
+title: "Prueba de Presentación"
 image: "images/caracol.webp"
+date: 2026-06-14
+date-modified: last-modified
+description: "presentación interactiva con RevealJS"
 format: html
 editor: visual
 categories: ["Presentaciones Web","Multimedia","Entrenamiento",".qmd","IA Prompts"]
