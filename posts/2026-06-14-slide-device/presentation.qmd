@@ -55,13 +55,9 @@ quarto render posts/slides-devices/presentation.qmd
 
 ## 5 *Render* \>\> el Archivo de Presentación
 
-- Una primera vez como en el punto 3, o como proceso iterativo de corrección de errores
 - Antes de renderizar el sitio un chequeo del post puede servir
+- Incluir el siguiente comando en el archivo _quarto.yml hace la ruta mas directa, aunque se necesite el paso siguiente una vez más
 
-``` bash
-quarto render posts/slides-devices/presentation.qmd
-```
-- E incluir en _quarto.yml hace la ruta mas directa -aunque se necesite el paso anterior a veces-  
 ```yaml
 project:
   type: website
@@ -69,6 +65,11 @@ project:
   render:
     - "*.qmd"
     - "posts/**/*.qmd"
+```
+- Y como en el punto 3, o como proceso iterativo de corrección de errores el comando
+
+``` bash
+quarto render posts/slides-devices/presentation.qmd
 ```
 
 ## 6 *Render* \>\> el Sitio Web

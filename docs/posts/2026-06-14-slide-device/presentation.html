@@ -237,20 +237,19 @@
 <section id="render-el-archivo-de-presentación-1" class="slide level2">
 <h2>5 <em>Render</em> &gt;&gt; el Archivo de Presentación</h2>
 <ul>
-<li>Una primera vez como en el punto 3, o como proceso iterativo de corrección de errores</li>
 <li>Antes de renderizar el sitio un chequeo del post puede servir</li>
+<li>Incluir el siguiente comando en el archivo _quarto.yml hace la ruta mas directa, aunque se necesite el paso siguiente una vez más</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="ex">quarto</span> render posts/slides-devices/presentation.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb5-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb5-3"><a></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs </span></span>
+<span id="cb5-4"><a></a><span class="at">  </span><span class="fu">render</span><span class="kw">:</span></span>
+<span id="cb5-5"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"*.qmd"</span></span>
+<span id="cb5-6"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"posts/**/*.qmd"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li>E incluir en _quarto.yml hace la ruta mas directa -aunque se necesite el paso anterior a veces-<br>
-</li>
+<li>Y como en el punto 3, o como proceso iterativo de corrección de errores el comando</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb6-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb6-3"><a></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs </span></span>
-<span id="cb6-4"><a></a><span class="at">  </span><span class="fu">render</span><span class="kw">:</span></span>
-<span id="cb6-5"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"*.qmd"</span></span>
-<span id="cb6-6"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"posts/**/*.qmd"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">quarto</span> render posts/slides-devices/presentation.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="render-el-sitio-web" class="slide level2">
 <h2>6 <em>Render</em> &gt;&gt; el Sitio Web</h2>
