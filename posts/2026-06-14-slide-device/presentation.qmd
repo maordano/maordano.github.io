@@ -12,8 +12,8 @@ editor: visual
 
 ## 1 Terminal Junto a Consola \[bash\]
 
-- creación de documentos de la presentación
-- separa el archivo que va a generar la presentación web
+-   creación de documentos de la presentación
+-   separa el archivo que va a generar la presentación web
 
 ``` bash
 mkdir -p posts/2026-slide-device/images
@@ -45,11 +45,10 @@ quarto render posts/slides-devices/presentation.qmd
 
 ## 4 Dentro del Archivo Index
 
-```r
+``` r
 # Presentación
 
 <iframe src="presentacion.html" width="100%" height="500px" style="border:none; border-radius:8px;">
 
 </iframe>
 ```
-
