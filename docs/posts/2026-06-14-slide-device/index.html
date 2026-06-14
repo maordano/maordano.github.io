@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bitácora – </title>
+<title>index – </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6ea91cd35237a82ec5854df7425f41cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6ea91cd35237a82ec5854df7425f41cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +68,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"><i class="bi-house-door"></i></span>
     </a>
   </div>
@@ -155,15 +95,15 @@ window.Quarto = {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Bitácora</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./proyectos.html"> 
+    <a class="nav-link" href="../../proyectos.html"> 
 <span class="menu-text">Proyectos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">Acerca de</span></a>
   </li>  
   <li class="nav-item">
@@ -181,16 +121,21 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="LnFtZA==">.qmd <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QXByZW5kaXphamU=">Aprendizaje <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q2xhc2lmaWNhY2klQzMlQjNu">Clasificación <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RGlzZSVDMyVCMW8lMjBkZSUyMENvbnNpZ25hcw==">Diseño de Consignas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RWNvbG9nJUMzJUFEYSUyMGRlJTIwVGV4dG8=">Ecología de Texto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RWNvc2lzdGVtYSUyMGRlJTIwSW52ZXN0aWdhY2klQzMlQjNu">Ecosistema de Investigación <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RW50cmVuYW1pZW50bw==">Entrenamiento <span class="quarto-category-count">(4)</span></div><div class="category" data-category="RXNjYWxhJTIwZGUlMjBBcHJveGltYWNpJUMzJUIzbg==">Escala de Aproximación <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Rm90b2dyYWYlQzMlQURh">Fotografía <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rm90b2dyYWYlQzMlQURhJTIwY29uJTIwVGVsJUMzJUE5Zm9ubyUyMENlbHVsYXI=">Fotografía con Teléfono Celular <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rm90b2dyYWYlQzMlQURhJTIwZGUlMjBOYXR1cmFsZXph">Fotografía de Naturaleza <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SUElMjBQcm9tcHRz">IA Prompts <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SW5nZW5pZXIlQzMlQURhJTIwZGVsJTIwQXByZW5kaXphamU=">Ingeniería del Aprendizaje <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SW50ZXJhY2NpJUMzJUIzbiUyMGNvbiUyMElB">Interacción con IA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SW50ZXJwcmV0YWNpJUMzJUIzbiUyMEFtYmllbnRhbA==">Interpretación Ambiental <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFyY28lMjBDb25jZXB0dWFs">Marco Conceptual <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TSVDMyVBOXRvZG9z">Métodos <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TXVsdGltZWRpYQ==">Multimedia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGxhbiUyMGRlJTIwSW52ZXN0aWdhY2klQzMlQjNu">Plan de Investigación <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJlc2VudGFjaW9uZXMlMjBXZWI=">Presentaciones Web <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvY2VzbyUyMEludGVyYWN0aXZv">Proceso Interactivo <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UiUyMFNoaW55JTIwYXBw">R Shiny app <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VGlwb3MlMjBkZSUyMHZhcmlhYmxlcw==">Tipos de variables <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VGlwb3MlMjBkZSUyMFZhcmlhYmxlcw==">Tipos de Variables <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VmlzdWFsaXphY2klQzMlQjNu">Visualización <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bitácora</h1>
-</div>
+<h1 class="title">index</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Presentaciones Web</div>
+    <div class="quarto-category">Multimedia</div>
+    <div class="quarto-category">Entrenamiento</div>
+    <div class="quarto-category">.qmd</div>
+    <div class="quarto-category">IA Prompts</div>
+  </div>
+  </div>
 
 
 
@@ -206,246 +151,15 @@ window.Quarto = {
 </header>
 
 
-<div class="lead">
-<hr>
-<p><em>Un poco de todo, antrópico ~ entrópico.</em></p>
-<hr>
-</div>
-<p><img src="images/quetupi-riparium-nube.webp" class="img-fluid quarto-figure quarto-figure-center" style="width:100.0%"> <em>Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos</em></p>
-<hr>
-<section id="estructura-de-post" class="level3">
-<h3 class="anchored" data-anchor-id="estructura-de-post">Estructura de post</h3>
-<p>Título. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.</p>
-<hr>
-
-
-
-</section>
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1781470976785" data-listing-reading-time-sort="1" data-listing-word-count-sort="106">
-<div class="thumbnail"><a href="./posts/2026-06-14-slide-device/presentation.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-06-14-slide-device/presentation.html" class="no-external">prueba de diapositiva</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/2026-06-14-slide-device/presentation.html" class="no-external">
-
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-06-14-slide-device/presentation.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="UHJlc2VudGFjaW9uZXMlMjBXZWIlMkNNdWx0aW1lZGlhJTJDRW50cmVuYW1pZW50byUyQy5xbWQlMkNJQSUyMFByb21wdHM=" data-listing-file-modified-sort="1781471290332" data-listing-reading-time-sort="1" data-listing-word-count-sort="6">
-<div class="thumbnail"><a href="./posts/2026-06-14-slide-device/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2026-06-14-slide-device/images/caracol.webp" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-06-14-slide-device/index.html" class="no-external">index</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHJlc2VudGFjaW9uZXMlMjBXZWI='); return false;">Presentaciones Web</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TXVsdGltZWRpYQ=='); return false;">Multimedia</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RW50cmVuYW1pZW50bw=='); return false;">Entrenamiento</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('LnFtZA=='); return false;">.qmd</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SUElMjBQcm9tcHRz'); return false;">IA Prompts</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-06-14-slide-device/index.html" class="no-external">
-
-
+<section id="presentación" class="level1">
+<h1>Presentación</h1>
 <iframe src="presentacion.html" width="100%" height="500px" style="border:none; border-radius:8px;">
 </iframe>
 
 
+</section>
 
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-06-14-slide-device/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="TWFyY28lMjBDb25jZXB0dWFsJTJDRXNjYWxhJTIwZGUlMjBBcHJveGltYWNpJUMzJUIzbiUyQ1BsYW4lMjBkZSUyMEludmVzdGlnYWNpJUMzJUIzbiUyQ0Vjb3Npc3RlbWElMjBkZSUyMEludmVzdGlnYWNpJUMzJUIzbiUyQ0VudHJlbmFtaWVudG8lMkNBcHJlbmRpemFqZSUyQ1Byb2Nlc28lMjBJbnRlcmFjdGl2bw==" data-listing-date-sort="1781146800000" data-listing-file-modified-sort="1781229618325" data-listing-date-modified-sort="1781229618000" data-listing-reading-time-sort="3" data-listing-word-count-sort="502">
-<div class="thumbnail"><a href="./posts/2026-06-11-elementos/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2026-06-11-elementos/images/caracol.webp" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-06-11-elementos/index.html" class="no-external">elementos de investigación</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFyY28lMjBDb25jZXB0dWFs'); return false;">Marco Conceptual</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXNjYWxhJTIwZGUlMjBBcHJveGltYWNpJUMzJUIzbg=='); return false;">Escala de Aproximación</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UGxhbiUyMGRlJTIwSW52ZXN0aWdhY2klQzMlQjNu'); return false;">Plan de Investigación</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RWNvc2lzdGVtYSUyMGRlJTIwSW52ZXN0aWdhY2klQzMlQjNu'); return false;">Ecosistema de Investigación</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RW50cmVuYW1pZW50bw=='); return false;">Entrenamiento</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXByZW5kaXphamU='); return false;">Aprendizaje</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHJvY2VzbyUyMEludGVyYWN0aXZv'); return false;">Proceso Interactivo</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-06-11-elementos/index.html" class="no-external">
-<p>caracterización de un ecosistema de investigación</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-06-11-elementos/index.html" class="no-external">
-<div class="listing-date">
-Jun 11, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Rm90b2dyYWYlQzMlQURhJTJDRm90b2dyYWYlQzMlQURhJTIwY29uJTIwVGVsJUMzJUE5Zm9ubyUyMENlbHVsYXIlMkNGb3RvZ3JhZiVDMyVBRGElMjBkZSUyME5hdHVyYWxlemElMkNJbnRlcnByZXRhY2klQzMlQjNuJTIwQW1iaWVudGFsJTJDRXNjYWxhJTIwZGUlMjBBcHJveGltYWNpJUMzJUIzbg==" data-listing-date-sort="1780369200000" data-listing-file-modified-sort="1780780760005" data-listing-date-modified-sort="1780780760000" data-listing-reading-time-sort="1" data-listing-word-count-sort="56">
-<div class="thumbnail"><a href="./posts/2026-06-02-foto-mini-escala/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2026-06-02-foto-mini-escala/images/selva3x.webp" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-06-02-foto-mini-escala/index.html" class="no-external">fotos 0.5, 1, 2 y 3 x</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Rm90b2dyYWYlQzMlQURh'); return false;">Fotografía</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Rm90b2dyYWYlQzMlQURhJTIwY29uJTIwVGVsJUMzJUE5Zm9ubyUyMENlbHVsYXI='); return false;">Fotografía con Teléfono Celular</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Rm90b2dyYWYlQzMlQURhJTIwZGUlMjBOYXR1cmFsZXph'); return false;">Fotografía de Naturaleza</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SW50ZXJwcmV0YWNpJUMzJUIzbiUyMEFtYmllbnRhbA=='); return false;">Interpretación Ambiental</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXNjYWxhJTIwZGUlMjBBcHJveGltYWNpJUMzJUIzbg=='); return false;">Escala de Aproximación</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-06-02-foto-mini-escala/index.html" class="no-external">
-<p>cambio de escala en fotos de celular</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-06-02-foto-mini-escala/index.html" class="no-external">
-<div class="listing-date">
-Jun 2, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="TSVDMyVBOXRvZG9zJTJDQ2xhc2lmaWNhY2klQzMlQjNuJTJDVGlwb3MlMjBkZSUyMHZhcmlhYmxlcyUyQ0Vjb2xvZyVDMyVBRGElMjBkZSUyMFRleHRvJTJDVmlzdWFsaXphY2klQzMlQjNuJTJDSUElMjBQcm9tcHRzJTJDSW50ZXJhY2NpJUMzJUIzbiUyMGNvbiUyMElBJTJDRGlzZSVDMyVCMW8lMjBkZSUyMENvbnNpZ25hcyUyQ0luZ2VuaWVyJUMzJUFEYSUyMGRlbCUyMEFwcmVuZGl6YWplJTJDRW50cmVuYW1pZW50bw==" data-listing-date-sort="1779678000000" data-listing-file-modified-sort="1780780791430" data-listing-date-modified-sort="1780780791000" data-listing-reading-time-sort="2" data-listing-word-count-sort="302">
-<div class="thumbnail"><a href="./posts/2026-05-25-prompt-nube-de-palabras/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2026-05-25-prompt-nube-de-palabras/images/claudewordcloud.webp" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-05-25-prompt-nube-de-palabras/index.html" class="no-external">prompt nube de palabras</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TSVDMyVBOXRvZG9z'); return false;">Métodos</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q2xhc2lmaWNhY2klQzMlQjNu'); return false;">Clasificación</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VGlwb3MlMjBkZSUyMHZhcmlhYmxlcw=='); return false;">Tipos de variables</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RWNvbG9nJUMzJUFEYSUyMGRlJTIwVGV4dG8='); return false;">Ecología de Texto</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VmlzdWFsaXphY2klQzMlQjNu'); return false;">Visualización</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SUElMjBQcm9tcHRz'); return false;">IA Prompts</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SW50ZXJhY2NpJUMzJUIzbiUyMGNvbiUyMElB'); return false;">Interacción con IA</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGlzZSVDMyVCMW8lMjBkZSUyMENvbnNpZ25hcw=='); return false;">Diseño de Consignas</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SW5nZW5pZXIlQzMlQURhJTIwZGVsJTIwQXByZW5kaXphamU='); return false;">Ingeniería del Aprendizaje</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RW50cmVuYW1pZW50bw=='); return false;">Entrenamiento</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-05-25-prompt-nube-de-palabras/index.html" class="no-external">
-<p>imagen obtenida con asistencia de IA</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-05-25-prompt-nube-de-palabras/index.html" class="no-external">
-<div class="listing-date">
-May 25, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="TSVDMyVBOXRvZG9zJTJDQ2xhc2lmaWNhY2klQzMlQjNuJTJDVGlwb3MlMjBkZSUyMFZhcmlhYmxlcyUyQ0Vjb2xvZyVDMyVBRGElMjBkZSUyMFRleHRvJTJDVmlzdWFsaXphY2klQzMlQjNuJTJDRGlzZSVDMyVCMW8lMjBkZSUyMENvbnNpZ25hcyUyQ1IlMjBTaGlueSUyMGFwcCUyQ0luZ2VuaWVyJUMzJUFEYSUyMGRlbCUyMEFwcmVuZGl6YWplJTJDRW50cmVuYW1pZW50bw==" data-listing-date-sort="1622343600000" data-listing-file-modified-sort="1780781094715" data-listing-date-modified-sort="1780781094000" data-listing-reading-time-sort="1" data-listing-word-count-sort="55">
-<div class="thumbnail"><a href="./posts/2021-05-30-nube-de-palabras/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2021-05-30-nube-de-palabras/images/sawordcloud.webp" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2021-05-30-nube-de-palabras/index.html" class="no-external">nube de palabras</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TSVDMyVBOXRvZG9z'); return false;">Métodos</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q2xhc2lmaWNhY2klQzMlQjNu'); return false;">Clasificación</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VGlwb3MlMjBkZSUyMFZhcmlhYmxlcw=='); return false;">Tipos de Variables</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RWNvbG9nJUMzJUFEYSUyMGRlJTIwVGV4dG8='); return false;">Ecología de Texto</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VmlzdWFsaXphY2klQzMlQjNu'); return false;">Visualización</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGlzZSVDMyVCMW8lMjBkZSUyMENvbnNpZ25hcw=='); return false;">Diseño de Consignas</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UiUyMFNoaW55JTIwYXBw'); return false;">R Shiny app</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SW5nZW5pZXIlQzMlQURhJTIwZGVsJTIwQXByZW5kaXphamU='); return false;">Ingeniería del Aprendizaje</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RW50cmVuYW1pZW50bw=='); return false;">Entrenamiento</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2021-05-30-nube-de-palabras/index.html" class="no-external">
-<p>imagen obtenida con app shiny adaptada</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2021-05-30-nube-de-palabras/index.html" class="no-external">
-<div class="listing-date">
-May 30, 2021
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

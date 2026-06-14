@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Bitácora",
     "section": "",
-    "text": "Un poco de todo, antrópico ~ entrópico.\n\n\n Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos\n\n\nEstructura de post\nTítulo. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelementos de investigación\n\n\n\nMarco Conceptual\n\nEscala de Aproximación\n\nPlan de Investigación\n\nEcosistema de Investigación\n\nEntrenamiento\n\nAprendizaje\n\nProceso Interactivo\n\n\n\ncaracterización de un ecosistema de investigación\n\n\n\n\n\nJun 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nfotos 0.5, 1, 2 y 3 x\n\n\n\nFotografía\n\nFotografía con Teléfono Celular\n\nFotografía de Naturaleza\n\nInterpretación Ambiental\n\nEscala de Aproximación\n\n\n\ncambio de escala en fotos de celular\n\n\n\n\n\nJun 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nprompt nube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de variables\n\nEcología de Texto\n\nVisualización\n\nIA Prompts\n\nInteracción con IA\n\nDiseño de Consignas\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con asistencia de IA\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de Variables\n\nEcología de Texto\n\nVisualización\n\nDiseño de Consignas\n\nR Shiny app\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con app shiny adaptada\n\n\n\n\n\nMay 30, 2021\n\n\n\n\n\nNo matching items"
+    "text": "Un poco de todo, antrópico ~ entrópico.\n\n\n Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos\n\n\nEstructura de post\nTítulo. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprueba de diapositiva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nindex\n\n\n\nPresentaciones Web\n\nMultimedia\n\nEntrenamiento\n\n.qmd\n\nIA Prompts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nelementos de investigación\n\n\n\nMarco Conceptual\n\nEscala de Aproximación\n\nPlan de Investigación\n\nEcosistema de Investigación\n\nEntrenamiento\n\nAprendizaje\n\nProceso Interactivo\n\n\n\ncaracterización de un ecosistema de investigación\n\n\n\n\n\nJun 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nfotos 0.5, 1, 2 y 3 x\n\n\n\nFotografía\n\nFotografía con Teléfono Celular\n\nFotografía de Naturaleza\n\nInterpretación Ambiental\n\nEscala de Aproximación\n\n\n\ncambio de escala en fotos de celular\n\n\n\n\n\nJun 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nprompt nube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de variables\n\nEcología de Texto\n\nVisualización\n\nIA Prompts\n\nInteracción con IA\n\nDiseño de Consignas\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con asistencia de IA\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de Variables\n\nEcología de Texto\n\nVisualización\n\nDiseño de Consignas\n\nR Shiny app\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con app shiny adaptada\n\n\n\n\n\nMay 30, 2021\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html#propósito",
@@ -49,6 +49,13 @@
     "text": "Hace relativamente poco tiempo, en este siglo, la formación de imágenes desde programas como R o Python eran de difícil solución.\nEn unos pocos años, dispositivos como los asistentes de IA lo pueden resolver sin necesidad de haber aprendido alguna otra interfase.\nUn ejemplo de nube de palabras basada en el diálogo de un prompt (1 consulta + 1 respuesta) a la asistencia de Claude Sonet 4.6 (Anthropic 2026).\n\nPrompt\nConsulta: “Hola! la web está quedando gustosa, muchas gracias! Puedes leer en la sección Acerca de sobre el reconocimiento de tu asistencia. Tengo un desafío, cuyo propósito es comparativo-didáctico, teniendo un post de 2021 y otro post de 2026, con la misma idea y distintas herramientas o procesos. Como entrenando con shiny con RStudio, en aquel tiempo hice este ejercicio: https://mvdqnf-mariano0ordano.shinyapps.io/sawordcloud/ que sigue estable. Eso fue hecho en mayo de 2021. Supongo que ahora, unos 5 años después, la misma imagen generada por aquel pequeño dispositivo, podría transformarse en un solo prompt y un asistente de IA como usted podría generar la figura. ¿Es posible?”\nRespuesta de asistencia de IA: “¡Hola! Qué lindo reconocimiento, gracias. Y sí, es completamente posible. Tu app Shiny de 2021 toma un texto y genera una nube de palabras donde el tamaño refleja la frecuencia. Eso hoy se puede hacer directamente aquí. Probemos: pasame un texto y te genero la nube de palabras como imagen SVG interactiva, sin código, sin Shiny, sin instalar nada. Puede ser cualquier texto: un párrafo tuyo, un abstract de un paper, lo que quieras. Así tenés el contraste perfecto para el post comparativo: 2021 con Shiny + R, 2026 con un prompt a un asistente de IA.”\n\n\n\n\nclaudewordcloud\n\n\nNube de palabras generada a partir de un prompt a Claude Sonnet 4.6 (Anthropic, 2026)\n\n\n\n\nsawordcloud\n\n\nNube de palabras generada a partir de la app shiny de 2021."
   },
   {
+    "objectID": "posts/2026-06-14-slide-device/index.html",
+    "href": "posts/2026-06-14-slide-device/index.html",
+    "title": "index",
+    "section": "",
+    "text": "Presentación"
+  },
+  {
     "objectID": "posts/2026-06-11-elementos/index.html",
     "href": "posts/2026-06-11-elementos/index.html",
     "title": "elementos de investigación",
@@ -68,6 +75,34 @@
     "title": "fotos 0.5, 1, 2 y 3 x",
     "section": "",
     "text": "Fotos tomadas desde un mismo punto, a distinta escala, pueden nutrir la interpretación ambiental.\nLa percepción y la interpretación ¿en qué medida están afectadas por el dispositivo?\n\nUn ejemplo de 4 fotos en el pedemonte.\n\n\n\n\nLente 0.5 x ~ 13 mm\n\n\n\n\n\n\nLente 1 x ~ 24 mm\n\n\n\n\n\n\nLente 2 x ~ 48 mm\n\n\n\n\n\n\nLente 3 x ~ 77 mm"
+  },
+  {
+    "objectID": "posts/2026-06-14-slide-device/presentation.html#terminal-junto-a-consola-bash",
+    "href": "posts/2026-06-14-slide-device/presentation.html#terminal-junto-a-consola-bash",
+    "title": "prueba de diapositiva",
+    "section": "1 Terminal Junto a Consola [bash]",
+    "text": "1 Terminal Junto a Consola [bash]\n\ncreación de documentos de la presentación\nsepara el archivo que va a generar la presentación web\n\nmkdir -p posts/2026-slide-device/images\ntouch posts/2026-slide-device/index.qmd\ntouch posts/2026-slide-device/presentation.qmd"
+  },
+  {
+    "objectID": "posts/2026-06-14-slide-device/presentation.html#configuración-del-archivo-de-la-presentación",
+    "href": "posts/2026-06-14-slide-device/presentation.html#configuración-del-archivo-de-la-presentación",
+    "title": "prueba de diapositiva",
+    "section": "2 Configuración del Archivo de la Presentación",
+    "text": "2 Configuración del Archivo de la Presentación\n---\ntitle: \"prueba de diapositiva\"\nformat: \n  revealjs:\n    theme: moon # o: moon, sky, serif, simple \n    transition: slide # o: fade, zoom, none \n    slide-number: true \n    # logo: images/logo.webp (apagada)\n    footer: \"casi lo mismo con otro dispositivo | maordano.github.io\"\neditor: visual \n---"
+  },
+  {
+    "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación",
+    "href": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación",
+    "title": "prueba de diapositiva",
+    "section": "3 Render el Archivo de Presentación",
+    "text": "3 Render el Archivo de Presentación\nquarto render posts/slides-devices/presentation.qmd"
+  },
+  {
+    "objectID": "posts/2026-06-14-slide-device/presentation.html#dentro-del-archivo-index",
+    "href": "posts/2026-06-14-slide-device/presentation.html#dentro-del-archivo-index",
+    "title": "prueba de diapositiva",
+    "section": "4 Dentro del Archivo Index",
+    "text": "4 Dentro del Archivo Index\n# Presentación\n\n&lt;iframe src=\"presentacion.html\" width=\"100%\" height=\"500px\" style=\"border:none; border-radius:8px;\"&gt;\n\n&lt;/iframe&gt;"
   },
   {
     "objectID": "posts/2021-05-30-nube-de-palabras/index.html",
