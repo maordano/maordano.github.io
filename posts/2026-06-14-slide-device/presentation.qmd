@@ -68,6 +68,7 @@ project:
 ```
 
 ## 6 *Render* >> el post
+
 - Y como en el punto 3, o como proceso iterativo de corrección de errores el comando
 
 ``` bash
@@ -85,11 +86,8 @@ git push origin main --force
 
 ## 8 Créditos
 
-Gracias a 
-___
+Gracias a
 
 Dispositivos de Interacción Asistentes
 - Claude Anthropic Sonnet 4.6 
 - Gemini de Google (Modo IA) 
-___
-
