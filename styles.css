@@ -38,3 +38,32 @@ img {
   height: auto;
 }
 
+/* --- REGLAS NATIVAS DE ACCESIBILIDAD --- */
+
+/* 1. Cuando se activa el Modo de Alto Contraste */
+body.alto-contraste {
+  background-color: #121212 !important; /* Fondo negro profundo */
+  color: #00ff00 !important;             /* Texto verde fosforescente de alta visibilidad */
+}
+
+body.alto-contraste h1, 
+body.alto-contraste h2, 
+body.alto-contraste h3, 
+body.alto-contraste p, 
+body.alto-contraste .navbar {
+  color: #ffffff !important;             /* Encabezados y menús en blanco puro */
+  background-color: #1a1a1a !important;
+}
+
+body.alto-contraste a {
+  color: #ffff00 !important;             /* Enlaces en amarillo brillante para resaltar */
+  text-decoration: underline !important;
+}
+
+/* 2. Cuando se activa el Modo de Texto Grande */
+body.texto-grande p, 
+body.texto-grande li, 
+body.texto-grande .nav-link {
+  font-size: 1.4rem !important;          /* Agranda considerablemente el tamaño de lectura */
+  line-height: 1.6 !important;
+}
