@@ -22,16 +22,16 @@ website:
   page-footer:
     background: dark
     left: |
-      [CC BY 4.0](https://creativecommons.org) 2026 Mariano Ordano v1.4 hecho con [Quarto](https://quarto.org) 
-    # PANEL DE ACCESIBILIDAD EN EL CENTER
+      [CC BY 4.0](https://creativecommons.org) 2026 Mariano Ordano v1.5 ~ hecho con [Quarto](https://quarto.org) 
     center: |
       <select id="modo-vision" onchange="cambiarPercepcion(this.value)" class="sel-acc">
         <option value="normal">👁️ Percepción Estándar</option>
         <option value="alto-contraste">🌓 Alto Contraste (Achromatopsia)</option>
         <option value="filtro-suave">🌅 Filtro Suave (Bajo Brillo / Fatiga)</option>
-        <option value="daltonismo">🎨 Modo Protanopia/Deuteranopia</option>
-      </select> | 
-      <button onclick="toggleTextoAVoz()" id="btn-voz" class="btn-acc">🔊 Escuchar Página</button>
+        <option value="daltonismo">🎨 Modo Protanopia/Deuteranopia</option>  
+        </select>  
+        <button onclick="toggleTextoAVoz()" id="btn-voz" class="btn-acc">🔊 Escuchar Página</button>
+
     right:
       - icon: github
         href: https://github.com/maordano/
@@ -48,7 +48,7 @@ website:
         aria-label: Instagram
       - text: "CV"
         href: https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view 
-        
+
 format:
   html:
     theme: cosmo
