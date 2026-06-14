@@ -35,6 +35,7 @@ Realizo ejercicios de aprendizaje, de expresión, describo mapas y mundos que se
 El sitio busca y explora conceptos, términos y condiciones.
 Sigue principios tipo [FAIR](https://www.go-fair.org/) y CARE para la [gestión de datos compartidos](https://datosdeinvestigacion.conicet.gov.ar/los-principios-fair-en-la-gestion-de-datos-de-investigacion/).
 Busca integrar dispositivos de interfase para ampliar la accesibilidad al sitio de personas con percepción visual "subóptima", o que necesitan comunicarse de manera especial (al menos para el "mundo de percepción convencional de lo que se considera población humana").
+En la versión actual el sitio tiene algunas opciones de accesibilidad en su versión original en idioma español.
 
 Se informa sobre la [legislación vigente local para la gestión de datos personales](https://www.oas.org/juridico/pdfs/arg_ley25326.pdf) y [uso de inteligencia artificial](https://www.argentina.gob.ar/justicia/derechofacil/leysimple/educacion-ciencia-cultura/recomendaciones-para-el-uso-de).
 Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referenciables, accesibles.
