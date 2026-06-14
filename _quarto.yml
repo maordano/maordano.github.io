@@ -4,6 +4,7 @@ project:
 
 website:
   title: "<i class='bi-house-door'></i>"
+  site-url: "https://github.io"
   navbar:
     background: dark
     foreground: light
