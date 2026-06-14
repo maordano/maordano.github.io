@@ -3,24 +3,28 @@ title: "Acerca de"
 image: images/riparium-cielo.webp
 about:
   template: trestles
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
-___
+------------------------------------------------------------------------
 
 ## Propósito
 
-Aprender a construir una especie de aula taller de aprendizaje, una cocina interior de expresión exploratoria, una ventana de traza humana en interfase de dispositivo disponible a la interacción con el entorno. 
+Aprender a construir una especie de aula \~ taller de aprendizaje, una cocina interior de expresión exploratoria, una ventana de traza humana en interfase de dispositivo disponible a la interacción con el entorno.
 
-____
+------------------------------------------------------------------------
 
 ## Bosquejo de identidad
 
-Una nave _navegando siendo nave_ sobre el mapa recorrido, - y sobre lo que se espera recorrer y conocer -. 
-Un ojo de buey en la nave deja ver el entorno, y algún horizonte o pájaro al vuelo. 
-Un “ecotono” de interacción con la nave, con la tripulación, la interfase del adentro-afuera. Intra-percepciones, ínter-percepciones.
-Un objeto _calidoiscopiesco_, que se mueve al paso de _commit-pinceladas_ y el versionado; que bosqueja distintas perspectivas con los mismos elementos. 
-Una poza donde abrevan rumias y algunos de sus resultados. Rumias que queman y echan humo, rumias que precipitan y despejan una nueva capa de conocimiento, _si acaso es el caso._
-Una ventana humana en interfase de dispositivo de interacción.
+Una nave *navegando siendo nave* sobre el mapa recorrido, - y sobre lo que se espera recorrer y conocer -.
+Un ojo de buey en la nave deja ver el entorno, y algún horizonte o pájaro al vuelo.
+Un “ecotono” de interacción con la nave, con la tripulación, la interfase del adentro-afuera.
+Intra-percepciones, ínter-percepciones.
+Un objeto *calidoiscopiesco*, que se mueve al paso de *commit-pinceladas* y el versionado; que bosqueja distintas perspectivas con los mismos elementos.
+Una poza donde abrevan rumias y algunos de sus resultados.
+Rumias que queman y echan humo, rumias que precipitan y despejan una nueva capa de conocimiento, *si acaso es el caso.* Una ventana humana en interfase de dispositivo de interacción.
 
 ## Descripción del sitio
 
@@ -28,58 +32,72 @@ Esta sección describe este dispositivo de interacción, el sitio web.
 
 Realizo ejercicios de aprendizaje, de expresión, describo mapas y mundos que se vinculan a lo que hago, a cómo pasaron y pasan los días, mientras busco una forma de describir interacciones bióticas, interacciones mediadas por dispositivos; una forma que refleje diversos aspectos e integre exploraciones, creaciones lúdicas, rumias, ejercicios.
 
-El sitio busca y explora conceptos, términos y condiciones. Sigue principios tipo [FAIR](https://www.go-fair.org/) y CARE para la [gestión de datos compartidos](https://datosdeinvestigacion.conicet.gov.ar/los-principios-fair-en-la-gestion-de-datos-de-investigacion/).
+El sitio busca y explora conceptos, términos y condiciones.
+Sigue principios tipo [FAIR](https://www.go-fair.org/) y CARE para la [gestión de datos compartidos](https://datosdeinvestigacion.conicet.gov.ar/los-principios-fair-en-la-gestion-de-datos-de-investigacion/).
+Busca integrar dispositivos de interfase para ampliar la accesibilidad al sitio de personas con percepción visual "subóptima", o que necesitan comunicarse de manera especial (al menos para el "mundo de percepción convencional de lo que se considera población humana").
+
 Se informa sobre la [legislación vigente local para la gestión de datos personales](https://www.oas.org/juridico/pdfs/arg_ley25326.pdf) y [uso de inteligencia artificial](https://www.argentina.gob.ar/justicia/derechofacil/leysimple/educacion-ciencia-cultura/recomendaciones-para-el-uso-de).
 Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referenciables, accesibles.
 
-La construcción del sitio está inspirada e inicialmente armado en [Hugo Ananke](https://themes.gohugo.io/themes/ananke/) y ahora construido con [Quarto](https://quarto.org). Se usaron y se usan  asistentes de Claude, Gemini y Copilot para la generación de código.
+La construcción del sitio está inspirada e inicialmente moldeado con [Hugo Ananke](https://themes.gohugo.io/themes/ananke/) y ahora construido con [Quarto](https://quarto.org).
+Se usaron y se usan asistentes de Claude, Gemini de Google y Copilot para la generación de código.
 
-Usa código abierto alojado en [GitHub](https://github.com/maordano/).  
+Usa código abierto alojado en [GitHub](https://github.com/maordano/).
 
-Hecho a mano por mi cuerpo orgánico - aparentemente humano ;) , mediado por dispositivos inorgánicos y algunos de tipo imaginario.
+Hecho a mano por mi cuerpo orgánico - aparentemente humano ;), mediado por dispositivos inorgánicos y algunos de tipo imaginario.
 
-___
+Más detalles en enlaces del footer.
+
+------------------------------------------------------------------------
 
 Licencia [Creative Commons by 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-___
+------------------------------------------------------------------------
 
-![amanecer en el pedemonte, Sierra de San Javier](images/alba-4476.webp){width=100%}
+![amanecer en el pedemonte, Sierra de San Javier](images/alba-4476.webp){width="100%"}
 
-
-___
+------------------------------------------------------------------------
 
 ### [Portada Galería](https://maordano.github.io/)
-Inicio. Analogía de la llegada a un espacio de presentación y comunicación, a un límite que identifica ese espacio, un ecotono, una portada galería de un ámbito doméstico.
+
+Inicio.
+Analogía de la llegada a un espacio de presentación y comunicación, a un límite que identifica ese espacio, un ecotono, una portada galería de un ámbito doméstico.
 
 ### [Bitácora](https://maordano.github.io/blog.html)
-Espacio que guarda de todo. Comparada con un mundo en las puertas de la singularidad, tiene aire a aquella vieja libreta que guarda apuntes sueltos, gramáticas telegráficas o ideográficas, ciertas expresiones indigeribles, o palabras que ya no son legibles, o no tienen sentido actual, o tienen la memoria erosionada. 
 
-En algunos casos puede funcionar como un testing de temas no resueltos, temas no madurados en el sentido de un producto final; o cosas que podrían generar un espacio propio o un menú aparte. 
+Espacio que guarda de todo.
+Comparada con un mundo en las puertas de la singularidad, tiene aire a aquella vieja libreta que guarda apuntes sueltos, gramáticas telegráficas o ideográficas, ciertas expresiones indigeribles, o palabras que ya no son legibles, o no tienen sentido actual, o tienen la memoria erosionada.
 
-Puede incluir herramientas, técnicas, métodos, conceptos, prompts, redacción de consultas, test de cosas que dicen; _"nideas"_, apuntes, _stuffs_, … _sensu_ Umberto Eco.  
+En algunos casos puede funcionar como un testing de temas no resueltos, temas no madurados en el sentido de un producto final; o cosas que podrían generar un espacio propio o un menú aparte.
 
-___
+Puede incluir herramientas, técnicas, métodos, conceptos, prompts, redacción de consultas, test de cosas que dicen; *"nideas"*, apuntes, *stuffs*, … *sensu* Umberto Eco.
 
-Experiencias y aprendizajes.  
-Experiencias aprendizadas.  
-Expresiones rumiantes.  
-Ex.  
+------------------------------------------------------------------------
 
-___
+Experiencias y aprendizajes.\
+Experiencias aprendizadas.\
+Expresiones rumiantes.\
+Ex.
+
+------------------------------------------------------------------------
 
 ### [Proyectos](https://maordano.github.io/proyectos.html)
 
 Descripción de elementos de investigación.
 
 ### [🌐Símbolo del globo terráqueo con meridianos](https://maordano-github-io.translate.goog/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es-419)
-Widget de traducción vía Google. Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original. En los celulares el tamaño de pantalla puede impedir ver opciones, ubicadas arriba a la derecha. Si no se pueden visualizar opciones de retorno, pruebe con girar la posición entre vertical y horizontal, o viceversa, para regresar a la página web original.
+
+Widget de traducción vía Google.
+Abre una página aparte en donde se puede seleccionar idioma y volver al sitio original.
+En los celulares el tamaño de pantalla puede impedir ver opciones, ubicadas arriba a la derecha.
+Si no se pueden visualizar opciones de retorno, pruebe con girar la posición entre vertical y horizontal, o viceversa, para regresar a la página web original.
 
 ## Buscador (lupa)
+
 Herramienta funcional, abre una barra para escribir palabras que encontrará (o no) en este sitio.
 
-___
+------------------------------------------------------------------------
 
-![amanecer en el pedemonte, Sierra de San Javier](images/alba-4474.webp){width=100%}
+![amanecer en el pedemonte, Sierra de San Javier](images/alba-4474.webp){width="100%"}
 
-___
+------------------------------------------------------------------------
