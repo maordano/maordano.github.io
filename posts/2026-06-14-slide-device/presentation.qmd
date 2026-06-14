@@ -73,6 +73,8 @@ git push origin main --force
 ## 7 Créditos
 
 Gracias a 
-- Claude Anthropic Sonnet 4.6
-- Gemini de Google (Modo IA)
 
+- Claude Anthropic Sonnet 4.6 
+- Gemini de Google (Modo IA) 
+
+___
