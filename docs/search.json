@@ -39,7 +39,7 @@
     "href": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación-1",
     "title": "prueba de diapositiva",
     "section": "5 Render >> el Archivo de Presentación",
-    "text": "5 Render &gt;&gt; el Archivo de Presentación\n\nUna primera vez como en el punto 3, o como proceso iterativo de corrección de errores\n\nquarto render posts/slides-devices/presentation.qmd\n\nDe otra manera, incluir en _quarto.yml\n\nproject:\n  type: website\n  output-dir: docs \n  render:\n    - \"*.qmd\"\n    - \"posts/**/*.qmd\""
+    "text": "5 Render &gt;&gt; el Archivo de Presentación\n\nUna primera vez como en el punto 3, o como proceso iterativo de corrección de errores\nAntes de renderizar el sitio un chequeo del post puede servir\n\nquarto render posts/slides-devices/presentation.qmd\n\nE incluir en _quarto.yml hace la ruta mas directa -aunque se necesite el paso anterior a veces-\n\n\nproject:\n  type: website\n  output-dir: docs \n  render:\n    - \"*.qmd\"\n    - \"posts/**/*.qmd\""
   },
   {
     "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-sitio-web",
