@@ -39,21 +39,28 @@
     "href": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación-1",
     "title": "prueba de diapositiva",
     "section": "5 Render >> el Archivo de Presentación",
-    "text": "5 Render &gt;&gt; el Archivo de Presentación\n\nAntes de renderizar el sitio un chequeo del post puede servir\nIncluir el siguiente comando en el archivo _quarto.yml hace la ruta mas directa, aunque se necesite el paso siguiente una vez más\n\nproject:\n  type: website\n  output-dir: docs \n  render:\n    - \"*.qmd\"\n    - \"posts/**/*.qmd\"\n\nY como en el punto 3, o como proceso iterativo de corrección de errores el comando\n\nquarto render posts/slides-devices/presentation.qmd"
+    "text": "5 Render &gt;&gt; el Archivo de Presentación\n\nAntes de renderizar el sitio un chequeo del post puede servir\nIncluir el siguiente comando en el archivo _quarto.yml hace la ruta mas directa, aunque se necesite el paso siguiente una vez más\n\nproject:\n  type: website\n  output-dir: docs \n  render:\n    - \"*.qmd\"\n    - \"posts/**/*.qmd\""
+  },
+  {
+    "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-post",
+    "href": "posts/2026-06-14-slide-device/presentation.html#render-el-post",
+    "title": "prueba de diapositiva",
+    "section": "6 Render >> el post",
+    "text": "6 Render &gt;&gt; el post\n\nY como en el punto 3, o como proceso iterativo de corrección de errores el comando\n\nquarto render posts/slides-devices/presentation.qmd"
   },
   {
     "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-sitio-web",
     "href": "posts/2026-06-14-slide-device/presentation.html#render-el-sitio-web",
     "title": "prueba de diapositiva",
-    "section": "6 Render >> el Sitio Web",
-    "text": "6 Render &gt;&gt; el Sitio Web\nquarto render \ngit add --all\ngit commit -m \"post RevealJS sky\"\ngit push origin main --force"
+    "section": "7 Render >> el Sitio Web",
+    "text": "7 Render &gt;&gt; el Sitio Web\nquarto render \ngit add --all\ngit commit -m \"post RevealJS sky\"\ngit push origin main --force"
   },
   {
     "objectID": "posts/2026-06-14-slide-device/presentation.html#créditos",
     "href": "posts/2026-06-14-slide-device/presentation.html#créditos",
     "title": "prueba de diapositiva",
-    "section": "7 Créditos",
-    "text": "7 Créditos\nGracias a\n\nClaude Anthropic Sonnet 4.6\nGemini de Google (Modo IA)"
+    "section": "8 Créditos",
+    "text": "8 Créditos\nGracias a ___\nDispositivos de Interacción Asistentes - Claude Anthropic Sonnet 4.6 - Gemini de Google (Modo IA) ___"
   },
   {
     "objectID": "posts/2026-06-11-elementos/index.html",

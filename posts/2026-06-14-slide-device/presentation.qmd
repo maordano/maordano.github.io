@@ -66,13 +66,15 @@ project:
     - "*.qmd"
     - "posts/**/*.qmd"
 ```
+
+## 6 *Render* >> el post
 - Y como en el punto 3, o como proceso iterativo de corrección de errores el comando
 
 ``` bash
 quarto render posts/slides-devices/presentation.qmd
 ```
 
-## 6 *Render* \>\> el Sitio Web
+## 7 *Render* \>\> el Sitio Web
 
 ``` bash
 quarto render 
@@ -81,11 +83,13 @@ git commit -m "post RevealJS sky"
 git push origin main --force
 ```
 
-## 7 Créditos
+## 8 Créditos
 
 Gracias a 
+___
 
+Dispositivos de Interacción Asistentes
 - Claude Anthropic Sonnet 4.6 
 - Gemini de Google (Modo IA) 
-
 ___
+
