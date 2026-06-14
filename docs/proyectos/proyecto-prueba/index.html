@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Acerca de</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://google.com" target="_blank"> 
+    <a class="nav-link" href="https://translate.google.com/translate?sl=es&amp;tl=en&amp;u=https%3A%2F%2Fmaordano.github.io" target="_blank"> 
 <span class="menu-text">🌐</span></a>
   </li>  
 </ul>
@@ -599,43 +599,43 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="https://creativecommons.org">CC BY 4.0</a> 2026 Mariano Ordano v1.4</p>
+<p><a href="https://creativecommons.org">CC BY 4.0</a> 2026 Mariano Ordano v1.4 hecho con <a href="https://quarto.org">Quarto</a></p>
 </div>   
     <div class="nav-footer-center">
-<p>hecho con <a href="https://quarto.org">Quarto</a> | <select id="modo-vision" onchange="cambiarPercepcion(this.value)" class="sel-acc"> <option value="normal">👁️ Percepción Estándar</option> <option value="alto-contraste">🌓 Alto Contraste (Achromatopsia)</option> <option value="filtro-suave">🌅 Filtro Suave (Bajo Brillo / Fatiga)</option> <option value="daltonismo">🎨 Modo Protanopia/Deuteranopia</option> </select> | <button onclick="toggleTextoAVoz()" id="btn-voz" class="btn-acc">🔊 Escuchar Página</button></p>
+<p><select id="modo-vision" onchange="cambiarPercepcion(this.value)" class="sel-acc"> <option value="normal">👁️ Percepción Estándar</option> <option value="alto-contraste">🌓 Alto Contraste (Achromatopsia)</option> <option value="filtro-suave">🌅 Filtro Suave (Bajo Brillo / Fatiga)</option> <option value="daltonismo">🎨 Modo Protanopia/Deuteranopia</option> </select> | <button onclick="toggleTextoAVoz()" id="btn-voz" class="btn-acc">🔊 Escuchar Página</button></p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com">
+    <a class="nav-link" href="https://github.com/maordano/">
       <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://osf.io">
+    <a class="nav-link" href="https://osf.io/9yxfm/">
 <p>OSF</p>
 </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com">
+    <a class="nav-link" href="https://www.linkedin.com/in/mariano-ordano">
       <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://researchgate.net">
+    <a class="nav-link" href="https://www.researchgate.net/profile/Mariano-Ordano">
 <p>RG</p>
 </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://instagram.com">
+    <a class="nav-link" href="https://instagram.com/mariano.ordano/">
       <i class="bi bi-instagram" role="img" aria-label="Instagram">
 </i> 
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://google.com">
+    <a class="nav-link" href="https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view">
 <p>CV</p>
 </a>
   </li>  
@@ -644,16 +644,13 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </footer>
 <script>
-  // 1. Lógica de cambios en Hue, Chroma y Brightness
   function cambiarPercepcion(modo) {
-    // Limpiar clases previas
     document.body.classList.remove('alto-contraste', 'filtro-suave', 'daltonismo');
     if (modo !== 'normal') {
       document.body.classList.add(modo);
     }
   }
 
-  // 2. Lógica de Transcripción a Voz Nativa (Web Speech API)
   let lector = null;
   function toggleTextoAVoz() {
     let boton = document.getElementById('btn-voz');
@@ -661,21 +658,20 @@ ul.task-list li input[type="checkbox"] {
       if (window.speechSynthesis.speaking) {
         window.speechSynthesis.cancel();
         boton.innerText = "🔊 Escuchar Página";
-        boton.style.color = "";
+        boton.classList.remove('activo-voz');
       } else {
-        // Capturar el texto limpio de la página principal
         let texto = document.querySelector('main')?.innerText || document.body.innerText;
         lector = new SpeechSynthesisUtterance(texto);
-        lector.lang = 'es-AR'; // Español rioplatense/argentino
+        lector.lang = 'es-AR';
         
         lector.onend = function() {
           boton.innerText = "🔊 Escuchar Página";
-          boton.style.color = "";
+          boton.classList.remove('activo-voz');
         };
 
         window.speechSynthesis.speak(lector);
         boton.innerText = "🛑 Detener Lectura";
-        boton.style.color = "#ff4757"; // Alerta visual discreta de reproducción
+        boton.classList.add('activo-voz');
       }
     } else {
       alert("Tu navegador no soporta transcripción de voz automática.");

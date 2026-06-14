@@ -1,7 +1,6 @@
-/* Importación de Roboto */
+/* Importación oficial de Roboto */
 @import url('https://googleapis.com');
 
-/* Configuración de Fuentes y Fondo */
 body {
   font-family: 'Roboto', 'Avenir', sans-serif !important;
   background-color: #f4f8fb;
@@ -19,11 +18,12 @@ body {
   color: white !important;
 }
 
-/* Footer oscuro */
+/* Footer oscuro original */
 .nav-footer {
   background-color: #1a1a2e;
   color: rgba(255,255,255,0.7);
   font-family: 'Roboto', sans-serif !important;
+  padding: 1.2rem 0;
 }
 .nav-footer a {
   color: rgba(255,255,255,0.7);
@@ -32,20 +32,43 @@ body {
   color: white;
 }
 
-/* Estilo para los botones discretos de accesibilidad en el footer */
-.btn-acc {
-  background: none !important;
-  border: none !important;
-  color: rgba(255,255,255,0.7) !important;
+/* Herramientas de accesibilidad mimetizadas con la estética del footer */
+.sel-acc {
+  background: #22223b !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: rgba(255,255,255,0.8) !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 0.85rem;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.sel-acc:hover {
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.5) !important;
+}
+
+.btn-acc-nav {
+  background: #22223b !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: rgba(255,255,255,0.8) !important;
   cursor: pointer;
   font-family: 'Roboto', sans-serif !important;
-  font-size: 0.9rem;
-  padding: 0 4px !important;
-  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
-.btn-acc:hover {
+.btn-acc-nav:hover {
   color: #ffffff !important;
-  text-decoration: underline !important;
+  border-color: rgba(255,255,255,0.5) !important;
+}
+
+.activo-voz {
+  background: #ff4757 !important;
+  color: white !important;
+  border-color: #ff4757 !important;
 }
 
 /* Imagen hero */
@@ -59,68 +82,18 @@ img {
   height: auto;
 }
 
-/* --- REGLAS NATIVAS DE ACCESIBILIDAD --- */
-
-/* 1. Cuando se activa el Modo de Alto Contraste */
+/* Matriz de filtros continuos para la percepción visual */
 body.alto-contraste {
-  background-color: #121212 !important; 
-  color: #00ff00 !important;             
-}
-
-body.alto-contraste h1, 
-body.alto-contraste h2, 
-body.alto-contraste h3, 
-body.alto-contraste p, 
-body.alto-contraste .navbar {
-  color: #ffffff !important;             
-  background-color: #1a1a1a !important;
-}
-
-body.alto-contraste a {
-  color: #ffff00 !important;             
-  text-decoration: underline !important;
-}
-
-/* 2. Cuando se activa el Modo de Texto Grande */
-body.texto-grande p, 
-body.texto-grande li, 
-body.texto-grande .nav-link {
-  font-size: 1.35rem !important;          
-  line-height: 1.6 !important;
-}
-
-/* Estilos para el selector desplegable de accesibilidad en el footer */
-.sel-acc {
-  background: #1a1a2e !important;
-  border: 1px solid rgba(255,255,255,0.3) !important;
-  color: rgba(255,255,255,0.8) !important;
-  font-family: 'Roboto', sans-serif !important;
-  font-size: 0.85rem;
-  padding: 2px 4px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.sel-acc:hover {
-  color: #ffffff !important;
-  border-color: #ffffff !important;
-}
-
-/* --- MATRIZ CIENTÍFICA DE PERCEPCIÓN VISUAL --- */
-
-/* 🌓 Modo 1: Alto Contraste Puro (Achromatopsia / Baja Visión) */
-body.alto-contraste {
-  filter: contrast(200%) brightness(110%) grayscale(100%) !important;
+  filter: contrast(180%) brightness(110%) grayscale(100%) !important;
   background-color: #ffffff !important;
   color: #000000 !important;
 }
 
-/* 🌅 Modo 2: Filtro Suave (Atenuación de Brillo y Cromatismo para fatiga o fotofobia) */
 body.filtro-suave {
-  filter: sepia(50%) brightness(85%) contrast(90%) !important;
-  background-color: #f4edd2 !important; /* Tono papel antiguo/cálido */
+  filter: sepia(45%) brightness(85%) contrast(95%) !important;
+  background-color: #f4edd2 !important;
 }
 
-/* 🎨 Modo 3: Daltonismo (Desplazamiento del Hue para compensar Protanopia/Deuteranopia) */
 body.daltonismo {
-  filter: hue-rotate(90deg) contrast(120%) !important;
+  filter: hue-rotate(85deg) contrast(115%) !important;
 }

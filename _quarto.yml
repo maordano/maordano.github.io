@@ -15,17 +15,16 @@ website:
         text: Proyectos
       - href: about.qmd
         text: Acerca de
-      - text: "🌐"                         # Removido el '.en' como pediste
-        href: "https://google.com"
-        target: "_blank" 
-   
+      - text: "🌐"  
+        href: "https://translate.google.com/translate?sl=es&tl=en&u=https%3A%2F%2Fmaordano.github.io"
+        target: "_blank"  
+  
   page-footer:
     background: dark
     left: |
-      [CC BY 4.0](https://creativecommons.org) 2026 Mariano Ordano v1.4
-    # PANEL DE ACCESIBILIDAD CIENTÍFICO EN EL CENTER
+      [CC BY 4.0](https://creativecommons.org) 2026 Mariano Ordano v1.4 hecho con [Quarto](https://quarto.org) 
+    # PANEL DE ACCESIBILIDAD EN EL CENTER
     center: |
-      hecho con [Quarto](https://quarto.org) | 
       <select id="modo-vision" onchange="cambiarPercepcion(this.value)" class="sel-acc">
         <option value="normal">👁️ Percepción Estándar</option>
         <option value="alto-contraste">🌓 Alto Contraste (Achromatopsia)</option>
@@ -35,39 +34,35 @@ website:
       <button onclick="toggleTextoAVoz()" id="btn-voz" class="btn-acc">🔊 Escuchar Página</button>
     right:
       - icon: github
-        href: https://github.com
+        href: https://github.com/maordano/
         aria-label: GitHub
       - text: "OSF"
-        href: https://osf.io
+        href: https://osf.io/9yxfm/
       - icon: linkedin
-        href: https://linkedin.com
+        href: https://www.linkedin.com/in/mariano-ordano
         aria-label: LinkedIn
       - text: "RG"
-        href: https://researchgate.net
+        href: https://www.researchgate.net/profile/Mariano-Ordano
       - icon: instagram
-        href: https://instagram.com
+        href: https://instagram.com/mariano.ordano/
         aria-label: Instagram
       - text: "CV"
-        href: https://google.com
-
+        href: https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view 
+        
 format:
   html:
     theme: cosmo
     css: styles.css
-    # JAVASCRIPT AVANZADO PARA FILTROS VISUALES Y SÍNTESIS DE VOZ NATIVA
     include-after-body:
       text: |
         <script>
-          // 1. Lógica de cambios en Hue, Chroma y Brightness
           function cambiarPercepcion(modo) {
-            // Limpiar clases previas
             document.body.classList.remove('alto-contraste', 'filtro-suave', 'daltonismo');
             if (modo !== 'normal') {
               document.body.classList.add(modo);
             }
           }
 
-          // 2. Lógica de Transcripción a Voz Nativa (Web Speech API)
           let lector = null;
           function toggleTextoAVoz() {
             let boton = document.getElementById('btn-voz');
@@ -75,27 +70,26 @@ format:
               if (window.speechSynthesis.speaking) {
                 window.speechSynthesis.cancel();
                 boton.innerText = "🔊 Escuchar Página";
-                boton.style.color = "";
+                boton.classList.remove('activo-voz');
               } else {
-                // Capturar el texto limpio de la página principal
                 let texto = document.querySelector('main')?.innerText || document.body.innerText;
                 lector = new SpeechSynthesisUtterance(texto);
-                lector.lang = 'es-AR'; // Español rioplatense/argentino
+                lector.lang = 'es-AR';
                 
                 lector.onend = function() {
                   boton.innerText = "🔊 Escuchar Página";
-                  boton.style.color = "";
+                  boton.classList.remove('activo-voz');
                 };
 
                 window.speechSynthesis.speak(lector);
                 boton.innerText = "🛑 Detener Lectura";
-                boton.style.color = "#ff4757"; // Alerta visual discreta de reproducción
+                boton.classList.add('activo-voz');
               }
             } else {
               alert("Tu navegador no soporta transcripción de voz automática.");
             }
           }
         </script>
-    
+        
 execute:
   freeze: true
