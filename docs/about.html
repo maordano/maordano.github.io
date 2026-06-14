@@ -67,14 +67,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-  }
-</script>
-<script type="text/javascript" src="//://google.com"></script>
-<!-- CÓDIGO DE USERWAY (EJEMPLO) -->
-<script src="https://userway.org" data-account="TU_ID_DE_USERWAY"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -654,6 +646,28 @@ Ex.</p>
     </div>
   </div>
 </footer>
+<!-- Contenedor del Traductor de Google -->
+<div id="idioma-contenedor" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: #fff; padding: 6px 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px;">
+  <span style="font-family: 'Roboto', sans-serif; font-size: 0.9rem; color: #495057; font-weight: 500;">Idioma / Language:</span>
+  <div id="google_translate_element"></div>
+</div>
+
+<!-- Botones Nativos de Accesibilidad -->
+<div id="accesibilidad-contenedor" style="position: fixed; bottom: 70px; left: 20px; z-index: 1000; background: #fff; padding: 6px 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; gap: 10px; align-items: center;">
+  <span style="font-family: 'Roboto', sans-serif; font-size: 0.9rem; color: #495057; font-weight: 500;">Accesibilidad:</span>
+  <button onclick="toggleContraste()" style="cursor: pointer; background: #f8f9fa; border: 1px solid #ccc; padding: 2px 8px; border-radius: 3px; font-size: 0.85rem;">🌓 Contraste</button>
+  <button onclick="toggleTexto()" style="cursor: pointer; background: #f8f9fa; border: 1px solid #ccc; padding: 2px 8px; border-radius: 3px; font-size: 0.85rem;">🔍 Letra A+</button>
+</div>
+
+<!-- Lógica de funcionamiento (JavaScript) -->
+<script>
+  function toggleContraste() {
+    document.body.classList.toggle('alto-contraste');
+  }
+  function toggleTexto() {
+    document.body.classList.toggle('texto-grande');
+  }
+</script>
 
 
 
