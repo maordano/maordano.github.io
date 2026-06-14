@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.io/proyectos/proyecto-prueba/index.html</loc>
+    <lastmod>2026-06-11T00:30:50.939Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.io/posts/2026-06-14-slide-device/presentation.html</loc>
+    <lastmod>2026-06-14T22:00:18.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.io/posts/2026-06-11-elementos/index.html</loc>
+    <lastmod>2026-06-12T02:00:18.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.io/posts/2026-05-25-prompt-nube-de-palabras/index.html</loc>
+    <lastmod>2026-06-06T21:19:51.430Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.io/index.html</loc>
+    <lastmod>2026-06-14T15:14:53.431Z</lastmod>
+  </url>
+  <url>
     <loc>https://github.io/blog.html</loc>
     <lastmod>2026-06-14T15:14:53.386Z</lastmod>
   </url>
@@ -9,43 +29,23 @@
     <lastmod>2026-06-14T16:01:29.522Z</lastmod>
   </url>
   <url>
-    <loc>https://github.io/proyectos/proyecto-prueba/index.html</loc>
-    <lastmod>2026-06-11T00:30:50.939Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.io/posts/2026-05-25-prompt-nube-de-palabras/index.html</loc>
-    <lastmod>2026-06-06T21:19:51.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.io/posts/2026-06-14-slide-device/index.html</loc>
-    <lastmod>2026-06-14T21:39:52.070Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.io/posts/2026-06-11-elementos/index.html</loc>
-    <lastmod>2026-06-12T02:00:18.325Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.io/posts/2026-06-02-foto-mini-escala/index.html</loc>
-    <lastmod>2026-06-06T21:19:20.005Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.io/posts/2026-06-14-slide-device/presentation.html</loc>
-    <lastmod>2026-06-14T21:48:43.359Z</lastmod>
+    <loc>https://github.io/cv.html</loc>
+    <lastmod>2026-06-06T13:01:59.423Z</lastmod>
   </url>
   <url>
     <loc>https://github.io/posts/2021-05-30-nube-de-palabras/index.html</loc>
     <lastmod>2026-06-06T21:24:54.715Z</lastmod>
   </url>
   <url>
+    <loc>https://github.io/posts/2026-06-02-foto-mini-escala/index.html</loc>
+    <lastmod>2026-06-06T21:19:20.005Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.io/posts/2026-06-14-slide-device/index.html</loc>
+    <lastmod>2026-06-14T21:55:03.070Z</lastmod>
+  </url>
+  <url>
     <loc>https://github.io/proyectos.html</loc>
     <lastmod>2026-06-05T21:11:00.307Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.io/index.html</loc>
-    <lastmod>2026-06-14T15:14:53.431Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.io/cv.html</loc>
-    <lastmod>2026-06-06T13:01:59.423Z</lastmod>
   </url>
 </urlset>

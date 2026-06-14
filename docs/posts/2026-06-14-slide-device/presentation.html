@@ -240,13 +240,22 @@
 <li>Una primera vez como en el punto 3, o como proceso iterativo de corrección de errores</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="ex">quarto</span> render posts/slides-devices/presentation.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>De otra manera, incluir en _quarto.yml</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb6-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb6-3"><a></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs </span></span>
+<span id="cb6-4"><a></a><span class="at">  </span><span class="fu">render</span><span class="kw">:</span></span>
+<span id="cb6-5"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"*.qmd"</span></span>
+<span id="cb6-6"><a></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"posts/**/*.qmd"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="render-el-sitio-web" class="slide level2">
 <h2>6 <em>Render</em> &gt;&gt; el Sitio Web</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">quarto</span> render </span>
-<span id="cb6-2"><a></a><span class="fu">git</span> add <span class="at">--all</span></span>
-<span id="cb6-3"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"post RevealJS sky"</span></span>
-<span id="cb6-4"><a></a><span class="fu">git</span> push origin main <span class="at">--force</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">quarto</span> render </span>
+<span id="cb7-2"><a></a><span class="fu">git</span> add <span class="at">--all</span></span>
+<span id="cb7-3"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"post RevealJS sky"</span></span>
+<span id="cb7-4"><a></a><span class="fu">git</span> push origin main <span class="at">--force</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="créditos" class="slide level2">
 <h2>7 Créditos</h2>

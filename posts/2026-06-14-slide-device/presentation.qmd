@@ -60,6 +60,15 @@ quarto render posts/slides-devices/presentation.qmd
 ``` bash
 quarto render posts/slides-devices/presentation.qmd
 ```
+- De otra manera, incluir en _quarto.yml
+```yaml
+project:
+  type: website
+  output-dir: docs 
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+```
 
 ## 6 *Render* \>\> el Sitio Web
 

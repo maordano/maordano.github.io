@@ -1,7 +1,9 @@
 project:
   type: website
-  output-dir: docs
-
+  output-dir: docs 
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
 website:
   title: "<i class='bi-house-door'></i>"
   site-url: "https://github.io"
