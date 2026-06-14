@@ -5,7 +5,6 @@ project:
 website:
   title: "Mariano Ordano"
   navbar:
-    title: "Portada Galería"
     background: dark
     foreground: light
     left: []
@@ -16,40 +15,19 @@ website:
         text: Proyectos
       - href: about.qmd
         text: Acerca de
-      - text: "🌐"
+      - text: "🌐 .en"  # Agregada la marca del idioma actual/destino junto al globo terráqueo
         href: "https://translate.google.com/translate?sl=es&tl=en&u=https%3A%2F%2Fmaordano.github.io"
         target: "_blank" 
-
-    include-after-body: 
-      text: |
-        <!-- Contenedor del Traductor de Google -->
-        <div id="idioma-contenedor" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: #fff; padding: 6px 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px;">
-          <span style="font-family: 'Roboto', sans-serif; font-size: 0.9rem; color: #495057; font-weight: 500;">Idioma / Language:</span>
-          <div id="google_translate_element"></div>
-        </div>
-
-        <!-- Botones Nativos de Accesibilidad -->
-        <div id="accesibilidad-contenedor" style="position: fixed; bottom: 70px; left: 20px; z-index: 1000; background: #fff; padding: 6px 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); display: flex; gap: 10px; align-items: center;">
-          <span style="font-family: 'Roboto', sans-serif; font-size: 0.9rem; color: #495057; font-weight: 500;">Accesibilidad:</span>
-          <button onclick="toggleContraste()" style="cursor: pointer; background: #f8f9fa; border: 1px solid #ccc; padding: 2px 8px; border-radius: 3px; font-size: 0.85rem;">🌓 Contraste</button>
-          <button onclick="toggleTexto()" style="cursor: pointer; background: #f8f9fa; border: 1px solid #ccc; padding: 2px 8px; border-radius: 3px; font-size: 0.85rem;">🔍 Letra A+</button>
-        </div>
-
-        <!-- Lógica de funcionamiento (JavaScript) -->
-        <script>
-          function toggleContraste() {
-            document.body.classList.toggle('alto-contraste');
-          }
-          function toggleTexto() {
-            document.body.classList.toggle('texto-grande');
-          }
-        </script>
    
   page-footer:
     background: dark
     left: |
       [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 2026 Mariano Ordano v1.4
-    center: "hecho con [Quarto](https://quarto.org)"
+    # BOTONES DISCRETOS DE ACCESIBILIDAD INTEGRADOS AL PIE DE PÁGINA (Sin flotantes molestos)
+    center: |
+      hecho con [Quarto](https://quarto.org) | 
+      <button onclick="toggleContraste()" class="btn-acc">🌓 Contraste</button> | 
+      <button onclick="toggleTexto()" class="btn-acc">🔍 Letra A+</button>
     right:
       - icon: github
         href: https://github.com/maordano/
@@ -71,7 +49,17 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    # LA UBICACIÓN CORRECTA PARA LA LÓGICA DE PROGRAMACIÓN DE LA ACCESIBILIDAD:
+    include-after-body:
+      text: |
+        <script>
+          function toggleContraste() {
+            document.body.classList.toggle('alto-contraste');
+          }
+          function toggleTexto() {
+            document.body.classList.toggle('texto-grande');
+          }
+        </script>
     
 execute:
   freeze: true
-

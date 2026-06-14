@@ -1,9 +1,19 @@
+/* Importación de Roboto */
+@import url('https://googleapis.com');
+
+/* Configuración de Fuentes y Fondo */
+body {
+  font-family: 'Roboto', 'Avenir', sans-serif !important;
+  background-color: #f4f8fb;
+}
+
 /* Navbar oscura tipo Ananke */
 .navbar {
   background-color: #1a1a2e !important;
 }
 .navbar-brand, .navbar-nav .nav-link {
   color: rgba(255,255,255,0.9) !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 .navbar-nav .nav-link:hover {
   color: white !important;
@@ -13,6 +23,7 @@
 .nav-footer {
   background-color: #1a1a2e;
   color: rgba(255,255,255,0.7);
+  font-family: 'Roboto', sans-serif !important;
 }
 .nav-footer a {
   color: rgba(255,255,255,0.7);
@@ -21,10 +32,20 @@
   color: white;
 }
 
-/* Contenido central */
-body {
-  font-family: 'Avenir', 'Helvetica Neue', sans-serif;
-  background-color: #f4f8fb;
+/* Estilo para los botones discretos de accesibilidad en el footer */
+.btn-acc {
+  background: none !important;
+  border: none !important;
+  color: rgba(255,255,255,0.7) !important;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 0.9rem;
+  padding: 0 4px !important;
+  text-decoration: none;
+}
+.btn-acc:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
 }
 
 /* Imagen hero */
@@ -42,8 +63,8 @@ img {
 
 /* 1. Cuando se activa el Modo de Alto Contraste */
 body.alto-contraste {
-  background-color: #121212 !important; /* Fondo negro profundo */
-  color: #00ff00 !important;             /* Texto verde fosforescente de alta visibilidad */
+  background-color: #121212 !important; 
+  color: #00ff00 !important;             
 }
 
 body.alto-contraste h1, 
@@ -51,12 +72,12 @@ body.alto-contraste h2,
 body.alto-contraste h3, 
 body.alto-contraste p, 
 body.alto-contraste .navbar {
-  color: #ffffff !important;             /* Encabezados y menús en blanco puro */
+  color: #ffffff !important;             
   background-color: #1a1a1a !important;
 }
 
 body.alto-contraste a {
-  color: #ffff00 !important;             /* Enlaces en amarillo brillante para resaltar */
+  color: #ffff00 !important;             
   text-decoration: underline !important;
 }
 
@@ -64,6 +85,6 @@ body.alto-contraste a {
 body.texto-grande p, 
 body.texto-grande li, 
 body.texto-grande .nav-link {
-  font-size: 1.4rem !important;          /* Agranda considerablemente el tamaño de lectura */
+  font-size: 1.35rem !important;          
   line-height: 1.6 !important;
 }
