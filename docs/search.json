@@ -18,7 +18,7 @@
     "href": "posts/2026-06-14-slide-device/presentation.html#configuración-del-archivo-de-la-presentación",
     "title": "prueba de diapositiva",
     "section": "2 Configuración del Archivo de la Presentación",
-    "text": "2 Configuración del Archivo de la Presentación\n---\ntitle: \"prueba de diapositiva\"\nformat: \n  revealjs:\n    theme: moon # o: moon, sky, serif, simple \n    transition: slide # o: fade, zoom, none \n    slide-number: true \n    logo: images/caracol.webp \n    footer: \"casi lo mismo con otro dispositivo | maordano.github.io\"\neditor: visual \n---"
+    "text": "2 Configuración del Archivo de la Presentación\n---\ntitle: \"prueba de diapositiva\"\nformat: \n  revealjs:\n    theme: simple # o: moon, sky, serif, ... \n    transition: slide # o: fade, zoom, none \n    slide-number: true \n    logo: images/caracol.webp \n    footer: \"casi lo mismo con otro dispositivo\"\neditor: visual \n---"
   },
   {
     "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación",
@@ -32,7 +32,7 @@
     "href": "posts/2026-06-14-slide-device/presentation.html#dentro-del-archivo-index",
     "title": "prueba de diapositiva",
     "section": "4 Dentro del Archivo Index",
-    "text": "4 Dentro del Archivo Index\n# Presentación\n\n&lt;iframe src=\"presentation.html\" width=\"100%\" height=\"500px\" style=\"border:none; border-radius:8px;\"&gt;\n\n&lt;/iframe&gt;"
+    "text": "4 Dentro del Archivo Index\n# Prueba de Presentación\n\n&lt;iframe src=\"presentation.html\" width=\"100%\" height=\"500px\" style=\"border:none; border-radius:8px;\"&gt;\n\n&lt;/iframe&gt;"
   },
   {
     "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación-1",
@@ -53,14 +53,14 @@
     "href": "posts/2026-06-14-slide-device/presentation.html#render-el-sitio-web",
     "title": "prueba de diapositiva",
     "section": "7 Render >> el Sitio Web",
-    "text": "7 Render &gt;&gt; el Sitio Web\nquarto render \ngit add --all\ngit commit -m \"post RevealJS sky\"\ngit push origin main --force"
+    "text": "7 Render &gt;&gt; el Sitio Web\nquarto render \ngit add --all\ngit commit -m \"post RevealJS simple 19+\"\ngit push origin main --force"
   },
   {
     "objectID": "posts/2026-06-14-slide-device/presentation.html#créditos",
     "href": "posts/2026-06-14-slide-device/presentation.html#créditos",
     "title": "prueba de diapositiva",
     "section": "8 Créditos",
-    "text": "8 Créditos\nGracias a\nDispositivos de Interacción Asistentes - Claude Anthropic Sonnet 4.6 - Gemini de Google (Modo IA)"
+    "text": "8 Créditos\nGracias a\nDispositivos de Interacción - Asistente de IA Claude Anthropic Sonnet 4.6 - Asistente Gemini de Google (Google Modo IA)"
   },
   {
     "objectID": "posts/2026-06-11-elementos/index.html",
@@ -95,7 +95,7 @@
     "href": "blog.html",
     "title": "Bitácora",
     "section": "",
-    "text": "Un poco de todo, antrópico ~ entrópico.\n\n\n Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos\n\n\nEstructura de post\nTítulo. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprueba de diapositiva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprueba de presentación\n\n\n\nPresentaciones Web\n\nMultimedia\n\nEntrenamiento\n\n.qmd\n\nIA Prompts\n\n\n\npresentación interactiva con RevealJS\n\n\n\n\n\nJun 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nelementos de investigación\n\n\n\nMarco Conceptual\n\nEscala de Aproximación\n\nPlan de Investigación\n\nEcosistema de Investigación\n\nEntrenamiento\n\nAprendizaje\n\nProceso Interactivo\n\n\n\ncaracterización de un ecosistema de investigación\n\n\n\n\n\nJun 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nfotos 0.5, 1, 2 y 3 x\n\n\n\nFotografía\n\nFotografía con Teléfono Celular\n\nFotografía de Naturaleza\n\nInterpretación Ambiental\n\nEscala de Aproximación\n\n\n\ncambio de escala en fotos de celular\n\n\n\n\n\nJun 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nprompt nube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de variables\n\nEcología de Texto\n\nVisualización\n\nIA Prompts\n\nInteracción con IA\n\nDiseño de Consignas\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con asistencia de IA\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de Variables\n\nEcología de Texto\n\nVisualización\n\nDiseño de Consignas\n\nR Shiny app\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con app shiny adaptada\n\n\n\n\n\nMay 30, 2021\n\n\n\n\n\nNo matching items"
+    "text": "Un poco de todo, antrópico ~ entrópico.\n\n\n Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos\n\n\nEstructura de post\nTítulo. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprueba de diapositiva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprueba de presentación\n\n\n\nPresentaciones Web\n\nMultimedia\n\nEntrenamiento\n\n.qmd\n\nIA Prompts\n\nMicroprompt\n\n\n\npresentación interactiva con RevealJS\n\n\n\n\n\nJun 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nelementos de investigación\n\n\n\nMarco Conceptual\n\nEscala de Aproximación\n\nPlan de Investigación\n\nEcosistema de Investigación\n\nEntrenamiento\n\nAprendizaje\n\nProceso Interactivo\n\n\n\ncaracterización de un ecosistema de investigación\n\n\n\n\n\nJun 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nfotos 0.5, 1, 2 y 3 x\n\n\n\nFotografía\n\nFotografía con Teléfono Celular\n\nFotografía de Naturaleza\n\nInterpretación Ambiental\n\nEscala de Aproximación\n\n\n\ncambio de escala en fotos de celular\n\n\n\n\n\nJun 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nprompt nube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de variables\n\nEcología de Texto\n\nVisualización\n\nIA Prompts\n\nInteracción con IA\n\nDiseño de Consignas\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con asistencia de IA\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de Variables\n\nEcología de Texto\n\nVisualización\n\nDiseño de Consignas\n\nR Shiny app\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con app shiny adaptada\n\n\n\n\n\nMay 30, 2021\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html#propósito",
@@ -179,7 +179,7 @@
     "href": "posts/2026-06-14-slide-device/index.html",
     "title": "prueba de presentación",
     "section": "",
-    "text": "Presentación"
+    "text": "Prueba de Presentación"
   },
   {
     "objectID": "proyectos.html",

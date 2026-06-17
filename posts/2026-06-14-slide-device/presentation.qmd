@@ -28,11 +28,11 @@ touch posts/2026-slide-device/presentation.qmd
 title: "prueba de diapositiva"
 format: 
   revealjs:
-    theme: moon # o: moon, sky, serif, simple 
+    theme: simple # o: moon, sky, serif, ... 
     transition: slide # o: fade, zoom, none 
     slide-number: true 
     logo: images/caracol.webp 
-    footer: "casi lo mismo con otro dispositivo | maordano.github.io"
+    footer: "casi lo mismo con otro dispositivo"
 editor: visual 
 ---
 ```
@@ -46,7 +46,7 @@ quarto render posts/slides-devices/presentation.qmd
 ## 4 Dentro del Archivo Index
 
 ``` r
-# Presentación
+# Prueba de Presentación
 
 <iframe src="presentation.html" width="100%" height="500px" style="border:none; border-radius:8px;">
 
@@ -80,7 +80,7 @@ quarto render posts/slides-devices/presentation.qmd
 ``` bash
 quarto render 
 git add --all
-git commit -m "post RevealJS sky"
+git commit -m "post RevealJS simple 19+"
 git push origin main --force
 ```
 
@@ -88,6 +88,7 @@ git push origin main --force
 
 Gracias a
 
-Dispositivos de Interacción Asistentes
-- Claude Anthropic Sonnet 4.6 
-- Gemini de Google (Modo IA) 
+Dispositivos de Interacción
+- Asistente de IA Claude Anthropic Sonnet 4.6 
+- Asistente Gemini de Google (Google Modo IA) 
+

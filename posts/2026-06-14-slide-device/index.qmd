@@ -6,10 +6,10 @@ date-modified: last-modified
 description: "presentación interactiva con RevealJS"
 # format: html (apagado)
 editor: visual
-categories: ["Presentaciones Web","Multimedia","Entrenamiento",".qmd","IA Prompts"]
+categories: ["Presentaciones Web","Multimedia","Entrenamiento",".qmd","IA Prompts", "Microprompt"]
 ---
 
-# Presentación
+# Prueba de Presentación
 
 <iframe src="presentation.html" width="100%" height="500px" style="border:none; border-radius:8px;">
 
