@@ -2,11 +2,11 @@
 title: "prueba de diapositiva"
 format: 
   revealjs:
-    theme: moon # night solarized simple default
+    theme: simple # moon night solarized default
     transition: slide # o: fade,zoom,none 
     slide-number: true 
     logo: images/caracol.webp 
-    footer: "casi lo mismo con otro dispositivo | maordano.github.io"
+    footer: "casi lo mismo con otro dispositivo"
 editor: visual 
 ---
 
