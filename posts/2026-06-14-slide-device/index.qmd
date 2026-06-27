@@ -2,7 +2,7 @@
 title: "prueba de presentación"
 image: "images/caracol.webp"
 date: 2026-06-14
-date-modified: last-modified
+date-modified: 2026-06-27
 description: "presentación interactiva con RevealJS"
 # format: html (apagado)
 editor: visual
