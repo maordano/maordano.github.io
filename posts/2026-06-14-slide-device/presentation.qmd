@@ -8,7 +8,7 @@ format:
     logo: images/caracol.webp 
     footer: "casi lo mismo con otro dispositivo"
 editor: visual 
-draft: true
+draft: true # evita doble entrada de post
 ---
 
 ## 1 Terminal Junto a Consola \[bash\]
@@ -35,6 +35,7 @@ format:
     logo: images/caracol.webp 
     footer: "casi lo mismo con otro dispositivo"
 editor: visual 
+draft: true # evita doble entrada de post
 ---
 ```
 
