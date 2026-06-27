@@ -6,7 +6,7 @@ format:
     transition: slide # o: fade,zoom,none 
     slide-number: true 
     logo: images/caracol.webp 
-    footer: "<a href='../../blog.html' target='_top'>← Bitácora - similar con otro dispositivo </a>"
+    footer: "similar con otro dispositivo"
 editor: visual 
 draft: true # evita doble entrada de post
 ---
