@@ -6,7 +6,7 @@ format:
     transition: slide # o: fade,zoom,none 
     slide-number: true 
     logo: images/caracol.webp 
-    footer: "casi lo mismo con otro dispositivo"
+    footer: "[← Bitácora](../../blog.html) -  similar con otro dispositivo"
 editor: visual 
 draft: true # evita doble entrada de post
 ---
@@ -57,10 +57,10 @@ quarto render posts/slides-devices/presentation.qmd
 
 ## 5 *Render* \>\> el Archivo de Presentación
 
-- Antes de renderizar el sitio un chequeo del post puede servir
-- Incluir el siguiente comando en el archivo _quarto.yml hace la ruta mas directa, aunque se necesite el paso siguiente una vez más
+-   Antes de renderizar el sitio un chequeo del post puede servir
+-   Incluir el siguiente comando en el archivo \_quarto.yml hace la ruta mas directa, aunque se necesite el paso siguiente una vez más
 
-```yaml
+``` yaml
 project:
   type: website
   output-dir: docs 
@@ -69,9 +69,9 @@ project:
     - "posts/**/*.qmd"
 ```
 
-## 6 *Render* >> el post
+## 6 *Render* \>\> el post
 
-- Y como en el punto 3, o como proceso iterativo de corrección de errores el comando
+-   Y como en el punto 3, o como proceso iterativo de corrección de errores el comando
 
 ``` bash
 quarto render posts/slides-devices/presentation.qmd
@@ -90,7 +90,4 @@ git push origin main --force
 
 Gracias a
 
-Dispositivos de Interacción
-- Asistente de IA Claude Anthropic Sonnet 4.6 
-- Asistente Gemini de Google (Google Modo IA) 
-
+Dispositivos de Interacción - Asistente de IA Claude Anthropic Sonnet 4.6 - Asistente Gemini de Google (Google Modo IA)
