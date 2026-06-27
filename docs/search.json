@@ -7,62 +7,6 @@
     "text": "Lyssomanes pauper, una arañita saltarina silvestre, recorriendo un dispositivo del ámbito doméstico\n\nTítulo\nVariación fenotípica de la vida silvestre en el ámbito doméstico: una revisión sistemática\n\nDispositivos de investigación\nPreguntas que guían la idea ¿Por qué hago lo que hago y hacia dónde se supone que va?\nFuente de elección del tema o sistema\nDispositivos de interacción\nMarco conceptual Ecología y evolución de interacciones bióticas\nMétodos de Investigación Plan de gestión de datos compartidos\nRevisión sistemática generalizada\nGlosario ad hoc\nEcosistema digital Cloud drives, Google WorkSpace, OSF, FORRT, STAPLE, RStudio, GitHub\nEntrenamiento de desarrollo COS\nStatus En preparación"
   },
   {
-    "objectID": "posts/2026-06-14-slide-device/presentation.html#terminal-junto-a-consola-bash",
-    "href": "posts/2026-06-14-slide-device/presentation.html#terminal-junto-a-consola-bash",
-    "title": "prueba de diapositiva",
-    "section": "1 Terminal Junto a Consola [bash]",
-    "text": "1 Terminal Junto a Consola [bash]\n\ncreación de documentos de la presentación\nsepara el archivo que va a generar la presentación web\n\nmkdir -p posts/2026-slide-device/images\ntouch posts/2026-slide-device/index.qmd\ntouch posts/2026-slide-device/presentation.qmd"
-  },
-  {
-    "objectID": "posts/2026-06-14-slide-device/presentation.html#configuración-del-archivo-de-la-presentación",
-    "href": "posts/2026-06-14-slide-device/presentation.html#configuración-del-archivo-de-la-presentación",
-    "title": "prueba de diapositiva",
-    "section": "2 Configuración del Archivo de la Presentación",
-    "text": "2 Configuración del Archivo de la Presentación\n---\ntitle: \"prueba de diapositiva\"\nformat: \n  revealjs:\n    theme: simple # o: moon, sky, serif, ... \n    transition: slide # o: fade, zoom, none \n    slide-number: true \n    logo: images/caracol.webp \n    footer: \"casi lo mismo con otro dispositivo\"\neditor: visual \n---"
-  },
-  {
-    "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación",
-    "href": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación",
-    "title": "prueba de diapositiva",
-    "section": "3 Render >> el Archivo de Presentación",
-    "text": "3 Render &gt;&gt; el Archivo de Presentación\nquarto render posts/slides-devices/presentation.qmd"
-  },
-  {
-    "objectID": "posts/2026-06-14-slide-device/presentation.html#dentro-del-archivo-index",
-    "href": "posts/2026-06-14-slide-device/presentation.html#dentro-del-archivo-index",
-    "title": "prueba de diapositiva",
-    "section": "4 Dentro del Archivo Index",
-    "text": "4 Dentro del Archivo Index\n# Prueba de Presentación\n\n&lt;iframe src=\"presentation.html\" width=\"100%\" height=\"500px\" style=\"border:none; border-radius:8px;\"&gt;\n\n&lt;/iframe&gt;"
-  },
-  {
-    "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación-1",
-    "href": "posts/2026-06-14-slide-device/presentation.html#render-el-archivo-de-presentación-1",
-    "title": "prueba de diapositiva",
-    "section": "5 Render >> el Archivo de Presentación",
-    "text": "5 Render &gt;&gt; el Archivo de Presentación\n\nAntes de renderizar el sitio un chequeo del post puede servir\nIncluir el siguiente comando en el archivo _quarto.yml hace la ruta mas directa, aunque se necesite el paso siguiente una vez más\n\nproject:\n  type: website\n  output-dir: docs \n  render:\n    - \"*.qmd\"\n    - \"posts/**/*.qmd\""
-  },
-  {
-    "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-post",
-    "href": "posts/2026-06-14-slide-device/presentation.html#render-el-post",
-    "title": "prueba de diapositiva",
-    "section": "6 Render >> el post",
-    "text": "6 Render &gt;&gt; el post\n\nY como en el punto 3, o como proceso iterativo de corrección de errores el comando\n\nquarto render posts/slides-devices/presentation.qmd"
-  },
-  {
-    "objectID": "posts/2026-06-14-slide-device/presentation.html#render-el-sitio-web",
-    "href": "posts/2026-06-14-slide-device/presentation.html#render-el-sitio-web",
-    "title": "prueba de diapositiva",
-    "section": "7 Render >> el Sitio Web",
-    "text": "7 Render &gt;&gt; el Sitio Web\nquarto render \ngit add --all\ngit commit -m \"post RevealJS simple 19+\"\ngit push origin main --force"
-  },
-  {
-    "objectID": "posts/2026-06-14-slide-device/presentation.html#créditos",
-    "href": "posts/2026-06-14-slide-device/presentation.html#créditos",
-    "title": "prueba de diapositiva",
-    "section": "8 Créditos",
-    "text": "8 Créditos\nGracias a\nDispositivos de Interacción - Asistente de IA Claude Anthropic Sonnet 4.6 - Asistente Gemini de Google (Google Modo IA)"
-  },
-  {
     "objectID": "posts/2026-06-11-elementos/index.html",
     "href": "posts/2026-06-11-elementos/index.html",
     "title": "elementos de investigación",
@@ -95,7 +39,7 @@
     "href": "blog.html",
     "title": "Bitácora",
     "section": "",
-    "text": "Un poco de todo, antrópico ~ entrópico.\n\n\n Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos\n\n\nEstructura de post\nTítulo. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprueba de diapositiva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprueba de presentación\n\n\n\nPresentaciones Web\n\nMultimedia\n\nEntrenamiento\n\n.qmd\n\nIA Prompts\n\nMicroprompt\n\n\n\npresentación interactiva con RevealJS\n\n\n\n\n\nJun 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nelementos de investigación\n\n\n\nMarco Conceptual\n\nEscala de Aproximación\n\nPlan de Investigación\n\nEcosistema de Investigación\n\nEntrenamiento\n\nAprendizaje\n\nProceso Interactivo\n\n\n\ncaracterización de un ecosistema de investigación\n\n\n\n\n\nJun 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nfotos 0.5, 1, 2 y 3 x\n\n\n\nFotografía\n\nFotografía con Teléfono Celular\n\nFotografía de Naturaleza\n\nInterpretación Ambiental\n\nEscala de Aproximación\n\n\n\ncambio de escala en fotos de celular\n\n\n\n\n\nJun 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nprompt nube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de variables\n\nEcología de Texto\n\nVisualización\n\nIA Prompts\n\nInteracción con IA\n\nDiseño de Consignas\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con asistencia de IA\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de Variables\n\nEcología de Texto\n\nVisualización\n\nDiseño de Consignas\n\nR Shiny app\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con app shiny adaptada\n\n\n\n\n\nMay 30, 2021\n\n\n\n\n\nNo matching items"
+    "text": "Un poco de todo, antrópico ~ entrópico.\n\n\n Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos\n\n\nEstructura de post\nTítulo. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprueba de presentación\n\n\n\nPresentaciones Web\n\nMultimedia\n\nEntrenamiento\n\n.qmd\n\nIA Prompts\n\nMicroprompt\n\n\n\npresentación interactiva con RevealJS\n\n\n\n\n\nJun 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nelementos de investigación\n\n\n\nMarco Conceptual\n\nEscala de Aproximación\n\nPlan de Investigación\n\nEcosistema de Investigación\n\nEntrenamiento\n\nAprendizaje\n\nProceso Interactivo\n\n\n\ncaracterización de un ecosistema de investigación\n\n\n\n\n\nJun 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nfotos 0.5, 1, 2 y 3 x\n\n\n\nFotografía\n\nFotografía con Teléfono Celular\n\nFotografía de Naturaleza\n\nInterpretación Ambiental\n\nEscala de Aproximación\n\n\n\ncambio de escala en fotos de celular\n\n\n\n\n\nJun 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nprompt nube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de variables\n\nEcología de Texto\n\nVisualización\n\nIA Prompts\n\nInteracción con IA\n\nDiseño de Consignas\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con asistencia de IA\n\n\n\n\n\nMay 25, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nnube de palabras\n\n\n\nMétodos\n\nClasificación\n\nTipos de Variables\n\nEcología de Texto\n\nVisualización\n\nDiseño de Consignas\n\nR Shiny app\n\nIngeniería del Aprendizaje\n\nEntrenamiento\n\n\n\nimagen obtenida con app shiny adaptada\n\n\n\n\n\nMay 30, 2021\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html#propósito",
