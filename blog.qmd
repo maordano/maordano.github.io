@@ -8,16 +8,16 @@ listing:
   categories: true 
 ---
 
-:::lead
----
+::: lead
 
-*Un poco de todo, antrópico ~ entrópico.*
+------------------------------------------------------------------------
 
----
+*Un poco de todo, antrópico \~ entrópico.*
+
+------------------------------------------------------------------------
 :::
 
 ![](images/quetupi-riparium-nube.webp){width="100%" fig-align="center"} *Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos*
-
 
 ------------------------------------------------------------------------
 
