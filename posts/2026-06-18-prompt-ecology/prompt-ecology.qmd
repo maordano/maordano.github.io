@@ -1,0 +1,169 @@
+---
+title: "Ecología de prompts"
+date: "2026-06-18"
+date-modified: "2026-06-28"  
+categories: ["ecología", "IA prompts", "microprompts", "visualización", "ecología de palabras", "ecología de prompts", "elementos de investigación"]
+description: >
+  Búsqueda heurística de prompts adecuadamente formulados sobre ecología,
+  visualizados como diagrama de relaciones al estilo *word cloud*.
+  Elaborado con asistencia de IA (Claude, Anthropic).
+image: "images/prompt-ecology.webp"
+---
+
+## Introducción
+
+Los modelos de lenguaje (LLM) han emergido como herramientas prometedoras en
+ecología: desde la identificación automatizada de especies hasta la síntesis de
+literatura científica. Sin embargo, la calidad de los resultados depende en gran
+medida de cómo se formulan las consultas —los llamados *prompts*— [@brown2026prompting].
+
+Este post presenta una exploración heurística de prompts ecológicos, organizados en un diagrama de relaciones que combina la lógica de
+una **nube de palabras** (*word cloud*) con la estructura de un mapa conceptual.
+
+> **Asistencia IA:** La búsqueda, síntesis y visualización de este post fueron
+> realizadas con asistencia de Claude (Anthropic, modelo Sonnet 4.6), en el
+> marco de prácticas FAIR y transparencia metodológica.
+
+---
+
+## Diagrama de relaciones (word ecology)
+
+El siguiente diagrama muestra seis dominios temáticos centrales en ecología,
+cada uno asociado a prompts representativos para IA. Los nodos secundarios
+corresponden a conceptos o herramientas que pueden enriquecer la
+consulta.
+
+```{mermaid}
+%%| label: fig-word-ecology
+%%| fig-cap: "Mapa de relaciones entre dominios ecológicos y prompts para IA. Los nodos primarios (coloreados) representan grandes áreas temáticas; los nodos secundarios (gris) refieren técnicas o conceptos específicos."
+
+graph TD
+    %% Nodo central
+    C(["🌿 Ecología\nPrompts para IA"])
+
+    %% Nodos primarios
+    MON["🔭 Monitoreo con IA\nbioacústica · teledetección"]
+    BIO["🦋 Biodiversidad\nriqueza · endemismo"]
+    RED["🕸️ Redes tróficas\ncadenas · cascadas"]
+    PER["⚡ Perturbaciones\nresiliencia · sucesión"]
+    SER["🌊 Servicios ecosistémicos\nregulación · provisión"]
+    CLI["🌡️ Cambio climático\nSDM · refugios · fenología"]
+
+    %% Nodos secundarios
+    IDE["Identificación de especies\n(deep learning, CNNs)"]
+    FEN["Fenología\n(NDVI, satélite)"]
+    MOD["Modelado poblacional\n(matrices de Leslie)"]
+    CON["Conservación\n(reservas, priorización)"]
+    DIS["Distribución de especies\n(MaxEnt, WorldClim)"]
+    REF["Refugios climáticos\n(NOA, Andes)"]
+
+    %% Relaciones principales
+    C -->|"¿qué monitorear?"| MON
+    C -->|"¿qué proteger?"| BIO
+    C -->|"¿cómo interactúa?"| RED
+    C -->|"¿cómo responde?"| PER
+    C -->|"¿qué provee?"| SER
+    C -->|"¿cómo cambia?"| CLI
+
+    %% Relaciones secundarias
+    BIO --- IDE
+    BIO --- FEN
+    RED --- MOD
+    SER --- CON
+    CLI --- DIS
+    CLI --- REF
+
+    %% Estilos
+    classDef central fill:#1D9E75,stroke:#085041,color:#fff,font-weight:bold
+    classDef primario fill:#E1F5EE,stroke:#1D9E75,color:#085041
+    classDef secundario fill:#F1EFE8,stroke:#B4B2A9,color:#444441,font-size:12px
+
+    class C central
+    class MON,BIO,RED,PER,SER,CLI primario
+    class IDE,FEN,MOD,CON,DIS,REF secundario
+```
+
+---
+
+## Ejemplos de prompts
+
+A continuación se ilustran, por dominio temático, prompts con estructura
+adecuada para producir respuestas útiles y reproducibles.
+
+### 🦋 Biodiversidad
+
+> *"Actúa como ecólogo de comunidades. Dado un dataset de aves con columnas
+> [sitio, especie, abundancia, altitud], calcula los índices de Shannon y
+> Simpson por sitio, grafica la relación con la altitud y sugiere qué variables
+> ambientales adicionales incorporarías en un GLM."*
+
+**Por qué funciona:** define rol, especifica estructura de datos, solicita
+análisis escalonado y abre espacio para interpretación experta.
+
+### 🕸️ Redes tróficas
+
+> *"Simula una red trófica de 5 niveles en un ecosistema de yungas. Define
+> parámetros de Lotka-Volterra para cada par predador-presa. ¿Qué ocurre con la
+> dinámica si se elimina el depredador tope? Presenta los resultados en R con
+> el paquete `igraph`."*
+
+### ⚡ Perturbaciones
+
+> *"Analiza el efecto de incendios recurrentes sobre la resiliencia de la
+> vegetación chaqueña. Usa el marco de Holling (1973) y sugiere métricas de
+> recuperación medibles con datos Landsat-8."*
+
+### 🌡️ Cambio climático
+
+> *"Usando variables bioclimáticas de WorldClim 2.1 y registros de
+> [especie focal] del NOA, construye un modelo de nicho ecológico con MaxEnt.
+> Proyecta la distribución potencial para 2050 bajo SSP2-4.5 y SSP5-8.5.
+> Interpreta los resultados en términos de refugios climáticos en los Andes."*
+
+### 🔭 Monitoreo con IA
+
+> *"Tengo grabaciones de audio de 1 minuto de ecosistemas de pastizal. Propón
+> un pipeline en Python usando BirdNET-Analyzer para detección de especies,
+> y sugiere cómo calcular índices acústicos de biodiversidad (ACI, BI, NDSI)."*
+
+### 🌊 Servicios ecosistémicos
+
+> *"Valora el servicio de regulación hídrica de humedales altoandinos en
+> Tucumán. Identifica métodos de valoración aplicables (transferencia de
+> beneficios, función de producción) y señala las principales incertidumbres
+> para un análisis de sensibilidad."*
+
+---
+
+## Fuentes y referencias
+
+Las búsquedas heurísticas se realizaron en junio de 2026 utilizando las
+siguientes fuentes principales:
+
+- **Brown et al. (2026).** "Prompting large language models for quality
+  ecological statistics." *Methods in Ecology and Evolution*.
+  <https://doi.org/10.1111/2041-210x.70267>
+
+- **Pollock et al. (2025).** "Harnessing artificial intelligence to fill global
+  shortfalls in biodiversity knowledge." *Nature Reviews Biodiversity*.
+  <https://doi.org/10.1038/s44358-025-00022-3>
+
+- **Rustad et al. (2023).** "A synergistic future for AI and ecology."
+  *PNAS*. <https://pmc.ncbi.nlm.nih.gov/articles/PMC10515155/>
+
+- **Guerrero et al. (2025).** AI for ecology and conservation: new tools track
+  ecosystem health. *Methods in Ecology and Evolution* / Rice University News.
+  <https://news.rice.edu/news/2025/ai-ecology-and-conservation-new-tools-track-ecosystem-health>
+
+- Digital Methods Initiative (2024). "Prompting for biodiversity: visual
+  research with generative AI."
+  <https://www.digitalmethods.net/Dmi/PromptingForBiodiversity>
+
+## Prompt empleado\ 
+Estimada asistente de ia, por favor realice una búsqueda heurística de prompts “adecuadamente formulados” sobre ecología, y que se forme una especie de diagrama de relaciones como se hace en la visualización de nubes de palabras (“word ecology”).
+Incluya las fuentes de información empleadas, y si es posible devuelva un dibujito programado en mermaid para desplegar con quarto.
+
+
+---
+
+*Última actualización: `r Sys.Date()`*
