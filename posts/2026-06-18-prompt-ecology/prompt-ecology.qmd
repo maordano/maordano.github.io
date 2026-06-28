@@ -1,7 +1,7 @@
 ---
 title: "ecología de prompts"
-date: "2026-06-18"
-date-modified: "2026-06-28"  
+date: 2026-06-18
+date-modified: 2026-06-28  
 categories: ["Ecología", "IA Prompts", "Microprompts", "Visualización", "Ecología de Palabras", "Ecología de Prompts", "Elementos de Investigación", "Aprendizaje", "Entrenamiento"]
 description: >
   Búsqueda de prompts "adecuadamente formulados" sobre ecología,
