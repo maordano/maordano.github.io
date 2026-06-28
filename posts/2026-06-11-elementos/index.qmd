@@ -6,7 +6,7 @@ image: "images/caracol.webp"
 date: 2026-06-11
 date-modified: last-modified
 description: "caracterización de un ecosistema de investigación"
-categories: ["Marco Conceptual", "Escala de Aproximación","Plan de Investigación",  "Ecosistema de Investigación","Entrenamiento","Aprendizaje","Proceso Interactivo"]
+categories: ["Marco Conceptual", "Escala de Aproximación","Plan de Investigación",  "Ecosistema de Investigación","Entrenamiento","Aprendizaje","Proceso Interactivo", "Elementos de Investigación"]
 ---
 
 ## Caracterización de una investigación
