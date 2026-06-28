@@ -2,7 +2,7 @@
 title: "ecología de prompts"
 date: 2026-06-18
 date-modified: 2026-06-28  
-categories: ["Ecología", "IA Prompts", "Microprompts", "Visualización", "Ecología de Palabras", "Ecología de Prompts", "Elementos de Investigación", "Aprendizaje", "Entrenamiento"]
+categories: ["Ecología", "IA Prompts", "Microprompts", "Visualización", "Ecología de Texto", "Ecología de Prompts", "Elementos de Investigación", "Aprendizaje", "Entrenamiento"]
 description: >
   búsqueda de prompts sobre ecología,
   visualizados al estilo *word cloud*, con asistencia de IA (Claude, Anthropic)
