@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - "google78e3f1e62d7e147c.html"
   output-dir: docs 
   render:
     - "*.qmd"
