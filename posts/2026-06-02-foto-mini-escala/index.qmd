@@ -1,8 +1,8 @@
 ---
 title: "fotos 0.5, 1, 2 y 3 x"
-image: "images/selva3x.webp"
+image: "images/selva-escala.webp"
 date: 2026-06-02
-date-modified: last-modified
+date-modified: 2026-06-28
 description: "cambio de escala en fotos de celular"
 categories: ["Fotografía", "Fotografía con Teléfono Celular", "Fotografía de Naturaleza", "Interpretación Ambiental", "Escala de Aproximación"]
 ---
@@ -11,25 +11,25 @@ Fotos tomadas desde un mismo punto, a distinta escala, pueden nutrir la interpre
 
 La percepción y la interpretación ¿en qué medida están afectadas por el dispositivo?  
 
-___
+ ___ 
 
 Un ejemplo de 4 fotos en el pedemonte.
 
-___
+ ___ 
 
 ![Lente 0.5 x ~ 13 mm](images/selva0-5x.webp){width=100%}
 
-___
+ ___ 
 
 ![Lente 1 x ~ 24 mm](images/selva1x.webp){width=100%}
 
-___
+ ___ 
 
 ![Lente 2 x ~ 48 mm](images/selva2x.webp){width=100%}
 
-___
+ ___ 
 
 ![Lente 3 x ~ 77 mm](images/selva3x.webp){width=100%}
 
-___
+ ___ 
 
