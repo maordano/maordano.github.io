@@ -37,7 +37,7 @@ Sigue principios tipo [FAIR](https://www.go-fair.org/) y CARE para la [gestión 
 Busca integrar dispositivos de interfase para ampliar la accesibilidad al sitio de personas con percepción visual "subóptima", o que necesitan comunicarse de manera especial (al menos para el "mundo de percepción convencional de lo que se considera población humana").
 En la versión actual el sitio tiene algunas opciones de accesibilidad en su versión original en idioma español.
 
-Se informa sobre la [legislación vigente local para la gestión de datos personales](https://www.oas.org/juridico/pdfs/arg_ley25326.pdf) y [uso de inteligencia artificial](https://www.argentina.gob.ar/justicia/derechofacil/leysimple/educacion-ciencia-cultura/recomendaciones-para-el-uso-de).
+Se informa sobre la [legislación vigente local para la gestión de datos personales](https://www.oas.org/juridico/pdfs/arg_ley25326.pdf) y [uso de inteligencia artificial](https://www.argentina.gob.ar/normativa/nacional/disposici%C3%B3n-2-2023-384656/texto).
 Declara fuentes de conocimiento, usa fuentes primarias y secundarias, referenciables, accesibles.
 
 La construcción del sitio está inspirada e inicialmente moldeado con [Hugo Ananke](https://themes.gohugo.io/themes/ananke/) y ahora construido con [Quarto](https://quarto.org).
@@ -49,15 +49,15 @@ Hecho a mano por mi cuerpo orgánico - aparentemente humano ;), mediado por disp
 
 Más detalles en enlaces del footer.
 
-------------------------------------------------------------------------
+ ---  
 
 Licencia [Creative Commons by 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-------------------------------------------------------------------------
+ ---  
 
 ![amanecer en el pedemonte, Sierra de San Javier](images/alba-4476.webp){width="100%"}
 
-------------------------------------------------------------------------
+ ---  
 
 ### [Portada Galería](https://maordano.github.io/)
 
@@ -73,14 +73,14 @@ En algunos casos puede funcionar como un testing de temas no resueltos, temas no
 
 Puede incluir herramientas, técnicas, métodos, conceptos, prompts, redacción de consultas, test de cosas que dicen; *"nideas"*, apuntes, *stuffs*, … *sensu* Umberto Eco.
 
-------------------------------------------------------------------------
+ ---  
 
 Experiencias y aprendizajes.\
 Experiencias aprendizadas.\
 Expresiones rumiantes.\
 Ex.
 
-------------------------------------------------------------------------
+ ---  
 
 ### [Proyectos](https://maordano.github.io/proyectos.html)
 
@@ -97,8 +97,8 @@ Si no se pueden visualizar opciones de retorno, pruebe con girar la posición en
 
 Herramienta funcional, abre una barra para escribir palabras que encontrará (o no) en este sitio.
 
-------------------------------------------------------------------------
+ ---  
 
 ![amanecer en el pedemonte, Sierra de San Javier](images/alba-4474.webp){width="100%"}
 
-------------------------------------------------------------------------
+ --- 
