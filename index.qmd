@@ -23,7 +23,7 @@ Aprendizaje y educación.
 
  --- 
 
-::: {layout-ncol="2"}
+::: portal {layout-ncol="2"}
 
 Trabajo en investigación y educación\
 como empleado de la [Fundación Miguel Lillo](https://www.lillo.org.ar/)\

@@ -97,3 +97,10 @@ body.filtro-suave {
 body.daltonismo {
   filter: hue-rotate(85deg) contrast(115%) !important;
 }
+
+.portal {
+  background-color: #e8f4e8;
+  padding: 1rem;
+  border-radius: 8px;
+  layout-ncol:"2";
+}
