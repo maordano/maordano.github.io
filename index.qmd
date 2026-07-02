@@ -6,9 +6,9 @@ title: "Portada Galería"
 
 ![](images/alba-bird-tree-4594.webp){width="100%" fig-align="center"} *pájaros al alba*
 
+ ---  
+ 
 ::: {.lead .text-center .portal}
-
- ---
 
 Explorando mundos con seres vivos.
 
@@ -16,8 +16,9 @@ Investigación en ecología, evolución de relaciones bióticas y ambientales.
 
 Aprendizaje y educación.
 
- --- 
 :::
+
+ ---  
 
 ![](images/alba-como-retrato.webp){width="100%" fig-align="center"} *otoño al amanecer - selva pedemontana - Sierra de San Javier*
 
