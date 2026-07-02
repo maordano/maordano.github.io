@@ -24,17 +24,19 @@ Aprendizaje y educación.
 
  --- 
 
-::: portal
+::: {.portal .text-center}
 
-Trabajo en investigación y educación\
-como empleado de la [Fundación Miguel Lillo](https://www.lillo.org.ar/)\
-y del [CONICET](https://www.conicet.gov.ar/)\
-en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/)\
+Trabajo en investigación y educación como empleado de la [Fundación Miguel Lillo](https://www.lillo.org.ar/)\
+y del [CONICET](https://www.conicet.gov.ar/) en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/). 
 
 :::
 
  ---  
 
+::: {.lead .text-center}
+
 Tucumán, Argentina
+
+:::
 
  --- 
