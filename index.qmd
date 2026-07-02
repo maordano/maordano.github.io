@@ -6,7 +6,7 @@ title: "Portada Galería"
 
 ![](images/alba-bird-tree-4594.webp){width="100%" fig-align="center"} *pájaros al alba*
 
-::: lead
+::: {.lead .text-center .portal}
 
  ---
 
