@@ -19,11 +19,11 @@ listing:
 Estructura de post
 :::
 
-::: {.lead .comodin-2col .row}
-::: {.col-md-6}
+::: {.comodin-2col}
+::: {}
 Título. Categorías. Descripción breve del contenido. Imagen típicamente repetida en contenido.
 :::
-::: {.col-md-6}
+::: {}
 Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.
 :::
 :::
