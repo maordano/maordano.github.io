@@ -24,7 +24,7 @@ Estructura de post
 Título. Categorías. Descripción breve del contenido. Imagen típicamente repetida en contenido.
 :::
 ::: {}
-Texto explicativo. Fecha de producción, fecha de modificación y categorías, firma humana, semi-automatizadas, en formato e idioma de origen.
+Texto explicativo. Fecha de producción, fecha de modificación, categorías, firma humana, semi-automatizadas, formato e idioma de origen.
 :::
 :::
 
