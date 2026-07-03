@@ -30,14 +30,11 @@ listing:
 
  ---  
 
-::: {.fondopost .col}
-::: {.col-md-4}
-Fecha de creación
-:::
-::: {.col-md-4}
+::: {.col}
+::: {.col-md-6}
 Título. Categorías. Descripción breve del contenido.
 :::
-::: {.col-md-4}
+::: {.col-md-6}
 Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.
 :::
 :::
