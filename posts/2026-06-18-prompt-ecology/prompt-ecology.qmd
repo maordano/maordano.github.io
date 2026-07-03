@@ -1,8 +1,8 @@
 ---
-title: "ecología de prompts"
+title: "prompts de ecología"
 date: 2026-06-18
 date-modified: 2026-06-28  
-categories: ["Ecología", "IA Prompts", "Microprompts", "Visualización", "Ecología de Texto", "Ecología de Prompts", "Elementos de Investigación", "Aprendizaje", "Entrenamiento","Diseño de Consignas"]
+categories: ["Ecología", "IA Prompts", "Microprompts", "Visualización", "Ecología de Texto", "Prompts de Ecología", "Ecología de Prompts", "Elementos de Investigación", "Aprendizaje", "Entrenamiento","Diseño de Consignas"]
 description: >
   búsqueda de prompts sobre ecología,
   visualizados al estilo *word cloud*, con asistencia de IA (Claude, Anthropic)
@@ -17,7 +17,7 @@ literatura científica. Sin embargo, la calidad de los resultados depende en gra
 medida de cómo se formulan las consultas —los llamados *prompts*— [@brown2026prompting].
 
 Este post presenta una exploración heurística de prompts ecológicos, organizados en un diagrama de relaciones que combina la lógica de
-una **nube de palabras** (*word cloud*) con la estructura de un mapa conceptual.
+una **nube de palabras** (*word cloud*) con la estructura de un mapa conceptual. (Nota de redacción: distinguir "ecología de prompts" de "prompts de ecología").
 
 > **Asistencia IA:** La búsqueda, síntesis y visualización de este post fueron
 > realizadas con asistencia de Claude (Anthropic, modelo Sonnet 4.6), en el
