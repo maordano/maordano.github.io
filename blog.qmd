@@ -26,10 +26,11 @@ listing:
 ### Estructura de post
 
  ---  
+:::
 
-::: 
+ ---  
 
-::: {.fondopost .row}
+::: {.fondopost .col}
 ::: {.col-md-4}
 Fecha de creación
 :::
