@@ -24,7 +24,7 @@ categories: ["Marco Conceptual", "Escala de Aproximación","Plan de Investigaci�
 -   un tiempo y espacio de entrenamiento y aprendizaje
 -   un tiempo y espacio de dedicación a facetas complementarias, comunidad de visiones del conocimiento y actividades *nada que ver*
 
- ---  
+------------------------------------------------------------------------
 
 ##### \[Meta-objetivo\]
 
@@ -74,8 +74,8 @@ graph LR
 
 En este esquema se representa una posible forma de relaciones entre elementos de un objetivo de investigación, de un conjunto de posibles clasificaciones del conjunto de interacciones que coexisten en el ámbito doméstico, y la dirección de los flujos entre elementos en el sistema con que se visualiza el objetivo.
 
- --- 
+------------------------------------------------------------------------
 
 ![ahí vamos hermenéutica de interacciones humano-naturaleza](images/caracol.webp){width="100%"}
 
- --- 
+------------------------------------------------------------------------
