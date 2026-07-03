@@ -1,7 +1,7 @@
 ---
 title: "prompts de ecología"
 date: 2026-06-18
-date-modified: 2026-06-28  
+date-modified: 2026-07-03  
 categories: ["Ecología", "IA Prompts", "Microprompts", "Visualización", "Ecología de Texto", "Prompts de Ecología", "Ecología de Prompts", "Elementos de Investigación", "Aprendizaje", "Entrenamiento","Diseño de Consignas"]
 description: >
   búsqueda de prompts sobre ecología,
