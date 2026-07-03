@@ -31,3 +31,6 @@ Título. Categorías. Descripción breve del contenido. Imagen repetida en conte
  
 ::: 
 
+<br>
+
+<br>
