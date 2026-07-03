@@ -8,33 +8,23 @@ listing:
   categories: true 
 ---
 
-::: lead
-
- ---  
-
+::: {.lead .text-center}
 *Un poco de todo, antrópico \~ entrópico.*
-
- ---  
-
 :::
 
 ![](images/quetupi-riparium-nube.webp){width="100%" fig-align="center"} *Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por Funga*
 
 
 ::: {.fondopost .lead .text-center}
- ___  
-
 Estructura de post
-
- ---  
 :::
-::: {.lead .comodin-2col}
-::: 
+
+::: {.lead .comodin-2col .row}
+::: {.col-md-6}
 Título. Categorías. Descripción breve del contenido. Imagen típicamente repetida en contenido.
 :::
-::: 
+::: {.col-md-6}
 Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.
 :::
 :::
 
- ---  
