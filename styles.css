@@ -115,3 +115,9 @@ body.daltonismo {
   padding: 1rem;
   border-radius: 8px;
 }
+
+.comodin-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
