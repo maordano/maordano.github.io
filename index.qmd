@@ -8,7 +8,7 @@ title: "Portada Galería"
 
  ---  
  
-::: {.lead .text-center .portal}
+::: {.lead .text-center .fondoportal}
 
 Explorando mundos con seres vivos.
 
@@ -24,7 +24,7 @@ Aprendizaje y educación.
 
  --- 
 
-::: {.portal .text-center}
+::: {.fondoportal .text-center}
 
 Trabajo en investigación y educación como empleado de la [Fundación Miguel Lillo](https://www.lillo.org.ar/)\
 y del [CONICET](https://www.conicet.gov.ar/) en el [Instituto de Ecología Regional](https://ier.conicet.gov.ar/). 

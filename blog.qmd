@@ -19,10 +19,15 @@ listing:
 
 ![](images/quetupi-riparium-nube.webp){width="100%" fig-align="center"} *Pitangus sulphuratus vivo parado en estructura de Solanum riparium comido por hongos*
 
-------------------------------------------------------------------------
+::: fondopost
+
+ ___  
 
 ### Estructura de post
 
 Título. Categorías. Descripción breve del contenido. Imagen repetida en contenido. Un texto explicativo dentro del post. Fecha de producción, fecha de modificación y categorías, firma humana, automatizadas, en formato e idioma de origen.
 
-------------------------------------------------------------------------
+ ---  
+ 
+::: 
+

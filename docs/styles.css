@@ -98,8 +98,20 @@ body.daltonismo {
   filter: hue-rotate(85deg) contrast(115%) !important;
 }
 
-.portal {
+.fondoportal {
   background-color: #e8f4e8;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.fondopost {
+  background-color: #b1b2f7;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.fondoproyecto {
+  background-color: #f3b2a2;
   padding: 1rem;
   border-radius: 8px;
 }
