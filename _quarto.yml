@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site
+  output-dir: docs
 
   resources:
     - "google78e3f1e62d7e147c.html"
@@ -8,7 +8,7 @@ project:
     - "*.qmd"
     - "posts/**/*.qmd"
 website:
-  title: "<i class='bi-house-door'></i>-interdomestic"
+  title: "<i class='bi-house-door'></i> interdomestic"
   site-url: "https://github.io"
   navbar:
     background: dark
