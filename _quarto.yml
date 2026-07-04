@@ -1,13 +1,14 @@
 project:
   type: website
+  output-dir: _site
+
   resources:
     - "google78e3f1e62d7e147c.html"
-  output-dir: docs 
   render:
     - "*.qmd"
     - "posts/**/*.qmd"
 website:
-  title: "<i class='bi-house-door'></i>"
+  title: "<i class='bi-house-door'></i>-interdomestic"
   site-url: "https://github.io"
   navbar:
     background: dark
