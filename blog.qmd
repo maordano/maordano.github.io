@@ -16,15 +16,7 @@ listing:
 
 
 ::: {.fondopost .lead .text-center}
-Estructura de post
-:::
-
-::: {.comodin-2col}
-::: {}
-Título. Categorías. Descripción breve del contenido. Imagen típicamente repetida en contenido.
-:::
-::: {}
-Texto explicativo. Fecha de producción y  modificación, categorías, firma humana, formato e idioma de origen.
-:::
+Estructura de post\ 
+Título. Categorías. Descripción breve del contenido. Imagen típicamente repetida en contenido. Texto explicativo. Fecha de producción y modificación, categorías, firma humana, formato e idioma de origen.
 :::
 
