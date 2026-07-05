@@ -8,7 +8,7 @@ project:
     - "*.qmd"
     - "posts/**/*.qmd"
 website:
-  title: "<i class='bi-house-door'></i> interdomestic"
+  title: "<i class='bi-house-door'></i>"
   site-url: "https://github.io"
   navbar:
     background: dark
