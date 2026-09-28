@@ -10,11 +10,11 @@ title: "Portada Galería"
  
 ::: {.lead .text-center .fondoportal}
 
-Explorando mundos con seres vivos.
+Explorando mundos interactivos.
 
 Investigación en ecología, evolución de relaciones bióticas y ambientales.
 
-Aprendizaje y experiencias.
+Exploración, aprendizaje y experiencias.
 
 :::
 
