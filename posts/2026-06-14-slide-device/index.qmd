@@ -2,7 +2,7 @@
 title: "prueba de presentación"
 image: "images/caracol.webp"
 date: 2026-06-14
-date-modified: 2026-06-27
+date-modified: 2026-10-03
 description: "presentación interactiva con RevealJS"
 # format: html (apagado)
 editor: visual
@@ -12,4 +12,5 @@ categories: ["Presentaciones Web","Multimedia","Entrenamiento",".qmd","IA Prompt
 [← Volver a la Bitácora](../../blog.html)
 
 <iframe src="presentation.html" width="100%" height="500px" style="border:none; border-radius:8px;">
+
 </iframe>
