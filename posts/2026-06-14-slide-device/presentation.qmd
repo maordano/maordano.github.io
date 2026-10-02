@@ -88,6 +88,6 @@ git push origin main --force
 
 ## 8 Créditos
 
-Gracias a
+Uso de IA
 
-Dispositivos de Interacción - Asistente de IA Claude Anthropic Sonnet 4.6 - Asistente Gemini de Google (Google Modo IA)
+Para la programación y montaje de la estructura digital en la web se consultaron las versiones libres de asistentes de Claude Anthropic Sonnet 4.6, y Gemini de Google (Google Modo IA).
