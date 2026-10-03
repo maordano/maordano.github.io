@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="M. A. Ordano">
+<meta name="description" content="Cómo construir y publicar en pocos pasos una presentación online dentro de un sitio Quarto, con las diapositivas definidas en slides.json y los metadatos JSON-LD generados desde el mismo archivo.">
+
+<title>Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto – </title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6ea91cd35237a82ec5854df7425f41cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><i class="bi-house-door"></i></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Bitácora</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../proyectos.html"> 
+<span class="menu-text">Proyectos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Acerca de</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://translate.google.com/translate?sl=es&amp;tl=en&amp;u=https%3A%2F%2Fmaordano.github.io" target="_blank"> 
+<span class="menu-text">🌐</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#la-idea-en-una-frase" id="toc-la-idea-en-una-frase" class="nav-link active" data-scroll-target="#la-idea-en-una-frase">1. La idea en una frase</a></li>
+  <li><a href="#anatomía-del-post" id="toc-anatomía-del-post" class="nav-link" data-scroll-target="#anatomía-del-post">2. Anatomía del post</a>
+  <ul class="collapse">
+  <li><a href="#qué-cambia-respecto-al-flujo-anterior" id="toc-qué-cambia-respecto-al-flujo-anterior" class="nav-link" data-scroll-target="#qué-cambia-respecto-al-flujo-anterior">¿Qué cambia respecto al flujo anterior?</a></li>
+  </ul></li>
+  <li><a href="#construcción-paso-a-paso-desde-rstudio" id="toc-construcción-paso-a-paso-desde-rstudio" class="nav-link" data-scroll-target="#construcción-paso-a-paso-desde-rstudio">3. Construcción paso a paso desde RStudio</a>
+  <ul class="collapse">
+  <li><a href="#crear-la-estructura" id="toc-crear-la-estructura" class="nav-link" data-scroll-target="#crear-la-estructura">3.1 Crear la estructura</a></li>
+  <li><a href="#slides.json-los-datos" id="toc-slides.json-los-datos" class="nav-link" data-scroll-target="#slides.json-los-datos">3.2 <code>slides.json</code>: los datos</a></li>
+  <li><a href="#presentation.qmd-el-despliegue" id="toc-presentation.qmd-el-despliegue" class="nav-link" data-scroll-target="#presentation.qmd-el-despliegue">3.3 <code>presentation.qmd</code>: el despliegue</a></li>
+  <li><a href="#previsualizar-y-renderizar" id="toc-previsualizar-y-renderizar" class="nav-link" data-scroll-target="#previsualizar-y-renderizar">3.4 Previsualizar y renderizar</a></li>
+  </ul></li>
+  <li><a href="#incrustar-la-presentación-en-el-post" id="toc-incrustar-la-presentación-en-el-post" class="nav-link" data-scroll-target="#incrustar-la-presentación-en-el-post">4. Incrustar la presentación en el post</a></li>
+  <li><a href="#json-ld-generado-desde-los-mismos-datos" id="toc-json-ld-generado-desde-los-mismos-datos" class="nav-link" data-scroll-target="#json-ld-generado-desde-los-mismos-datos">5. JSON-LD generado desde los mismos datos</a>
+  <ul class="collapse">
+  <li><a href="#y-si-prefiero-python" id="toc-y-si-prefiero-python" class="nav-link" data-scroll-target="#y-si-prefiero-python">¿Y si prefiero Python?</a></li>
+  </ul></li>
+  <li><a href="#despliegue-la-infraestructura-del-artefacto" id="toc-despliegue-la-infraestructura-del-artefacto" class="nav-link" data-scroll-target="#despliegue-la-infraestructura-del-artefacto">6. Despliegue: la infraestructura del artefacto</a>
+  <ul class="collapse">
+  <li><a href="#archivo-con-doi-opcional" id="toc-archivo-con-doi-opcional" class="nav-link" data-scroll-target="#archivo-con-doi-opcional">Archivo con DOI (opcional)</a></li>
+  </ul></li>
+  <li><a href="#qué-dice-la-literatura" id="toc-qué-dice-la-literatura" class="nav-link" data-scroll-target="#qué-dice-la-literatura">7. ¿Qué dice la literatura?</a></li>
+  <li><a href="#límites-y-buenas-prácticas" id="toc-límites-y-buenas-prácticas" class="nav-link" data-scroll-target="#límites-y-buenas-prácticas">8. Límites y buenas prácticas</a></li>
+  <li><a href="#créditos" id="toc-créditos" class="nav-link" data-scroll-target="#créditos">Créditos</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">quarto</div>
+    <div class="quarto-category">revealjs</div>
+    <div class="quarto-category">json</div>
+    <div class="quarto-category">json-ld</div>
+    <div class="quarto-category">open science</div>
+    <div class="quarto-category">reproducibilidad</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Cómo construir y publicar en pocos pasos una presentación online dentro de un sitio Quarto, con las diapositivas definidas en slides.json y los metadatos JSON-LD generados desde el mismo archivo.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>M. A. Ordano </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2 de octubre de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="la-idea-en-una-frase" class="level2">
+<h2 class="anchored" data-anchor-id="la-idea-en-una-frase">1. La idea en una frase</h2>
+<p>Una presentación web (RevealJS) puede tratarse como cualquier otro <strong>artefacto de investigación</strong>: se escribe en texto plano, se compila con un comando, se versiona con git y se publica con otro comando. Lo nuevo de este flujo es que <strong>el contenido de las diapositivas ya no está escrito dentro del documento, sino en un archivo de datos (<code>slides.json</code>)</strong>. De ese único archivo salen:</p>
+<ul>
+<li>las diapositivas (<code>presentation.qmd</code> → <code>presentation.html</code>),</li>
+<li>los metadatos para buscadores y repositorios (JSON-LD de schema.org) que se insertan en este post.</li>
+</ul>
+<p>Aquí tienes la presentación terminada, incrustada en el post:</p>
+<div class="ratio ratio-16x9">
+<p><iframe src="presentation.html" title="Presentación RevealJS: del .qmd al iframe, con contenido en JSON" loading="lazy" allowfullscreen="" style="border:0; border-radius:8px;"></iframe></p>
+</div>
+<p><a href="presentation.html" target="_blank">Abrir la presentación a pantalla completa</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si las teclas de flecha no cambian de diapositiva, haz clic primero dentro del recuadro: el iframe necesita tener el foco. La tecla <code>F</code> activa la pantalla completa y <code>S</code> abre la vista del orador con las notas.</p>
+</div>
+</div>
+</section>
+<section id="anatomía-del-post" class="level2">
+<h2 class="anchored" data-anchor-id="anatomía-del-post">2. Anatomía del post</h2>
+<p>Todo vive en una carpeta. Cada archivo cumple un solo papel:</p>
+<pre><code>posts/2026-10-02-slide-json/
+├── slides.json          # DATOS: qué dicen las diapositivas
+├── presentation.qmd     # DESPLIEGUE: convierte los datos en una presentación RevealJS
+├── index.qmd            # POST: explica, incrusta la presentación y genera el JSON-LD
+├── references.bib       # citas del post
+└── images/
+    └── caracol.webp     # logo de la presentación</code></pre>
+<p>El flujo completo, desde la fuente hasta el artefacto archivado:</p>
+<div class="cell" data-fig-width="7" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A["slides.json&lt;br/&gt;(datos)"] --&gt; B["presentation.qmd&lt;br/&gt;(plantilla)"]
+  B --&gt;|quarto render| C["presentation.html&lt;br/&gt;(un solo archivo)"]
+  A --&gt; E["JSON-LD&lt;br/&gt;(schema.org)"]
+  C --&gt; D["index.qmd&lt;br/&gt;(iframe + JSON-LD)"]
+  E --&gt; D
+  D --&gt;|quarto render| F["docs/&lt;br/&gt;(sitio compilado)"]
+  F --&gt;|git push| G["GitHub Pages"]
+  F --&gt;|release| H["Zenodo&lt;br/&gt;(DOI)"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="qué-cambia-respecto-al-flujo-anterior" class="level3">
+<h3 class="anchored" data-anchor-id="qué-cambia-respecto-al-flujo-anterior">¿Qué cambia respecto al flujo anterior?</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 34%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Antes</th>
+<th>Ahora</th>
+<th>Por qué importa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diapositivas escritas dentro del <code>.qmd</code></td>
+<td>Diapositivas en <code>slides.json</code></td>
+<td>El contenido es un dato que otros programas también pueden leer</td>
+</tr>
+<tr class="even">
+<td>Rutas distintas en cada paso (<code>2026-10-02-slide-json</code> y <code>slides-devices</code>)</td>
+<td>Un único <code>slug</code> en el JSON</td>
+<td>Una sola fuente de verdad evita errores de ruta</td>
+</tr>
+<tr class="odd">
+<td>Render de la presentación, del post y del sitio por separado</td>
+<td>Un <code>quarto render</code> del proyecto</td>
+<td>Menos pasos manuales que olvidar</td>
+</tr>
+<tr class="even">
+<td><code>draft: true</code> para evitar la entrada doble</td>
+<td><code>listing: contents: "posts/*/index.qmd"</code></td>
+<td>El listado decide explícitamente qué entra</td>
+</tr>
+<tr class="odd">
+<td>Iframe de altura fija (<code>500px</code>)</td>
+<td>Contenedor <code>ratio-16x9</code></td>
+<td>Se adapta a pantallas de distinto tamaño</td>
+</tr>
+<tr class="even">
+<td>Presentación con carpeta de archivos auxiliares</td>
+<td><code>embed-resources: true</code></td>
+<td>Un único <code>.html</code> autosuficiente</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="construcción-paso-a-paso-desde-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="construcción-paso-a-paso-desde-rstudio">3. Construcción paso a paso desde RStudio</h2>
+<section id="crear-la-estructura" class="level3">
+<h3 class="anchored" data-anchor-id="crear-la-estructura">3.1 Crear la estructura</h3>
+<p>En RStudio abre tu proyecto del sitio y usa la pestaña <strong>Terminal</strong> (junto a la Consola; atajo <code>Alt+Shift+R</code>). La terminal y la consola son cosas distintas: la consola ejecuta R, la terminal ejecuta comandos del sistema como <code>mkdir</code> o <code>git</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> posts/2026-10-02-slide-json/images</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> posts/2026-10-02-slide-json/index.qmd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> posts/2026-10-02-slide-json/presentation.qmd</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> posts/2026-10-02-slide-json/slides.json</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> posts/2026-10-02-slide-json/references.bib</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si prefieres quedarte en la Consola de R (por ejemplo, en Windows sin Git Bash), el equivalente es:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"posts/2026-10-02-slide-json/images"</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">file.create</span>(<span class="fu">file.path</span>(<span class="st">"posts/2026-10-02-slide-json"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">c</span>(<span class="st">"index.qmd"</span>, <span class="st">"presentation.qmd"</span>, <span class="st">"slides.json"</span>, <span class="st">"references.bib"</span>)))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Copia tu logo en <code>images/caracol.webp</code>.</p>
+</section>
+<section id="slides.json-los-datos" class="level3">
+<h3 class="anchored" data-anchor-id="slides.json-los-datos">3.2 <code>slides.json</code>: los datos</h3>
+<p>Cada diapositiva es un objeto con campos opcionales. Solo <code>title</code> es obligatorio:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Campo</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>Identificador de la diapositiva; permite enlazarla directamente (<code>presentation.html#/estructura</code>)</td>
+</tr>
+<tr class="even">
+<td><code>title</code></td>
+<td>Título (genera el encabezado <code>##</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>bullets</code></td>
+<td>Lista de viñetas</td>
+</tr>
+<tr class="even">
+<td><code>text</code></td>
+<td>Párrafo libre en markdown</td>
+</tr>
+<tr class="odd">
+<td><code>code</code></td>
+<td>Lista de bloques de código, cada uno con <code>lang</code> y <code>text</code>. El marcador <code>{slug}</code> se reemplaza por el slug del proyecto</td>
+</tr>
+<tr class="even">
+<td><code>class</code></td>
+<td>Clases de RevealJS, por ejemplo <code>smaller</code> para reducir la letra</td>
+</tr>
+<tr class="odd">
+<td><code>notes</code></td>
+<td>Notas del orador</td>
+</tr>
+<tr class="even">
+<td><code>step</code></td>
+<td>Si vale <code>false</code>, la diapositiva no se declara como paso en el JSON-LD</td>
+</tr>
+</tbody>
+</table>
+<p>Se eligió JSON y no YAML porque es estricto, lo entiende cualquier lenguaje (R, Python, JavaScript) y es exactamente el formato que exige JSON-LD. Además, prácticamente todo JSON válido es también YAML válido, lo que facilita combinarlo con la configuración de Quarto.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Ver slides.json completo">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ver slides.json completo
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"project"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"slug"</span><span class="fu">:</span> <span class="st">"2026-10-02-slide-json"</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"siteUrl"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io"</span><span class="fu">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"author"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"M. A. Ordano"</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"affiliation"</span><span class="fu">:</span> <span class="st">"IER-UNT-CONICET / Fundación Miguel Lillo"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"slides"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"estructura"</span><span class="fu">,</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"1 Terminal junto a consola [bash]"</span><span class="fu">,</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"bullets"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Creación de los documentos del post"</span><span class="ot">,</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Se separa el archivo que genera la presentación web (presentation.qmd) del post que la incrusta (index.qmd)"</span><span class="ot">,</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"slides.json guarda el contenido; presentation.qmd solo lo despliega"</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"code"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"lang"</span><span class="fu">:</span> <span class="st">"bash"</span><span class="fu">,</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"mkdir -p posts/{{slug}}/images</span><span class="ch">\n</span><span class="st">touch posts/{{slug}}/index.qmd</span><span class="ch">\n</span><span class="st">touch posts/{{slug}}/presentation.qmd</span><span class="ch">\n</span><span class="st">touch posts/{{slug}}/slides.json</span><span class="ch">\n</span><span class="st">touch posts/{{slug}}/references.bib"</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"notes"</span><span class="fu">:</span> <span class="st">"Un único slug evita el desajuste de rutas entre los pasos (2026-10-02-slide-json vs slides-devices)."</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"yaml"</span><span class="fu">,</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"2 Configuración de la presentación"</span><span class="fu">,</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"class"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"smaller"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"code"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"lang"</span><span class="fu">:</span> <span class="st">"yaml"</span><span class="fu">,</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"---</span><span class="ch">\n</span><span class="st">title: </span><span class="ch">\"</span><span class="st">Mi presentación</span><span class="ch">\"\n</span><span class="st">lang: es</span><span class="ch">\n</span><span class="st">format:</span><span class="ch">\n</span><span class="st">  revealjs:</span><span class="ch">\n</span><span class="st">    theme: simple          # moon, night, sky, serif, solarized</span><span class="ch">\n</span><span class="st">    transition: slide      # fade, zoom, none</span><span class="ch">\n</span><span class="st">    slide-number: c/t</span><span class="ch">\n</span><span class="st">    logo: images/caracol.webp</span><span class="ch">\n</span><span class="st">    footer: </span><span class="ch">\"</span><span class="st">Quarto · RevealJS</span><span class="ch">\"\n</span><span class="st">    code-copy: true</span><span class="ch">\n</span><span class="st">    embed-resources: true  # un solo .html, ideal para iframe</span><span class="ch">\n</span><span class="st">---"</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"notes"</span><span class="fu">:</span> <span class="st">"embed-resources empaqueta CSS, JS e imágenes dentro de presentation.html: el iframe no depende de carpetas auxiliares."</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"json"</span><span class="fu">,</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"3 El contenido vive en JSON"</span><span class="fu">,</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"bullets"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Cada diapositiva es un objeto: id, title, bullets, code, notes"</span><span class="ot">,</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Un chunk de R lee el archivo y emite el markdown de cada slide"</span><span class="ot">,</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Cambiar una diapositiva = editar un dato, no el documento"</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"code"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"lang"</span><span class="fu">:</span> <span class="st">"json"</span><span class="fu">,</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\n</span><span class="st">  </span><span class="ch">\"</span><span class="st">id</span><span class="ch">\"</span><span class="st">: </span><span class="ch">\"</span><span class="st">render</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\n</span><span class="st">  </span><span class="ch">\"</span><span class="st">title</span><span class="ch">\"</span><span class="st">: </span><span class="ch">\"</span><span class="st">4 Render</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\n</span><span class="st">  </span><span class="ch">\"</span><span class="st">bullets</span><span class="ch">\"</span><span class="st">: [</span><span class="ch">\"</span><span class="st">Iterar con preview</span><span class="ch">\"</span><span class="st">],</span><span class="ch">\n</span><span class="st">  </span><span class="ch">\"</span><span class="st">code</span><span class="ch">\"</span><span class="st">: [{ </span><span class="ch">\"</span><span class="st">lang</span><span class="ch">\"</span><span class="st">: </span><span class="ch">\"</span><span class="st">bash</span><span class="ch">\"</span><span class="st">, </span><span class="ch">\"</span><span class="st">text</span><span class="ch">\"</span><span class="st">: </span><span class="ch">\"</span><span class="st">quarto preview ...</span><span class="ch">\"</span><span class="st"> }],</span><span class="ch">\n</span><span class="st">  </span><span class="ch">\"</span><span class="st">notes</span><span class="ch">\"</span><span class="st">: </span><span class="ch">\"</span><span class="st">Texto para el orador</span><span class="ch">\"\n</span><span class="st">}"</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"render"</span><span class="fu">,</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"4 Render de la presentación"</span><span class="fu">,</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"bullets"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>        <span class="st">"En RStudio: botón Render del editor, o la pestaña Terminal"</span><span class="ot">,</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Para iterar y corregir errores, preview recarga al guardar"</span><span class="ot">,</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Para generar el archivo final, render"</span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"code"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"lang"</span><span class="fu">:</span> <span class="st">"bash"</span><span class="fu">,</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"quarto preview posts/{{slug}}/presentation.qmd</span><span class="ch">\n</span><span class="st">quarto render  posts/{{slug}}/presentation.qmd"</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"iframe"</span><span class="fu">,</span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"5 Incrustar en index.qmd"</span><span class="fu">,</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"bullets"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>        <span class="st">"El contenedor responsivo mantiene la proporción 16:9"</span><span class="ot">,</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>        <span class="st">"El enlace permite abrir la presentación a pantalla completa"</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"class"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"smaller"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"code"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"lang"</span><span class="fu">:</span> <span class="st">"markdown"</span><span class="fu">,</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"# Prueba de presentación</span><span class="ch">\n\n</span><span class="st">&lt;div class=</span><span class="ch">\"</span><span class="st">ratio ratio-16x9</span><span class="ch">\"</span><span class="st">&gt;</span><span class="ch">\n</span><span class="st">  &lt;iframe src=</span><span class="ch">\"</span><span class="st">presentation.html</span><span class="ch">\"\n</span><span class="st">          title=</span><span class="ch">\"</span><span class="st">Presentación RevealJS</span><span class="ch">\"\n</span><span class="st">          loading=</span><span class="ch">\"</span><span class="st">lazy</span><span class="ch">\"</span><span class="st"> allowfullscreen</span><span class="ch">\n</span><span class="st">          style=</span><span class="ch">\"</span><span class="st">border:0; border-radius:8px;</span><span class="ch">\"</span><span class="st">&gt;&lt;/iframe&gt;</span><span class="ch">\n</span><span class="st">&lt;/div&gt;</span><span class="ch">\n\n</span><span class="st">[Abrir a pantalla completa](presentation.html){target=</span><span class="ch">\"</span><span class="st">_blank</span><span class="ch">\"</span><span class="st">}"</span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"proyecto"</span><span class="fu">,</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"6 Proyecto y listado"</span><span class="fu">,</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"bullets"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Quarto ya renderiza todos los .qmd: no hace falta un render manual extra"</span><span class="ot">,</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>        <span class="st">"El listado toma solo los index.qmd, así la presentación no genera una entrada doble (sin necesidad de draft)"</span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"class"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"smaller"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"code"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"lang"</span><span class="fu">:</span> <span class="st">"yaml"</span><span class="fu">,</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"# _quarto.yml</span><span class="ch">\n</span><span class="st">project:</span><span class="ch">\n</span><span class="st">  type: website</span><span class="ch">\n</span><span class="st">  output-dir: docs"</span></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"lang"</span><span class="fu">:</span> <span class="st">"yaml"</span><span class="fu">,</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"# posts/index.qmd (o la página que lista los posts)</span><span class="ch">\n</span><span class="st">listing:</span><span class="ch">\n</span><span class="st">  contents: </span><span class="ch">\"</span><span class="st">posts/*/index.qmd</span><span class="ch">\"</span><span class="st">"</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"publicar"</span><span class="fu">,</span></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"7 Render del sitio y publicación"</span><span class="fu">,</span></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"bullets"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>        <span class="st">"docs/ es el artefacto: el sitio ya compilado"</span><span class="ot">,</span></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>        <span class="st">"git lo versiona junto con las fuentes (.qmd y .json)"</span><span class="ot">,</span></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>        <span class="st">"El push lo publica; un release en GitHub puede archivarlo en Zenodo con DOI"</span></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"code"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"lang"</span><span class="fu">:</span> <span class="st">"bash"</span><span class="fu">,</span></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"quarto render</span><span class="ch">\n</span><span class="st">git add --all</span><span class="ch">\n</span><span class="st">git commit -m </span><span class="ch">\"</span><span class="st">post RevealJS simple</span><span class="ch">\"\n</span><span class="st">git push origin main"</span></span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"jsonld"</span><span class="fu">,</span></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"8 Metadatos JSON-LD"</span><span class="fu">,</span></span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"bullets"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>        <span class="st">"El post lee slides.json y su propio YAML"</span><span class="ot">,</span></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Cada diapositiva se declara como HowToStep de schema.org"</span><span class="ot">,</span></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>        <span class="st">"El resultado se inserta en la página como bloque `application/ld+json`"</span></span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"creditos"</span><span class="fu">,</span></span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"9 Créditos"</span><span class="fu">,</span></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"step"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"**Uso de IA.** Para la programación y el montaje de la estructura digital en la web se consultaron las versiones libres de los asistentes Claude (Anthropic) y Gemini (Google, Modo IA). Esta versión se reestructuró con Claude Sonnet 5.5."</span></span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="presentation.qmd-el-despliegue" class="level3">
+<h3 class="anchored" data-anchor-id="presentation.qmd-el-despliegue">3.3 <code>presentation.qmd</code>: el despliegue</h3>
+<p>El documento tiene dos partes: la cabecera YAML con las opciones de RevealJS, y dos chunks de R. El primero lee el JSON; el segundo recorre las diapositivas y escribe, para cada una, el markdown equivalente. Con <code>output: asis</code> ese markdown se trata como contenido del documento y no como salida de código, y por eso cada <code>## Título</code> se convierte en una diapositiva.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Ver presentation.qmd completo">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ver presentation.qmd completo
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Presentaciones RevealJS dentro de un sitio Quarto"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "De presentation.qmd al iframe del post, con el contenido en JSON"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "M. A. Ordano"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> long</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: simple              # moon, night, sky, serif, solarized</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">    transition: slide          # fade, zoom, none</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">    background-transition: fade</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">    slide-number: c/t          # actual/total</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">    logo: images/caracol.webp</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">    footer: "Quarto · RevealJS · JSON"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">    preview-links: auto</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">    link-external-newwindow: true</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">    scrollable: true</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">    width: 1280</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">    height: 720</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true      # un único .html: ideal para el iframe</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co"># El contenido de las diapositivas vive en slides.json (misma carpeta).</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Este documento solo lo lee y lo despliega.</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="st">"No se encuentra slides.json junto a presentation.qmd"</span> <span class="ot">=</span> <span class="fu">file.exists</span>(<span class="st">"slides.json"</span>))</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>deck  <span class="ot">&lt;-</span> <span class="fu">read_json</span>(<span class="st">"slides.json"</span>, <span class="at">simplifyVector =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>slug  <span class="ot">&lt;-</span> deck<span class="sc">$</span>project<span class="sc">$</span>slug</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>fence <span class="ot">&lt;-</span> <span class="fu">strrep</span>(<span class="st">"`"</span>, <span class="dv">3</span>)   <span class="co"># evita escribir las tres comillas inversas dentro del chunk</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Convierte un objeto del JSON en el markdown de una diapositiva</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>emit_slide <span class="ot">&lt;-</span> <span class="cf">function</span>(s) {</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>  attrs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(s[[<span class="st">"id"</span>]])) <span class="fu">paste0</span>(<span class="st">"#"</span>, s[[<span class="st">"id"</span>]]),</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(s[[<span class="st">"class"</span>]])) <span class="fu">paste0</span>(<span class="st">"."</span>, <span class="fu">unlist</span>(s[[<span class="st">"class"</span>]]))</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  attrs <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="fu">length</span>(attrs)) <span class="fu">paste0</span>(<span class="st">" {"</span>, <span class="fu">paste</span>(attrs, <span class="at">collapse =</span> <span class="st">" "</span>), <span class="st">"}"</span>) <span class="cf">else</span> <span class="st">""</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">## "</span>, s[[<span class="st">"title"</span>]], attrs, <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (b <span class="cf">in</span> s[[<span class="st">"bullets"</span>]]) <span class="fu">cat</span>(<span class="st">"- "</span>, b, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(s[[<span class="st">"bullets"</span>]])) <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(s[[<span class="st">"text"</span>]])) <span class="fu">cat</span>(s[[<span class="st">"text"</span>]], <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (cb <span class="cf">in</span> s[[<span class="st">"code"</span>]]) {</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    txt <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"{{slug}}"</span>, slug, cb[[<span class="st">"text"</span>]], <span class="at">fixed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(fence, cb[[<span class="st">"lang"</span>]], <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, txt, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, fence, <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(s[[<span class="st">"notes"</span>]])) <span class="fu">cat</span>(<span class="st">"::: {.notes}</span><span class="sc">\n</span><span class="st">"</span>, s[[<span class="st">"notes"</span>]], <span class="st">"</span><span class="sc">\n</span><span class="st">:::</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: slides</span></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: asis</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">lapply</span>(deck<span class="sc">$</span>slides, emit_slide))</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>Tres opciones del YAML conviene entender:</p>
+<ul>
+<li><strong><code>embed-resources: true</code></strong>: guarda CSS, JavaScript e imágenes dentro del propio <code>presentation.html</code>. Es lo que permite copiar o incrustar el archivo sin arrastrar carpetas.</li>
+<li><strong><code>execute: echo: false</code></strong>: oculta el código de generación para que no aparezca en las diapositivas.</li>
+<li><strong><code>slide-number: c/t</code></strong>: muestra “diapositiva actual / total”.</li>
+</ul>
+</section>
+<section id="previsualizar-y-renderizar" class="level3">
+<h3 class="anchored" data-anchor-id="previsualizar-y-renderizar">3.4 Previsualizar y renderizar</h3>
+<p>Hay dos comandos, con propósitos distintos:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview posts/2026-10-02-slide-json/presentation.qmd   <span class="co"># abre una vista que se recarga al guardar</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render  posts/2026-10-02-slide-json/presentation.qmd   <span class="co"># genera el presentation.html final</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Desde RStudio puedes usar el botón <strong>Render</strong> del editor; según la versión, la presentación se abre en el panel Viewer o en una pestaña propia.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Ciclo de trabajo:</strong> edita <code>slides.json</code>, guarda, mira el cambio en la vista previa. Solo tocas <code>presentation.qmd</code> si quieres cambiar <em>cómo</em> se ven las diapositivas, no <em>qué dicen</em>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="incrustar-la-presentación-en-el-post" class="level2">
+<h2 class="anchored" data-anchor-id="incrustar-la-presentación-en-el-post">4. Incrustar la presentación en el post</h2>
+<p>Ya viste el resultado arriba. Este es el código en <code>index.qmd</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"ratio ratio-16x9"</span><span class="dt">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> src</span><span class="op">=</span><span class="st">"presentation.html"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ot">          title</span><span class="op">=</span><span class="st">"Presentación RevealJS"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ot">          loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="ot"> allowfullscreen</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ot">          style</span><span class="op">=</span><span class="st">"border:0; border-radius:8px;"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>[Abrir a pantalla completa](presentation.html){target="_blank"}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>ratio ratio-16x9</code> es una clase de Bootstrap (el tema que Quarto usa por defecto en sitios web) que mantiene la proporción de la presentación.</li>
+<li><code>title</code> describe el iframe para lectores de pantalla.</li>
+<li><code>loading="lazy"</code> pospone la carga hasta que el iframe es visible.</li>
+<li>El enlace final es una salida de emergencia: algunas personas prefieren ver las diapositivas en pantalla completa.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si abres el post con <code>quarto preview</code> y el iframe aparece vacío, es porque <code>presentation.html</code> todavía no existe. Ejecuta una vez <code>quarto render</code> en el proyecto (o renderiza <code>presentation.qmd</code>).</p>
+</div>
+</div>
+</section>
+<section id="json-ld-generado-desde-los-mismos-datos" class="level2">
+<h2 class="anchored" data-anchor-id="json-ld-generado-desde-los-mismos-datos">5. JSON-LD generado desde los mismos datos</h2>
+<p><strong>JSON-LD</strong> es una forma de describir una página con el vocabulario de <a href="https://schema.org">schema.org</a>, de modo que buscadores, repositorios y otros programas entiendan qué es el contenido (un artículo, su autor, sus partes) sin tener que adivinarlo.</p>
+<p>El chunk siguiente combina dos fuentes, cada una con su función:</p>
+<ul>
+<li>el <strong>YAML de este post</strong> aporta título, descripción, fecha, idioma y categorías;</li>
+<li><strong><code>slides.json</code></strong> aporta el slug, el autor, la URL del sitio y los pasos.</li>
+</ul>
+<p>Cada diapositiva (salvo las marcadas con <code>"step": false</code>) se declara como un <code>HowToStep</code> dentro de un <code>HowTo</code>, y la presentación como un <code>PresentationDigitalDocument</code>. Los enlaces de cada paso apuntan a la diapositiva concreta gracias a los <code>id</code>.</p>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>site     <span class="ot">&lt;-</span> deck<span class="sc">$</span>project<span class="sc">$</span>siteUrl</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>post_url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(site, <span class="st">"/posts/"</span>, slug, <span class="st">"/"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>pres_url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(post_url, <span class="st">"presentation.html"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Un HowToStep por diapositiva</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>steps_src <span class="ot">&lt;-</span> <span class="fu">Filter</span>(<span class="cf">function</span>(s) <span class="sc">!</span><span class="fu">isFALSE</span>(s[[<span class="st">"step"</span>]]), deck<span class="sc">$</span>slides)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>steps <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_along</span>(steps_src), <span class="cf">function</span>(i) {</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  s   <span class="ot">&lt;-</span> steps_src[[i]]</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  txt <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">unlist</span>(s[[<span class="st">"bullets"</span>]]), <span class="at">collapse =</span> <span class="st">". "</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">nzchar</span>(txt)) txt <span class="ot">&lt;-</span> <span class="fu">sub</span>(<span class="st">"^[0-9]+</span><span class="sc">\\</span><span class="st">s+"</span>, <span class="st">""</span>, s[[<span class="st">"title"</span>]])</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">@type</span><span class="st">`</span>  <span class="ot">=</span> <span class="st">"HowToStep"</span>,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> i,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">name     =</span> <span class="fu">sub</span>(<span class="st">"^[0-9]+</span><span class="sc">\\</span><span class="st">s+"</span>, <span class="st">""</span>, s[[<span class="st">"title"</span>]]),   <span class="co"># quita la numeración del título</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">text     =</span> txt,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">url      =</span> <span class="fu">paste0</span>(pres_url, <span class="st">"#/"</span>, s[[<span class="st">"id"</span>]])</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. El objeto principal</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>ld <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">@context</span><span class="st">`</span>    <span class="ot">=</span> <span class="st">"https://schema.org"</span>,</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">@type</span><span class="st">`</span>       <span class="ot">=</span> <span class="st">"BlogPosting"</span>,</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">@id</span><span class="st">`</span>         <span class="ot">=</span> post_url,</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">url           =</span> post_url,</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">headline      =</span> fm<span class="sc">$</span>title,</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">description   =</span> fm<span class="sc">$</span>description,</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">inLanguage    =</span> fm<span class="sc">$</span>lang,</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">datePublished =</span> <span class="fu">as.character</span>(fm<span class="sc">$</span>date),</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">keywords      =</span> <span class="fu">unlist</span>(fm<span class="sc">$</span>categories),</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">author =</span> <span class="fu">list</span>(</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">@type</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Person"</span>,</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">name    =</span> deck<span class="sc">$</span>project<span class="sc">$</span>author<span class="sc">$</span>name,</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">affiliation =</span> <span class="fu">list</span>(<span class="st">`</span><span class="at">@type</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Organization"</span>,</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>                       <span class="at">name    =</span> deck<span class="sc">$</span>project<span class="sc">$</span>author<span class="sc">$</span>affiliation)</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">hasPart =</span> <span class="fu">list</span>(</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="st">`</span><span class="at">@type</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"PresentationDigitalDocument"</span>,</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>         <span class="at">name =</span> <span class="fu">paste</span>(<span class="st">"Presentación:"</span>, fm<span class="sc">$</span>title),</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>         <span class="at">url =</span> pres_url, <span class="at">encodingFormat =</span> <span class="st">"text/html"</span>, <span class="at">inLanguage =</span> fm<span class="sc">$</span>lang),</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="st">`</span><span class="at">@type</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"HowTo"</span>, <span class="at">name =</span> fm<span class="sc">$</span>title, <span class="at">step =</span> steps)</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(deck<span class="sc">$</span>project<span class="sc">$</span>license)) ld<span class="sc">$</span>license <span class="ot">&lt;-</span> deck<span class="sc">$</span>project<span class="sc">$</span>license   <span class="co"># opcional</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>json <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(ld, <span class="at">auto_unbox =</span> <span class="cn">TRUE</span>, <span class="at">pretty =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="co"># 3a. Mostrarlo en el post (plegado)</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="fu">show_block</span>(json, <span class="st">"json"</span>, <span class="st">"Ver el JSON-LD generado"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="callout callout-style-default callout-note callout-titled" title="Ver el JSON-LD generado">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ver el JSON-LD generado
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://schema.org"</span><span class="fu">,</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"BlogPosting"</span><span class="fu">,</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/"</span><span class="fu">,</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/"</span><span class="fu">,</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"headline"</span><span class="fu">:</span> <span class="st">"Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto"</span><span class="fu">,</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Cómo construir y publicar en pocos pasos una presentación online dentro de un sitio Quarto, con las diapositivas definidas en slides.json y los metadatos JSON-LD generados desde el mismo archivo."</span><span class="fu">,</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"inLanguage"</span><span class="fu">:</span> <span class="st">"es"</span><span class="fu">,</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"datePublished"</span><span class="fu">:</span> <span class="st">"2026-10-02"</span><span class="fu">,</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"keywords"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"quarto"</span><span class="ot">,</span> <span class="st">"revealjs"</span><span class="ot">,</span> <span class="st">"json"</span><span class="ot">,</span> <span class="st">"json-ld"</span><span class="ot">,</span> <span class="st">"open science"</span><span class="ot">,</span> <span class="st">"reproducibilidad"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"author"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Person"</span><span class="fu">,</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"M. A. Ordano"</span><span class="fu">,</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"affiliation"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Organization"</span><span class="fu">,</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"IER-UNT-CONICET / Fundación Miguel Lillo"</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"hasPart"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"PresentationDigitalDocument"</span><span class="fu">,</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Presentación: Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto"</span><span class="fu">,</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html"</span><span class="fu">,</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"encodingFormat"</span><span class="fu">:</span> <span class="st">"text/html"</span><span class="fu">,</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"inLanguage"</span><span class="fu">:</span> <span class="st">"es"</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowTo"</span><span class="fu">,</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto"</span><span class="fu">,</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"step"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowToStep"</span><span class="fu">,</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"position"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Terminal junto a consola [bash]"</span><span class="fu">,</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"Creación de los documentos del post. Se separa el archivo que genera la presentación web (presentation.qmd) del post que la incrusta (index.qmd). slides.json guarda el contenido; presentation.qmd solo lo despliega"</span><span class="fu">,</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/estructura"</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowToStep"</span><span class="fu">,</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"position"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Configuración de la presentación"</span><span class="fu">,</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"Configuración de la presentación"</span><span class="fu">,</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/yaml"</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowToStep"</span><span class="fu">,</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"position"</span><span class="fu">:</span> <span class="dv">3</span><span class="fu">,</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"El contenido vive en JSON"</span><span class="fu">,</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"Cada diapositiva es un objeto: id, title, bullets, code, notes. Un chunk de R lee el archivo y emite el markdown de cada slide. Cambiar una diapositiva = editar un dato, no el documento"</span><span class="fu">,</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/json"</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowToStep"</span><span class="fu">,</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"position"</span><span class="fu">:</span> <span class="dv">4</span><span class="fu">,</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Render de la presentación"</span><span class="fu">,</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"En RStudio: botón Render del editor, o la pestaña Terminal. Para iterar y corregir errores, preview recarga al guardar. Para generar el archivo final, render"</span><span class="fu">,</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/render"</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowToStep"</span><span class="fu">,</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"position"</span><span class="fu">:</span> <span class="dv">5</span><span class="fu">,</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Incrustar en index.qmd"</span><span class="fu">,</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"El contenedor responsivo mantiene la proporción 16:9. El enlace permite abrir la presentación a pantalla completa"</span><span class="fu">,</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/iframe"</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowToStep"</span><span class="fu">,</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"position"</span><span class="fu">:</span> <span class="dv">6</span><span class="fu">,</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Proyecto y listado"</span><span class="fu">,</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"Quarto ya renderiza todos los .qmd: no hace falta un render manual extra. El listado toma solo los index.qmd, así la presentación no genera una entrada doble (sin necesidad de draft)"</span><span class="fu">,</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/proyecto"</span></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowToStep"</span><span class="fu">,</span></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"position"</span><span class="fu">:</span> <span class="dv">7</span><span class="fu">,</span></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Render del sitio y publicación"</span><span class="fu">,</span></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"docs/ es el artefacto: el sitio ya compilado. git lo versiona junto con las fuentes (.qmd y .json). El push lo publica; un release en GitHub puede archivarlo en Zenodo con DOI"</span><span class="fu">,</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/publicar"</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"HowToStep"</span><span class="fu">,</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"position"</span><span class="fu">:</span> <span class="dv">8</span><span class="fu">,</span></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Metadatos JSON-LD"</span><span class="fu">,</span></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"El post lee slides.json y su propio YAML. Cada diapositiva se declara como HowToStep de schema.org. El resultado se inserta en la página como bloque `application/ld+json`"</span><span class="fu">,</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>          <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/jsonld"</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3b. Insertarlo como bloque HTML crudo, invisible para el lector</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(fence, <span class="st">"{=html}</span><span class="sc">\n</span><span class="st">&lt;script type=</span><span class="sc">\"</span><span class="st">application/ld+json</span><span class="sc">\"</span><span class="st">&gt;</span><span class="sc">\n</span><span class="st">"</span>, json,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="sc">\n</span><span class="st">&lt;/script&gt;</span><span class="sc">\n</span><span class="st">"</span>, fence, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://maordano.github.io/posts/2026-10-02-slide-json/",
+  "url": "https://maordano.github.io/posts/2026-10-02-slide-json/",
+  "headline": "Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto",
+  "description": "Cómo construir y publicar en pocos pasos una presentación online dentro de un sitio Quarto, con las diapositivas definidas en slides.json y los metadatos JSON-LD generados desde el mismo archivo.",
+  "inLanguage": "es",
+  "datePublished": "2026-10-02",
+  "keywords": ["quarto", "revealjs", "json", "json-ld", "open science", "reproducibilidad"],
+  "author": {
+    "@type": "Person",
+    "name": "M. A. Ordano",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "IER-UNT-CONICET / Fundación Miguel Lillo"
+    }
+  },
+  "hasPart": [
+    {
+      "@type": "PresentationDigitalDocument",
+      "name": "Presentación: Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto",
+      "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html",
+      "encodingFormat": "text/html",
+      "inLanguage": "es"
+    },
+    {
+      "@type": "HowTo",
+      "name": "Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Terminal junto a consola [bash]",
+          "text": "Creación de los documentos del post. Se separa el archivo que genera la presentación web (presentation.qmd) del post que la incrusta (index.qmd). slides.json guarda el contenido; presentation.qmd solo lo despliega",
+          "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/estructura"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Configuración de la presentación",
+          "text": "Configuración de la presentación",
+          "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/yaml"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "El contenido vive en JSON",
+          "text": "Cada diapositiva es un objeto: id, title, bullets, code, notes. Un chunk de R lee el archivo y emite el markdown de cada slide. Cambiar una diapositiva = editar un dato, no el documento",
+          "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/json"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Render de la presentación",
+          "text": "En RStudio: botón Render del editor, o la pestaña Terminal. Para iterar y corregir errores, preview recarga al guardar. Para generar el archivo final, render",
+          "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/render"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Incrustar en index.qmd",
+          "text": "El contenedor responsivo mantiene la proporción 16:9. El enlace permite abrir la presentación a pantalla completa",
+          "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/iframe"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Proyecto y listado",
+          "text": "Quarto ya renderiza todos los .qmd: no hace falta un render manual extra. El listado toma solo los index.qmd, así la presentación no genera una entrada doble (sin necesidad de draft)",
+          "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/proyecto"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Render del sitio y publicación",
+          "text": "docs/ es el artefacto: el sitio ya compilado. git lo versiona junto con las fuentes (.qmd y .json). El push lo publica; un release en GitHub puede archivarlo en Zenodo con DOI",
+          "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/publicar"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 8,
+          "name": "Metadatos JSON-LD",
+          "text": "El post lee slides.json y su propio YAML. Cada diapositiva se declara como HowToStep de schema.org. El resultado se inserta en la página como bloque `application/ld+json`",
+          "url": "https://maordano.github.io/posts/2026-10-02-slide-json/presentation.html#/jsonld"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<p>Para comprobar que el resultado es válido, copia el contenido del <code>&lt;script&gt;</code> (clic derecho → <em>Ver código fuente</em> en la página publicada) en el <a href="https://validator.schema.org">validador de schema.org</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El valor de este bloque es <strong>semántico e interoperable</strong>: describe el post y sus partes en un formato abierto. No esperes que garantice por sí solo resultados enriquecidos en buscadores; eso depende de cada buscador.</p>
+</div>
+</div>
+<section id="y-si-prefiero-python" class="level3">
+<h3 class="anchored" data-anchor-id="y-si-prefiero-python">¿Y si prefiero Python?</h3>
+<p>La lógica es idéntica. En RStudio hay dos caminos:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Solo Python (Jupyter)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">R + Python (reticulate)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Cambia <code>engine: knitr</code> por <code>engine: jupyter</code> y reemplaza el chunk de R por uno de Python. Necesitas <code>pip install jupyter pyyaml</code> y comprobar con <code>quarto check jupyter</code>. Este es el equivalente en espíritu (no lo probé aquí):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json, re, pathlib, yaml</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> json.loads(pathlib.Path(<span class="st">"slides.json"</span>).read_text(encoding<span class="op">=</span><span class="st">"utf-8"</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>txt  <span class="op">=</span> pathlib.Path(<span class="st">"index.qmd"</span>).read_text(encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fm   <span class="op">=</span> yaml.safe_load(re.match(<span class="vs">r"</span><span class="dv">^</span><span class="vs">---</span><span class="ch">\n</span><span class="kw">(</span><span class="dv">.</span><span class="op">*?</span><span class="kw">)</span><span class="ch">\n</span><span class="vs">---"</span>, txt, re.S).group(<span class="dv">1</span>))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>post_url <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>deck[<span class="st">"project"</span>][<span class="st">"siteUrl"</span>]<span class="sc">}</span><span class="ss">/posts/</span><span class="sc">{</span>deck[<span class="st">"project"</span>][<span class="st">"slug"</span>]<span class="sc">}</span><span class="ss">/'</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>pres_url <span class="op">=</span> post_url <span class="op">+</span> <span class="st">"presentation.html"</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>steps <span class="op">=</span> []</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, s <span class="kw">in</span> <span class="bu">enumerate</span>([s <span class="cf">for</span> s <span class="kw">in</span> deck[<span class="st">"slides"</span>] <span class="cf">if</span> s.get(<span class="st">"step"</span>, <span class="va">True</span>)], start<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> re.sub(<span class="vs">r"</span><span class="dv">^\d</span><span class="op">+</span><span class="dv">\s</span><span class="op">+</span><span class="vs">"</span>, <span class="st">""</span>, s[<span class="st">"title"</span>])</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    steps.append({</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"@type"</span>: <span class="st">"HowToStep"</span>, <span class="st">"position"</span>: i, <span class="st">"name"</span>: name,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"text"</span>: <span class="st">". "</span>.join(s.get(<span class="st">"bullets"</span>, [])) <span class="kw">or</span> name,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"url"</span>: <span class="ss">f'</span><span class="sc">{</span>pres_url<span class="sc">}</span><span class="ss">#/</span><span class="sc">{</span>s[<span class="st">"id"</span>]<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>ld <span class="op">=</span> {</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"@context"</span>: <span class="st">"https://schema.org"</span>, <span class="st">"@type"</span>: <span class="st">"BlogPosting"</span>,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"@id"</span>: post_url, <span class="st">"url"</span>: post_url,</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"headline"</span>: fm[<span class="st">"title"</span>], <span class="st">"description"</span>: fm[<span class="st">"description"</span>],</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"inLanguage"</span>: fm[<span class="st">"lang"</span>], <span class="st">"datePublished"</span>: <span class="bu">str</span>(fm[<span class="st">"date"</span>]),</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"keywords"</span>: fm[<span class="st">"categories"</span>],</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"author"</span>: {<span class="st">"@type"</span>: <span class="st">"Person"</span>,</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>               <span class="st">"name"</span>: deck[<span class="st">"project"</span>][<span class="st">"author"</span>][<span class="st">"name"</span>],</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>               <span class="st">"affiliation"</span>: {<span class="st">"@type"</span>: <span class="st">"Organization"</span>,</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"name"</span>: deck[<span class="st">"project"</span>][<span class="st">"author"</span>][<span class="st">"affiliation"</span>]}},</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hasPart"</span>: [</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"@type"</span>: <span class="st">"PresentationDigitalDocument"</span>, <span class="st">"name"</span>: <span class="st">"Presentación: "</span> <span class="op">+</span> fm[<span class="st">"title"</span>],</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>         <span class="st">"url"</span>: pres_url, <span class="st">"encodingFormat"</span>: <span class="st">"text/html"</span>, <span class="st">"inLanguage"</span>: fm[<span class="st">"lang"</span>]},</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        {<span class="st">"@type"</span>: <span class="st">"HowTo"</span>, <span class="st">"name"</span>: fm[<span class="st">"title"</span>], <span class="st">"step"</span>: steps},</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'```{=html}</span><span class="ch">\n</span><span class="st">&lt;script type="application/ld+json"&gt;'</span>)</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(ld, ensure_ascii<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"&lt;/script&gt;</span><span class="ch">\n</span><span class="st">```"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Mantienes <code>engine: knitr</code> y agregas un chunk <code>{python}</code>. Los objetos de R son accesibles desde Python con el prefijo <code>r.</code> (por ejemplo <code>r.deck</code>), siempre que tengas el paquete <code>reticulate</code> y un Python configurado en RStudio (<em>Tools → Global Options → Python</em>). Sirve para mezclar lenguajes, pero para un script tan corto es más simple quedarse con uno solo.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="despliegue-la-infraestructura-del-artefacto" class="level2">
+<h2 class="anchored" data-anchor-id="despliegue-la-infraestructura-del-artefacto">6. Despliegue: la infraestructura del artefacto</h2>
+<p>Hasta ahora hemos construido fuentes. Falta convertirlas en un <strong>artefacto publicado y trazable</strong>. Cada comando tiene una razón de ser:</p>
+<p>Antes del primer render, en la página que lista los posts (por ejemplo <code>posts/index.qmd</code>), declara qué archivos entran al listado. Así la presentación no genera una entrada duplicada y no hace falta <code>draft: true</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"posts/*/index.qmd"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Después, los cuatro comandos:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render                      <span class="co"># (1)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span>                      <span class="co"># (2)</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"post RevealJS simple"</span>   <span class="co"># (3)</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main               <span class="co"># (4)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="1">
+<li><strong><code>quarto render</code></strong> compila todo el proyecto y escribe el sitio en <code>docs/</code> (el <code>output-dir</code> definido en <code>_quarto.yml</code>). Como Quarto procesa todos los <code>.qmd</code>, el <code>presentation.html</code> y el post salen en la misma pasada.</li>
+<li><strong><code>git add --all</code></strong> prepara para el registro las fuentes (<code>.qmd</code>, <code>.json</code>, <code>.bib</code>) y el artefacto compilado (<code>docs/</code>). Revisa antes con <code>git status</code> para confirmar que no entra nada que no quieras publicar.</li>
+<li><strong><code>git commit</code></strong> fija una versión identificable. El mensaje debería decir <em>qué</em> cambió.</li>
+<li><strong><code>git push origin main</code></strong> envía el commit a GitHub, que sirve <code>docs/</code> mediante GitHub Pages. En RStudio puedes hacer los pasos 2 a 4 desde la pestaña <strong>Git</strong> (Commit → Push) si prefieres la interfaz.</li>
+</ol>
+<p>Se omitió <code>--force</code>: ese indicador reescribe el historial remoto y solo se justifica cuando se busca deliberadamente. Sin él, un conflicto te avisa en lugar de sobrescribir trabajo.</p>
+<p>Para que el sitio sea completamente reproducible, el <code>.gitignore</code> debería excluir la carpeta de caché <code>/.quarto/</code> (Quarto suele agregarla al crear el proyecto) y el repositorio debe incluir <code>slides.json</code>, que es la fuente real del contenido.</p>
+<section id="archivo-con-doi-opcional" class="level3">
+<h3 class="anchored" data-anchor-id="archivo-con-doi-opcional">Archivo con DOI (opcional)</h3>
+<p>Si el repositorio está vinculado a Zenodo, cada <em>release</em> de GitHub genera una copia archivada con DOI. Así la presentación deja de ser solo “una página en la web” y pasa a ser una versión citable.</p>
+<ol type="1">
+<li>En Zenodo, activa el repositorio en la sección de GitHub.</li>
+<li>En GitHub, crea un release (por ejemplo <code>v1.0.0</code>).</li>
+<li>Zenodo archiva el contenido y asigna el DOI.</li>
+</ol>
+</section>
+</section>
+<section id="qué-dice-la-literatura" class="level2">
+<h2 class="anchored" data-anchor-id="qué-dice-la-literatura">7. ¿Qué dice la literatura?</h2>
+<p>Conviene ser claros con los límites de lo que se puede citar. <strong>No encontré estudios empíricos controlados que comparen formatos de presentación</strong> (PowerPoint, Beamer, RevealJS) en términos de reproducibilidad. Lo que sí hay son tres tipos de apoyo:</p>
+<p><strong>Principios generales de investigación computacional reproducible.</strong> <span class="citation" data-cites="sandve2013">Sandve et&nbsp;al. (<a href="#ref-sandve2013" role="doc-biblioref">2013</a>)</span> proponen diez reglas, entre ellas evitar pasos manuales, mantener bajo control de versiones los scripts propios y dar acceso público a scripts, ejecuciones y resultados. <span class="citation" data-cites="wilson2017">Wilson et&nbsp;al. (<a href="#ref-wilson2017" role="doc-biblioref">2017</a>)</span> sintetizan prácticas mínimas de organización de proyectos, seguimiento del trabajo y escritura, y orientan a depositar datos y código en repositorios con DOI. El flujo de este post es una aplicación directa: la presentación se genera con un comando desde texto plano, se versiona con git y puede archivarse con DOI.</p>
+<p><strong>Una comparación de formatos, con sesgo declarado.</strong> <span class="citation" data-cites="racine2024">Racine (<a href="#ref-racine2024" role="doc-biblioref">2024</a>)</span> examina en un capítulo cómo crear presentaciones dinámicas RevealJS con Quarto, dirigido sobre todo a quienes vienen de Beamer, y sus conclusiones son muy entusiastas. Es un texto de defensa de una herramienta por parte de un usuario experimentado, no una evaluación comparativa controlada: úsalo como testimonio razonado, no como evidencia.</p>
+<p><strong>Material docente que distingue cuándo usar cada formato.</strong> Las diapositivas de un curso de Cornell <span class="citation" data-cites="cornell_info5940">(<a href="#ref-cornell_info5940" role="doc-biblioref">Cornell University, INFO 5940, s.&nbsp;f.</a>)</span> describen RevealJS como formato HTML de código abierto, Beamer para diapositivas LaTeX y PowerPoint para cuando hay que colaborar en el entorno Office. Es una guía práctica de decisión, no un análisis de reproducibilidad.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si conoces estudios que midan el tiempo de producción o la reproducibilidad de distintos formatos de presentación, agrégalos a <code>references.bib</code>: la sección está pensada para crecer.</p>
+</div>
+</div>
+</section>
+<section id="límites-y-buenas-prácticas" class="level2">
+<h2 class="anchored" data-anchor-id="límites-y-buenas-prácticas">8. Límites y buenas prácticas</h2>
+<ul>
+<li><strong>Dependencia de R.</strong> Generar las diapositivas desde JSON requiere R con el paquete <code>jsonlite</code> (y <code>rmarkdown</code> para leer el YAML del post). El resultado final, en cambio, es HTML estático que no necesita R para verse.</li>
+<li><strong>El caché de Quarto.</strong> Si activas <code>freeze</code> en <code>_quarto.yml</code>, Quarto no detecta cambios en <code>slides.json</code>, solo en los <code>.qmd</code>. Tras editar el JSON, vuelve a renderizar el <code>.qmd</code> correspondiente.</li>
+<li><strong>URL del sitio.</strong> <code>siteUrl</code> en <code>slides.json</code> es el que construye los enlaces del JSON-LD; verifica que coincida con tu dominio real.</li>
+<li><strong>Accesibilidad.</strong> Mantén el <code>title</code> del iframe y el enlace a pantalla completa. Describe con texto alternativo las imágenes que agregues.</li>
+<li><strong>Probar antes de publicar.</strong> Revisa la presentación con <code>quarto preview</code> y la página con <code>quarto render</code> en local antes del <code>git push</code>.</li>
+</ul>
+</section>
+<section id="créditos" class="level2">
+<h2 class="anchored" data-anchor-id="créditos">Créditos</h2>
+<p><strong>Uso de IA.</strong> Para estructurar el código y los textos de este post se consultó Claude (Anthropic, Sonnet 5.5). <em>(Agrega aquí las demás herramientas que hayas usado.)</em></p>
+</section>
+<section id="referencias" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="referencias">Referencias</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-cornell_info5940" class="csl-entry" role="listitem">
+Cornell University, INFO 5940. s.&nbsp;f. <span>«Publishing reproducible documents with Quarto»</span>. Diapositivas de curso. <a href="https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents">https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents</a>.
+</div>
+<div id="ref-racine2024" class="csl-entry" role="listitem">
+Racine, Jeffrey S. 2024. <span>«Quarto the Assassin»</span>. Department of Economics Working Papers 2024-11. Department of Economics, McMaster University. <a href="https://ideas.repec.org/p/mcm/deptwp/2024-11.html">https://ideas.repec.org/p/mcm/deptwp/2024-11.html</a>.
+</div>
+<div id="ref-sandve2013" class="csl-entry" role="listitem">
+Sandve, Geir Kjetil, Anton Nekrutenko, James Taylor, y Eivind Hovig. 2013. <span>«Ten Simple Rules for Reproducible Computational Research»</span>. <em>PLoS Computational Biology</em> 9 (10): e1003285. <a href="https://doi.org/10.1371/journal.pcbi.1003285">https://doi.org/10.1371/journal.pcbi.1003285</a>.
+</div>
+<div id="ref-wilson2017" class="csl-entry" role="listitem">
+Wilson, Greg, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt, y Tracy K. Teal. 2017. <span>«Good Enough Practices in Scientific Computing»</span>. <em>PLOS Computational Biology</em> 13 (6): e1005510. <a href="https://doi.org/10.1371/journal.pcbi.1005510">https://doi.org/10.1371/journal.pcbi.1005510</a>.
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="https://creativecommons.org">CC BY 4.0</a> 2026 Mariano Ordano v1.5 ~ hecho con <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p><select id="modo-vision" onchange="cambiarPercepcion(this.value)" class="sel-acc"> <option value="normal">👁️ Percepción Estándar</option> <option value="alto-contraste">🌓 Alto Contraste (Achromatopsia)</option> <option value="filtro-suave">🌅 Filtro Suave (Bajo Brillo / Fatiga)</option> <option value="daltonismo">🎨 Modo Protanopia/Deuteranopia</option>
+</select><br>
+<button onclick="toggleTextoAVoz()" id="btn-voz" class="btn-acc">🔊 Escuchar Página</button></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/maordano/">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://osf.io/9yxfm/">
+<p>OSF</p>
+</a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/mariano-ordano">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.researchgate.net/profile/Mariano-Ordano">
+<p>RG</p>
+</a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://instagram.com/mariano.ordano/">
+      <i class="bi bi-instagram" role="img" aria-label="Instagram">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://drive.google.com/file/d/1fwCgR2HiVTTu7CEI3Vsi1gWZcUNglawJ/view">
+<p>CV</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>
+  function cambiarPercepcion(modo) {
+    document.body.classList.remove('alto-contraste', 'filtro-suave', 'daltonismo');
+    if (modo !== 'normal') {
+      document.body.classList.add(modo);
+    }
+  }
+
+  let lector = null;
+  function toggleTextoAVoz() {
+    let boton = document.getElementById('btn-voz');
+    if ('speechSynthesis' in window) {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        boton.innerText = "🔊 Escuchar Página";
+        boton.classList.remove('activo-voz');
+      } else {
+        let texto = document.querySelector('main')?.innerText || document.body.innerText;
+        lector = new SpeechSynthesisUtterance(texto);
+        lector.lang = 'es-AR';
+        
+        lector.onend = function() {
+          boton.innerText = "🔊 Escuchar Página";
+          boton.classList.remove('activo-voz');
+        };
+
+        window.speechSynthesis.speak(lector);
+        boton.innerText = "🛑 Detener Lectura";
+        boton.classList.add('activo-voz');
+      }
+    } else {
+      alert("Tu navegador no soporta transcripción de voz automática.");
+    }
+  }
+</script>
+
+
+
+
+</body></html>

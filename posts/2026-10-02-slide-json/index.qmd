@@ -1,0 +1,406 @@
+---
+title: "Presentaciones RevealJS como artefacto reproducible: el contenido en JSON, el despliegue con Quarto"
+description: "Cómo construir y publicar en pocos pasos una presentación online dentro de un sitio Quarto, con las diapositivas definidas en slides.json y los metadatos JSON-LD generados desde el mismo archivo."
+author: "M. A. Ordano"
+date: 2026-10-02
+lang: es
+categories: [quarto, revealjs, json, json-ld, open science, reproducibilidad]
+bibliography: references.bib
+engine: knitr
+format:
+  html:
+    toc: true
+    toc-title: "Contenido"
+    toc-depth: 3
+    code-fold: true
+    code-summary: "Ver código"
+    link-external-newwindow: true
+execute:
+  warning: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Este post lee los mismos archivos que describe: así lo que se muestra
+# en pantalla es siempre lo que realmente se ejecutó.
+library(jsonlite)
+
+deck  <- read_json("slides.json", simplifyVector = FALSE)   # contenido de las diapositivas
+fm    <- rmarkdown::yaml_front_matter("index.qmd")          # título, fecha, categorías de este post
+slug  <- deck$project$slug
+fence <- strrep("`", 3)
+
+# Muestra un bloque de texto como código dentro de un recuadro plegable.
+# 'f' = cantidad de comillas inversas de la valla externa (5 si el contenido ya trae vallas de 3).
+show_block <- function(txt, lang, title, f = 3) {
+  fz <- strrep("`", f)
+  cat('::: {.callout-note collapse="true" title="', title, '"}\n\n',
+      fz, lang, "\n", paste(txt, collapse = "\n"), "\n", fz, "\n\n:::\n\n", sep = "")
+  invisible(NULL)
+}
+show_file <- function(path, lang, title, f = 3) {
+  show_block(readLines(path, encoding = "UTF-8", warn = FALSE), lang, title, f)
+}
+```
+
+## 1. La idea en una frase
+
+Una presentación web (RevealJS) puede tratarse como cualquier otro **artefacto de investigación**: se escribe en texto plano, se compila con un comando, se versiona con git y se publica con otro comando. Lo nuevo de este flujo es que **el contenido de las diapositivas ya no está escrito dentro del documento, sino en un archivo de datos (`slides.json`)**. De ese único archivo salen:
+
+- las diapositivas (`presentation.qmd` → `presentation.html`),
+- los metadatos para buscadores y repositorios (JSON-LD de schema.org) que se insertan en este post.
+
+Aquí tienes la presentación terminada, incrustada en el post:
+
+<div class="ratio ratio-16x9">
+  <iframe src="presentation.html" title="Presentación RevealJS: del .qmd al iframe, con contenido en JSON" loading="lazy" allowfullscreen style="border:0; border-radius:8px;"></iframe>
+</div>
+
+[Abrir la presentación a pantalla completa](presentation.html){target="_blank"}
+
+::: {.callout-tip}
+Si las teclas de flecha no cambian de diapositiva, haz clic primero dentro del recuadro: el iframe necesita tener el foco. La tecla `F` activa la pantalla completa y `S` abre la vista del orador con las notas.
+:::
+
+## 2. Anatomía del post
+
+Todo vive en una carpeta. Cada archivo cumple un solo papel:
+
+```
+posts/2026-10-02-slide-json/
+├── slides.json          # DATOS: qué dicen las diapositivas
+├── presentation.qmd     # DESPLIEGUE: convierte los datos en una presentación RevealJS
+├── index.qmd            # POST: explica, incrusta la presentación y genera el JSON-LD
+├── references.bib       # citas del post
+└── images/
+    └── caracol.webp     # logo de la presentación
+```
+
+El flujo completo, desde la fuente hasta el artefacto archivado:
+
+```{mermaid}
+%%| fig-width: 7
+flowchart LR
+  A["slides.json<br/>(datos)"] --> B["presentation.qmd<br/>(plantilla)"]
+  B -->|quarto render| C["presentation.html<br/>(un solo archivo)"]
+  A --> E["JSON-LD<br/>(schema.org)"]
+  C --> D["index.qmd<br/>(iframe + JSON-LD)"]
+  E --> D
+  D -->|quarto render| F["docs/<br/>(sitio compilado)"]
+  F -->|git push| G["GitHub Pages"]
+  F -->|release| H["Zenodo<br/>(DOI)"]
+```
+
+### ¿Qué cambia respecto al flujo anterior?
+
+| Antes | Ahora | Por qué importa |
+|-------------------------------|-------------------------------|----------------------------|
+| Diapositivas escritas dentro del `.qmd` | Diapositivas en `slides.json` | El contenido es un dato que otros programas también pueden leer |
+| Rutas distintas en cada paso (`2026-10-02-slide-json` y `slides-devices`) | Un único `slug` en el JSON | Una sola fuente de verdad evita errores de ruta |
+| Render de la presentación, del post y del sitio por separado | Un `quarto render` del proyecto | Menos pasos manuales que olvidar |
+| `draft: true` para evitar la entrada doble | `listing: contents: "posts/*/index.qmd"` | El listado decide explícitamente qué entra |
+| Iframe de altura fija (`500px`) | Contenedor `ratio-16x9` | Se adapta a pantallas de distinto tamaño |
+| Presentación con carpeta de archivos auxiliares | `embed-resources: true` | Un único `.html` autosuficiente |
+
+## 3. Construcción paso a paso desde RStudio
+
+### 3.1 Crear la estructura
+
+En RStudio abre tu proyecto del sitio y usa la pestaña **Terminal** (junto a la Consola; atajo `Alt+Shift+R`). La terminal y la consola son cosas distintas: la consola ejecuta R, la terminal ejecuta comandos del sistema como `mkdir` o `git`.
+
+```bash
+mkdir -p posts/2026-10-02-slide-json/images
+touch posts/2026-10-02-slide-json/index.qmd
+touch posts/2026-10-02-slide-json/presentation.qmd
+touch posts/2026-10-02-slide-json/slides.json
+touch posts/2026-10-02-slide-json/references.bib
+```
+
+Si prefieres quedarte en la Consola de R (por ejemplo, en Windows sin Git Bash), el equivalente es:
+
+```r
+dir.create("posts/2026-10-02-slide-json/images", recursive = TRUE)
+file.create(file.path("posts/2026-10-02-slide-json",
+                      c("index.qmd", "presentation.qmd", "slides.json", "references.bib")))
+```
+
+Copia tu logo en `images/caracol.webp`.
+
+### 3.2 `slides.json`: los datos
+
+Cada diapositiva es un objeto con campos opcionales. Solo `title` es obligatorio:
+
+| Campo | Qué hace |
+|----------------|--------------------------------------------------------|
+| `id` | Identificador de la diapositiva; permite enlazarla directamente (`presentation.html#/estructura`) |
+| `title` | Título (genera el encabezado `##`) |
+| `bullets` | Lista de viñetas |
+| `text` | Párrafo libre en markdown |
+| `code` | Lista de bloques de código, cada uno con `lang` y `text`. El marcador `{{slug}}` se reemplaza por el slug del proyecto |
+| `class` | Clases de RevealJS, por ejemplo `smaller` para reducir la letra |
+| `notes` | Notas del orador |
+| `step` | Si vale `false`, la diapositiva no se declara como paso en el JSON-LD |
+
+Se eligió JSON y no YAML porque es estricto, lo entiende cualquier lenguaje (R, Python, JavaScript) y es exactamente el formato que exige JSON-LD. Además, prácticamente todo JSON válido es también YAML válido, lo que facilita combinarlo con la configuración de Quarto.
+
+```{r}
+#| echo: false
+#| output: asis
+show_file("slides.json", "json", "Ver slides.json completo")
+```
+
+### 3.3 `presentation.qmd`: el despliegue
+
+El documento tiene dos partes: la cabecera YAML con las opciones de RevealJS, y dos chunks de R. El primero lee el JSON; el segundo recorre las diapositivas y escribe, para cada una, el markdown equivalente. Con `output: asis` ese markdown se trata como contenido del documento y no como salida de código, y por eso cada `## Título` se convierte en una diapositiva.
+
+```{r}
+#| echo: false
+#| output: asis
+show_file("presentation.qmd", "markdown", "Ver presentation.qmd completo", f = 5)
+```
+
+Tres opciones del YAML conviene entender:
+
+- **`embed-resources: true`**: guarda CSS, JavaScript e imágenes dentro del propio `presentation.html`. Es lo que permite copiar o incrustar el archivo sin arrastrar carpetas.
+- **`execute: echo: false`**: oculta el código de generación para que no aparezca en las diapositivas.
+- **`slide-number: c/t`**: muestra "diapositiva actual / total".
+
+### 3.4 Previsualizar y renderizar
+
+Hay dos comandos, con propósitos distintos:
+
+```bash
+quarto preview posts/2026-10-02-slide-json/presentation.qmd   # abre una vista que se recarga al guardar
+quarto render  posts/2026-10-02-slide-json/presentation.qmd   # genera el presentation.html final
+```
+
+Desde RStudio puedes usar el botón **Render** del editor; según la versión, la presentación se abre en el panel Viewer o en una pestaña propia.
+
+::: {.callout-note}
+**Ciclo de trabajo:** edita `slides.json`, guarda, mira el cambio en la vista previa. Solo tocas `presentation.qmd` si quieres cambiar *cómo* se ven las diapositivas, no *qué dicen*.
+:::
+
+## 4. Incrustar la presentación en el post
+
+Ya viste el resultado arriba. Este es el código en `index.qmd`:
+
+```html
+<div class="ratio ratio-16x9">
+  <iframe src="presentation.html"
+          title="Presentación RevealJS"
+          loading="lazy" allowfullscreen
+          style="border:0; border-radius:8px;"></iframe>
+</div>
+
+[Abrir a pantalla completa](presentation.html){target="_blank"}
+```
+
+- `ratio ratio-16x9` es una clase de Bootstrap (el tema que Quarto usa por defecto en sitios web) que mantiene la proporción de la presentación.
+- `title` describe el iframe para lectores de pantalla.
+- `loading="lazy"` pospone la carga hasta que el iframe es visible.
+- El enlace final es una salida de emergencia: algunas personas prefieren ver las diapositivas en pantalla completa.
+
+::: {.callout-warning}
+Si abres el post con `quarto preview` y el iframe aparece vacío, es porque `presentation.html` todavía no existe. Ejecuta una vez `quarto render` en el proyecto (o renderiza `presentation.qmd`).
+:::
+
+## 5. JSON-LD generado desde los mismos datos
+
+**JSON-LD** es una forma de describir una página con el vocabulario de [schema.org](https://schema.org), de modo que buscadores, repositorios y otros programas entiendan qué es el contenido (un artículo, su autor, sus partes) sin tener que adivinarlo.
+
+El chunk siguiente combina dos fuentes, cada una con su función:
+
+- el **YAML de este post** aporta título, descripción, fecha, idioma y categorías;
+- **`slides.json`** aporta el slug, el autor, la URL del sitio y los pasos.
+
+Cada diapositiva (salvo las marcadas con `"step": false`) se declara como un `HowToStep` dentro de un `HowTo`, y la presentación como un `PresentationDigitalDocument`. Los enlaces de cada paso apuntan a la diapositiva concreta gracias a los `id`.
+
+```{r}
+#| label: jsonld
+#| output: asis
+
+site     <- deck$project$siteUrl
+post_url <- paste0(site, "/posts/", slug, "/")
+pres_url <- paste0(post_url, "presentation.html")
+
+# 1. Un HowToStep por diapositiva
+steps_src <- Filter(function(s) !isFALSE(s[["step"]]), deck$slides)
+
+steps <- lapply(seq_along(steps_src), function(i) {
+  s   <- steps_src[[i]]
+  txt <- paste(unlist(s[["bullets"]]), collapse = ". ")
+  if (!nzchar(txt)) txt <- sub("^[0-9]+\\s+", "", s[["title"]])
+  list(
+    `@type`  = "HowToStep",
+    position = i,
+    name     = sub("^[0-9]+\\s+", "", s[["title"]]),   # quita la numeración del título
+    text     = txt,
+    url      = paste0(pres_url, "#/", s[["id"]])
+  )
+})
+
+# 2. El objeto principal
+ld <- list(
+  `@context`    = "https://schema.org",
+  `@type`       = "BlogPosting",
+  `@id`         = post_url,
+  url           = post_url,
+  headline      = fm$title,
+  description   = fm$description,
+  inLanguage    = fm$lang,
+  datePublished = as.character(fm$date),
+  keywords      = unlist(fm$categories),
+  author = list(
+    `@type` = "Person",
+    name    = deck$project$author$name,
+    affiliation = list(`@type` = "Organization",
+                       name    = deck$project$author$affiliation)
+  ),
+  hasPart = list(
+    list(`@type` = "PresentationDigitalDocument",
+         name = paste("Presentación:", fm$title),
+         url = pres_url, encodingFormat = "text/html", inLanguage = fm$lang),
+    list(`@type` = "HowTo", name = fm$title, step = steps)
+  )
+)
+if (!is.null(deck$project$license)) ld$license <- deck$project$license   # opcional
+
+json <- toJSON(ld, auto_unbox = TRUE, pretty = TRUE)
+
+# 3a. Mostrarlo en el post (plegado)
+show_block(json, "json", "Ver el JSON-LD generado")
+
+# 3b. Insertarlo como bloque HTML crudo, invisible para el lector
+cat(fence, "{=html}\n<script type=\"application/ld+json\">\n", json,
+    "\n</script>\n", fence, "\n", sep = "")
+```
+
+Para comprobar que el resultado es válido, copia el contenido del `<script>` (clic derecho → *Ver código fuente* en la página publicada) en el [validador de schema.org](https://validator.schema.org).
+
+::: {.callout-note}
+El valor de este bloque es **semántico e interoperable**: describe el post y sus partes en un formato abierto. No esperes que garantice por sí solo resultados enriquecidos en buscadores; eso depende de cada buscador.
+:::
+
+### ¿Y si prefiero Python?
+
+La lógica es idéntica. En RStudio hay dos caminos:
+
+::: {.panel-tabset}
+### Solo Python (Jupyter)
+
+Cambia `engine: knitr` por `engine: jupyter` y reemplaza el chunk de R por uno de Python. Necesitas `pip install jupyter pyyaml` y comprobar con `quarto check jupyter`. Este es el equivalente en espíritu (no lo probé aquí):
+
+```python
+import json, re, pathlib, yaml
+
+deck = json.loads(pathlib.Path("slides.json").read_text(encoding="utf-8"))
+txt  = pathlib.Path("index.qmd").read_text(encoding="utf-8")
+fm   = yaml.safe_load(re.match(r"^---\n(.*?)\n---", txt, re.S).group(1))
+
+post_url = f'{deck["project"]["siteUrl"]}/posts/{deck["project"]["slug"]}/'
+pres_url = post_url + "presentation.html"
+
+steps = []
+for i, s in enumerate([s for s in deck["slides"] if s.get("step", True)], start=1):
+    name = re.sub(r"^\d+\s+", "", s["title"])
+    steps.append({
+        "@type": "HowToStep", "position": i, "name": name,
+        "text": ". ".join(s.get("bullets", [])) or name,
+        "url": f'{pres_url}#/{s["id"]}',
+    })
+
+ld = {
+    "@context": "https://schema.org", "@type": "BlogPosting",
+    "@id": post_url, "url": post_url,
+    "headline": fm["title"], "description": fm["description"],
+    "inLanguage": fm["lang"], "datePublished": str(fm["date"]),
+    "keywords": fm["categories"],
+    "author": {"@type": "Person",
+               "name": deck["project"]["author"]["name"],
+               "affiliation": {"@type": "Organization",
+                               "name": deck["project"]["author"]["affiliation"]}},
+    "hasPart": [
+        {"@type": "PresentationDigitalDocument", "name": "Presentación: " + fm["title"],
+         "url": pres_url, "encodingFormat": "text/html", "inLanguage": fm["lang"]},
+        {"@type": "HowTo", "name": fm["title"], "step": steps},
+    ],
+}
+print('```{=html}\n<script type="application/ld+json">')
+print(json.dumps(ld, ensure_ascii=False, indent=2))
+print("</script>\n```")
+```
+
+### R + Python (reticulate)
+
+Mantienes `engine: knitr` y agregas un chunk `{python}`. Los objetos de R son accesibles desde Python con el prefijo `r.` (por ejemplo `r.deck`), siempre que tengas el paquete `reticulate` y un Python configurado en RStudio (*Tools → Global Options → Python*). Sirve para mezclar lenguajes, pero para un script tan corto es más simple quedarse con uno solo.
+:::
+
+## 6. Despliegue: la infraestructura del artefacto
+
+Hasta ahora hemos construido fuentes. Falta convertirlas en un **artefacto publicado y trazable**. Cada comando tiene una razón de ser:
+
+Antes del primer render, en la página que lista los posts (por ejemplo `posts/index.qmd`), declara qué archivos entran al listado. Así la presentación no genera una entrada duplicada y no hace falta `draft: true`:
+
+```yaml
+listing:
+  contents: "posts/*/index.qmd"
+```
+
+Después, los cuatro comandos:
+
+```bash
+quarto render                      # (1)
+git add --all                      # (2)
+git commit -m "post RevealJS simple"   # (3)
+git push origin main               # (4)
+```
+
+1. **`quarto render`** compila todo el proyecto y escribe el sitio en `docs/` (el `output-dir` definido en `_quarto.yml`). Como Quarto procesa todos los `.qmd`, el `presentation.html` y el post salen en la misma pasada.
+2. **`git add --all`** prepara para el registro las fuentes (`.qmd`, `.json`, `.bib`) y el artefacto compilado (`docs/`). Revisa antes con `git status` para confirmar que no entra nada que no quieras publicar.
+3. **`git commit`** fija una versión identificable. El mensaje debería decir *qué* cambió.
+4. **`git push origin main`** envía el commit a GitHub, que sirve `docs/` mediante GitHub Pages. En RStudio puedes hacer los pasos 2 a 4 desde la pestaña **Git** (Commit → Push) si prefieres la interfaz.
+
+Se omitió `--force`: ese indicador reescribe el historial remoto y solo se justifica cuando se busca deliberadamente. Sin él, un conflicto te avisa en lugar de sobrescribir trabajo.
+
+Para que el sitio sea completamente reproducible, el `.gitignore` debería excluir la carpeta de caché `/.quarto/` (Quarto suele agregarla al crear el proyecto) y el repositorio debe incluir `slides.json`, que es la fuente real del contenido.
+
+### Archivo con DOI (opcional)
+
+Si el repositorio está vinculado a Zenodo, cada *release* de GitHub genera una copia archivada con DOI. Así la presentación deja de ser solo "una página en la web" y pasa a ser una versión citable.
+
+1. En Zenodo, activa el repositorio en la sección de GitHub.
+2. En GitHub, crea un release (por ejemplo `v1.0.0`).
+3. Zenodo archiva el contenido y asigna el DOI.
+
+## 7. ¿Qué dice la literatura?
+
+Conviene ser claros con los límites de lo que se puede citar. **No encontré estudios empíricos controlados que comparen formatos de presentación** (PowerPoint, Beamer, RevealJS) en términos de reproducibilidad. Lo que sí hay son tres tipos de apoyo:
+
+**Principios generales de investigación computacional reproducible.** @sandve2013 proponen diez reglas, entre ellas evitar pasos manuales, mantener bajo control de versiones los scripts propios y dar acceso público a scripts, ejecuciones y resultados. @wilson2017 sintetizan prácticas mínimas de organización de proyectos, seguimiento del trabajo y escritura, y orientan a depositar datos y código en repositorios con DOI. El flujo de este post es una aplicación directa: la presentación se genera con un comando desde texto plano, se versiona con git y puede archivarse con DOI.
+
+**Una comparación de formatos, con sesgo declarado.** @racine2024 examina en un capítulo cómo crear presentaciones dinámicas RevealJS con Quarto, dirigido sobre todo a quienes vienen de Beamer, y sus conclusiones son muy entusiastas. Es un texto de defensa de una herramienta por parte de un usuario experimentado, no una evaluación comparativa controlada: úsalo como testimonio razonado, no como evidencia.
+
+**Material docente que distingue cuándo usar cada formato.** Las diapositivas de un curso de Cornell [@cornell_info5940] describen RevealJS como formato HTML de código abierto, Beamer para diapositivas LaTeX y PowerPoint para cuando hay que colaborar en el entorno Office. Es una guía práctica de decisión, no un análisis de reproducibilidad.
+
+::: {.callout-note}
+Si conoces estudios que midan el tiempo de producción o la reproducibilidad de distintos formatos de presentación, agrégalos a `references.bib`: la sección está pensada para crecer.
+:::
+
+## 8. Límites y buenas prácticas
+
+- **Dependencia de R.** Generar las diapositivas desde JSON requiere R con el paquete `jsonlite` (y `rmarkdown` para leer el YAML del post). El resultado final, en cambio, es HTML estático que no necesita R para verse.
+- **El caché de Quarto.** Si activas `freeze` en `_quarto.yml`, Quarto no detecta cambios en `slides.json`, solo en los `.qmd`. Tras editar el JSON, vuelve a renderizar el `.qmd` correspondiente.
+- **URL del sitio.** `siteUrl` en `slides.json` es el que construye los enlaces del JSON-LD; verifica que coincida con tu dominio real.
+- **Accesibilidad.** Mantén el `title` del iframe y el enlace a pantalla completa. Describe con texto alternativo las imágenes que agregues.
+- **Probar antes de publicar.** Revisa la presentación con `quarto preview` y la página con `quarto render` en local antes del `git push`.
+
+## Créditos
+
+**Uso de IA.** Para estructurar el código y los textos de este post se consultó Claude (Anthropic, Sonnet 5.5). *(Agrega aquí las demás herramientas que hayas usado.)*
+
+## Referencias {.unnumbered}
+
+::: {#refs}
+:::

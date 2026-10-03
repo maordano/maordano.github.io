@@ -1,0 +1,72 @@
+---
+title: "Presentaciones RevealJS dentro de un sitio Quarto"
+subtitle: "De presentation.qmd al iframe del post, con el contenido en JSON"
+author: "M. A. Ordano"
+date: today
+date-format: long
+lang: es
+format:
+  revealjs:
+    theme: simple              # moon, night, sky, serif, solarized
+    transition: slide          # fade, zoom, none
+    background-transition: fade
+    slide-number: c/t          # actual/total
+    logo: images/caracol.webp
+    footer: "Quarto · RevealJS · JSON"
+    code-copy: true
+    preview-links: auto
+    link-external-newwindow: true
+    scrollable: true
+    width: 1280
+    height: 720
+    embed-resources: true      # un único .html: ideal para el iframe
+execute:
+  echo: false
+  warning: false
+editor: visual
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# El contenido de las diapositivas vive en slides.json (misma carpeta).
+# Este documento solo lo lee y lo despliega.
+library(jsonlite)
+
+stopifnot("No se encuentra slides.json junto a presentation.qmd" = file.exists("slides.json"))
+
+deck  <- read_json("slides.json", simplifyVector = FALSE)
+slug  <- deck$project$slug
+fence <- strrep("`", 3)   # evita escribir las tres comillas inversas dentro del chunk
+
+# Convierte un objeto del JSON en el markdown de una diapositiva
+emit_slide <- function(s) {
+  attrs <- c(
+    if (!is.null(s[["id"]])) paste0("#", s[["id"]]),
+    if (!is.null(s[["class"]])) paste0(".", unlist(s[["class"]]))
+  )
+  attrs <- if (length(attrs)) paste0(" {", paste(attrs, collapse = " "), "}") else ""
+
+  cat("\n## ", s[["title"]], attrs, "\n\n", sep = "")
+
+  for (b in s[["bullets"]]) cat("- ", b, "\n", sep = "")
+  if (length(s[["bullets"]])) cat("\n")
+
+  if (!is.null(s[["text"]])) cat(s[["text"]], "\n\n", sep = "")
+
+  for (cb in s[["code"]]) {
+    txt <- gsub("{{slug}}", slug, cb[["text"]], fixed = TRUE)
+    cat(fence, cb[["lang"]], "\n", txt, "\n", fence, "\n\n", sep = "")
+  }
+
+  if (!is.null(s[["notes"]])) cat("::: {.notes}\n", s[["notes"]], "\n:::\n\n", sep = "")
+}
+```
+
+```{r}
+#| label: slides
+#| output: asis
+
+invisible(lapply(deck$slides, emit_slide))
+```

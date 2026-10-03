@@ -1,0 +1,134 @@
+{
+  "project": {
+    "slug": "2026-10-02-slide-json",
+    "siteUrl": "https://maordano.github.io",
+    "author": {
+      "name": "M. A. Ordano",
+      "affiliation": "IER-UNT-CONICET / Fundación Miguel Lillo"
+    }
+  },
+  "slides": [
+    {
+      "id": "estructura",
+      "title": "1 Terminal junto a consola [bash]",
+      "bullets": [
+        "Creación de los documentos del post",
+        "Se separa el archivo que genera la presentación web (presentation.qmd) del post que la incrusta (index.qmd)",
+        "slides.json guarda el contenido; presentation.qmd solo lo despliega"
+      ],
+      "code": [
+        {
+          "lang": "bash",
+          "text": "mkdir -p posts/{{slug}}/images\ntouch posts/{{slug}}/index.qmd\ntouch posts/{{slug}}/presentation.qmd\ntouch posts/{{slug}}/slides.json\ntouch posts/{{slug}}/references.bib"
+        }
+      ],
+      "notes": "Un único slug evita el desajuste de rutas entre los pasos (2026-10-02-slide-json vs slides-devices)."
+    },
+    {
+      "id": "yaml",
+      "title": "2 Configuración de la presentación",
+      "class": ["smaller"],
+      "code": [
+        {
+          "lang": "yaml",
+          "text": "---\ntitle: \"Mi presentación\"\nlang: es\nformat:\n  revealjs:\n    theme: simple          # moon, night, sky, serif, solarized\n    transition: slide      # fade, zoom, none\n    slide-number: c/t\n    logo: images/caracol.webp\n    footer: \"Quarto · RevealJS\"\n    code-copy: true\n    embed-resources: true  # un solo .html, ideal para iframe\n---"
+        }
+      ],
+      "notes": "embed-resources empaqueta CSS, JS e imágenes dentro de presentation.html: el iframe no depende de carpetas auxiliares."
+    },
+    {
+      "id": "json",
+      "title": "3 El contenido vive en JSON",
+      "bullets": [
+        "Cada diapositiva es un objeto: id, title, bullets, code, notes",
+        "Un chunk de R lee el archivo y emite el markdown de cada slide",
+        "Cambiar una diapositiva = editar un dato, no el documento"
+      ],
+      "code": [
+        {
+          "lang": "json",
+          "text": "{\n  \"id\": \"render\",\n  \"title\": \"4 Render\",\n  \"bullets\": [\"Iterar con preview\"],\n  \"code\": [{ \"lang\": \"bash\", \"text\": \"quarto preview ...\" }],\n  \"notes\": \"Texto para el orador\"\n}"
+        }
+      ]
+    },
+    {
+      "id": "render",
+      "title": "4 Render de la presentación",
+      "bullets": [
+        "En RStudio: botón Render del editor, o la pestaña Terminal",
+        "Para iterar y corregir errores, preview recarga al guardar",
+        "Para generar el archivo final, render"
+      ],
+      "code": [
+        {
+          "lang": "bash",
+          "text": "quarto preview posts/{{slug}}/presentation.qmd\nquarto render  posts/{{slug}}/presentation.qmd"
+        }
+      ]
+    },
+    {
+      "id": "iframe",
+      "title": "5 Incrustar en index.qmd",
+      "bullets": [
+        "El contenedor responsivo mantiene la proporción 16:9",
+        "El enlace permite abrir la presentación a pantalla completa"
+      ],
+      "class": ["smaller"],
+      "code": [
+        {
+          "lang": "markdown",
+          "text": "# Prueba de presentación\n\n<div class=\"ratio ratio-16x9\">\n  <iframe src=\"presentation.html\"\n          title=\"Presentación RevealJS\"\n          loading=\"lazy\" allowfullscreen\n          style=\"border:0; border-radius:8px;\"></iframe>\n</div>\n\n[Abrir a pantalla completa](presentation.html){target=\"_blank\"}"
+        }
+      ]
+    },
+    {
+      "id": "proyecto",
+      "title": "6 Proyecto y listado",
+      "bullets": [
+        "Quarto ya renderiza todos los .qmd: no hace falta un render manual extra",
+        "El listado toma solo los index.qmd, así la presentación no genera una entrada doble (sin necesidad de draft)"
+      ],
+      "class": ["smaller"],
+      "code": [
+        {
+          "lang": "yaml",
+          "text": "# _quarto.yml\nproject:\n  type: website\n  output-dir: docs"
+        },
+        {
+          "lang": "yaml",
+          "text": "# posts/index.qmd (o la página que lista los posts)\nlisting:\n  contents: \"posts/*/index.qmd\""
+        }
+      ]
+    },
+    {
+      "id": "publicar",
+      "title": "7 Render del sitio y publicación",
+      "bullets": [
+        "docs/ es el artefacto: el sitio ya compilado",
+        "git lo versiona junto con las fuentes (.qmd y .json)",
+        "El push lo publica; un release en GitHub puede archivarlo en Zenodo con DOI"
+      ],
+      "code": [
+        {
+          "lang": "bash",
+          "text": "quarto render\ngit add --all\ngit commit -m \"post RevealJS simple\"\ngit push origin main"
+        }
+      ]
+    },
+    {
+      "id": "jsonld",
+      "title": "8 Metadatos JSON-LD",
+      "bullets": [
+        "El post lee slides.json y su propio YAML",
+        "Cada diapositiva se declara como HowToStep de schema.org",
+        "El resultado se inserta en la página como bloque `application/ld+json`"
+      ]
+    },
+    {
+      "id": "creditos",
+      "title": "9 Créditos",
+      "step": false,
+      "text": "**Uso de IA.** Para la programación y el montaje de la estructura digital en la web se consultaron las versiones libres de los asistentes Claude (Anthropic) y Gemini (Google, Modo IA). Esta versión se reestructuró con Claude Sonnet 5.5."
+    }
+  ]
+}
